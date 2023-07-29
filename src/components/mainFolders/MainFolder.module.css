@@ -1,0 +1,77 @@
+.ChatGptWrapper {
+  width: 1000px;
+  background-color: #f0f0f0;
+  border: 1px solid #999;
+  border-radius: 6px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.TitleBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0078d4;
+  color: white;
+  font-weight: bold;
+  padding: 12px 20px;
+  cursor: default;
+  width: 100%;
+}
+
+.Title {
+  flex-grow: 1;
+}
+
+.Icons {
+  display: flex;
+}
+
+.MinimizeButton,
+.CloseButton {
+  width: 64px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.MinimizeButton {
+  background-color: #0078d4;
+}
+
+.MinimizeButton:hover {
+  background-color: #005a9e;
+}
+
+.CloseButton {
+  background-color: #d83b01;
+}
+
+.CloseButton:hover {
+  background-color: #a4262c;
+}
+
+.folderImage {
+  width: 100%;
+  height: auto;
+}
+
+.folderImageContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.folderImageInside {
+  height: 20%;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}

@@ -1,0 +1,13 @@
+.FolderListWrapper {
+  display: flex;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.FolderListWrapper div {
+  display: flex;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+}
