@@ -2,37 +2,62 @@ import React, { useState, useEffect } from "react";
 import classes from "./MainFolder.module.css";
 import FolderMainItem from "./FolderMainItem";
 import blog1 from "../../sources/2023-07-30.png";
+import blog2 from "../../sources/2023-07-31.png";
+
 function NieWiem({ handleFolderSelection }) {
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [startY, setStartY] = useState(0);
-  const [offsetX, setOffsetX] = useState(0);
-  const [offsetY, setOffsetY] = useState(0);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+  const [windows, setWindows] = useState([
+    { id: 1, offsetX: 0, offsetY: 0, isOpen: true },
+    { id: 2, offsetX: 0, offsetY: 0, isOpen: true },
+  ]);
 
-  const handleCloseClick = (e) => {
-    handleFolderSelection(0);
+  const handleCloseClick = (windowId) => {
+    setWindows((prevWindows) =>
+      prevWindows.map((window) =>
+        window.id === windowId ? { ...window, isOpen: false } : window
+      )
+    );
   };
 
-  const handleMouseDown = (e) => {
-    setIsDragging(true);
-    setStartX(e.clientX - offsetX);
-    setStartY(e.clientY - offsetY);
+  const handleMouseDown = (e, windowId) => {
+    setWindows((prevWindows) =>
+      prevWindows.map((window) =>
+        window.id === windowId
+          ? {
+              ...window,
+              isDragging: true,
+              startX: e.clientX - window.offsetX,
+              startY: e.clientY - window.offsetY,
+            }
+          : window
+      )
+    );
     e.preventDefault();
   };
 
-  const handleMouseMove = (e) => {
-    if (isDragging) {
-      const newOffsetX = e.clientX - startX;
-      const newOffsetY = e.clientY - startY;
-      setOffsetX(newOffsetX);
-      setOffsetY(newOffsetY);
-    }
+  const handleMouseMove = (e, windowId) => {
+    setWindows((prevWindows) =>
+      prevWindows.map((window) =>
+        window.isDragging && window.id === windowId
+          ? {
+              ...window,
+              offsetX: e.clientX - window.startX,
+              offsetY: e.clientY - window.startY,
+            }
+          : window
+      )
+    );
   };
 
-  const handleMouseUp = () => {
-    setIsDragging(false);
+  const handleMouseUp = (windowId) => {
+    setWindows((prevWindows) =>
+      prevWindows.map((window) =>
+        window.isDragging && window.id === windowId
+          ? { ...window, isDragging: false }
+          : window
+      )
+    );
   };
 
   const handleResize = () => {
@@ -48,41 +73,72 @@ function NieWiem({ handleFolderSelection }) {
   }, []);
 
   useEffect(() => {
-    const chatGptWrapper = document.getElementById("chat-gpt-wrapper");
-    if (chatGptWrapper) {
-      const { top, left, right, bottom } =
-        chatGptWrapper.getBoundingClientRect();
-      if (left < 0) {
-        setOffsetX(offsetX - left);
-      } else if (right > windowWidth) {
-        setOffsetX(offsetX - (right - windowWidth));
-      }
-      if (top < 0) {
-        setOffsetY(offsetY - top);
-      } else if (bottom > windowHeight) {
-        setOffsetY(offsetY - (bottom - windowHeight));
-      }
-    }
-  }, [offsetX, offsetY, windowWidth, windowHeight]);
+    const handleWindowMove = (e) => {
+      setWindows((prevWindows) =>
+        prevWindows.map((window) =>
+          window.isDragging
+            ? {
+                ...window,
+                offsetX: e.clientX - window.startX,
+                offsetY: e.clientY - window.startY,
+              }
+            : window
+        )
+      );
+    };
+
+    const handleWindowUp = () => {
+      setWindows((prevWindows) =>
+        prevWindows.map((window) =>
+          window.isDragging ? { ...window, isDragging: false } : window
+        )
+      );
+    };
+
+    window.addEventListener("mousemove", handleWindowMove);
+    window.addEventListener("mouseup", handleWindowUp);
+
+    return () => {
+      window.removeEventListener("mousemove", handleWindowMove);
+      window.removeEventListener("mouseup", handleWindowUp);
+    };
+  }, []);
 
   return (
-    <div
-      className={classes.ChatGptWrapper}
-      style={{ transform: `translate(${offsetX}px, ${offsetY}px)` }}
-      onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
-    >
-      <div className={classes.TitleBar}>
-        <div className={classes.Title}>30.07.2023</div>
-        <div className={classes.Icons}>
-          <div className={classes.CloseButton} onClick={handleCloseClick}>
-            ✕
+    <>
+      {windows.map((window) => (
+        <div
+          key={window.id}
+          className={classes.ChatGptWrapper}
+          style={{
+            transform: `translate(${window.offsetX}px, ${window.offsetY}px)`,
+            display: window.isOpen ? "block" : "none",
+          }}
+          onMouseDown={(e) => handleMouseDown(e, window.id)}
+          onMouseMove={(e) => handleMouseMove(e, window.id)}
+          onMouseUp={() => handleMouseUp(window.id)}
+        >
+          <div className={classes.TitleBar}>
+            <div className={classes.Title}>
+              {window.id === 1 ? "30.07.2023" : "31.07.2023"}
+            </div>
+            <div className={classes.Icons}>
+              <div
+                className={classes.CloseButton}
+                onClick={() => handleCloseClick(window.id)}
+              >
+                ✕
+              </div>
+            </div>
           </div>
+          <img
+            src={window.id === 1 ? blog1 : blog2}
+            className={classes.folderImage}
+            alt="logo"
+          />
         </div>
-      </div>
-      <img src={blog1} className={classes.folderImage} alt="logo" />
-    </div>
+      ))}
+    </>
   );
 }
 

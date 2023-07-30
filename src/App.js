@@ -10,6 +10,7 @@ function App() {
   const [bearPosition, setBearPosition] = useState({ x: 0, y: 0 });
   const [bearDirection, setBearDirection] = useState({ x: 1, y: 1 });
   const [isTouchingEdge, setIsTouchingEdge] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 700);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -45,8 +46,15 @@ function App() {
       setAngelHour(isAngelHour ? `${hours}:${minutes}` : null);
     }, 1000);
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 700);
+    };
+
+    window.addEventListener("resize", handleResize);
+
     return () => {
       clearInterval(intervalId);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -100,7 +108,7 @@ function App() {
         }}
       />
       <FolderList />
-      <Footer />
+      {!isMobile && <Footer />}
     </div>
   );
 }
