@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import classes from "./MainFolder.module.css";
+import dzwiek from "../../sources/dzwiek.png";
 
 function Dzwieki({ handleFolderSelection }) {
   const [isDragging, setIsDragging] = useState(false);
@@ -73,11 +74,14 @@ function Dzwieki({ handleFolderSelection }) {
       onMouseUp={handleMouseUp}
     >
       <div className={classes.TitleBar}>
-        <div className={classes.Title}>Dzwieki (nie ma)</div>
+        <div className={classes.Title}>Najlepszy dźwięk?...</div>
         <div className={classes.Icons}>
-          <div className={classes.CloseButton} onClick={handleCloseClick}>✕</div>
+          <div className={classes.CloseButton} onClick={handleCloseClick}>
+            ✕
+          </div>
         </div>
       </div>
+      <img src={dzwiek} className={classes.folderImage} alt="logo" />
     </div>
   );
 }

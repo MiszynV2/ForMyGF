@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
 import classes from "./Footer.module.css";
 
-function Footer() {
+function Footer({ bears }) {
   const [currentTime, setCurrentTime] = useState(getCurrentTime());
 
   useEffect(() => {
-    // Ustawienie interwału na aktualizację czasu co sekundę
     const interval = setInterval(() => {
       setCurrentTime(getCurrentTime());
     }, 1000);
 
-    // Zatrzymaj interwał, gdy komponent jest odmontowywany
     return () => clearInterval(interval);
   }, []);
 

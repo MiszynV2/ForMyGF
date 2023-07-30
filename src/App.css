@@ -66,16 +66,26 @@ body {
     background-position: 100% 50%;
   }
 }
-.app-wrapper {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
 
 .moving-bear {
   position: absolute;
   width: 100px;
   height: 100px;
   transform: scaleX(-1);
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import classes from "./MainFolder.module.css";
+import najlepszaGf from "../../sources/najlepsze.png";
 
 function Najlepsza({ handleFolderSelection }) {
   const [isDragging, setIsDragging] = useState(false);
@@ -73,13 +74,14 @@ function Najlepsza({ handleFolderSelection }) {
       onMouseUp={handleMouseUp}
     >
       <div className={classes.TitleBar}>
-        <div className={classes.Title}>Najlepsza (nie ma)</div>
+        <div className={classes.Title}>Koda Koda Koda Koda</div>
         <div className={classes.Icons}>
           <div className={classes.CloseButton} onClick={handleCloseClick}>
             ✕
           </div>
         </div>
       </div>
+      <img src={najlepszaGf} className={classes.folderImage} alt="logo" />
     </div>
   );
 }

@@ -14,23 +14,25 @@ import Najlepsza from "./mainFolders/Najlepsza";
 import HasloAccepted from "./mainFolders/HasloAccepted";
 import Quiz from "./mainFolders/Quiz";
 import ChangeBg from "./mainFolders/ChangeBg";
+import Bears from "./mainFolders/Bears";
 
 function FolderList() {
   const [selectedFolderIndex, setSelectedFolderIndex] = useState(0);
   const [selectedFolders, setSelectedFolders] = useState([]);
   const selectedFolderNames = [
-    { name: "Najlepsza gf", type: "folder" },
+    { name: "Najlepsza gf to?", type: "folder" },
     { name: "Kocham cie", type: "heart" },
     { name: "Sam and Colby!?!?", type: "folder" },
     { name: "Lista do zrobienia z Kodą", type: "folder" },
     { name: "nie wiem co to tu robi", type: "folder" },
     { name: "Chat-gpt kto jest best gf?", type: "folder" },
-    { name: "Najlepsze dźwieki ever", type: "folder" },
+    { name: "Najlepszy dźwiek ever", type: "folder" },
     { name: "Hasło (tajne)", type: "setting" },
     { name: "Fanarty!", type: "folder" },
     { name: "Wierszyk", type: "folder" },
     { name: "Zrobiłem quiz", type: "game" },
     { name: "Zmień tło", type: "setting" },
+    { name: "Generator miśkow!", type: "folder" },
   ];
 
   const [selectedClass, setSelectedClass] = useState(classes.FolderListWrapper);
@@ -65,6 +67,7 @@ function FolderList() {
     <Wierszyk handleFolderSelection={handleFolderSelection} />,
     <Quiz handleFolderSelection={handleFolderSelection} />,
     <ChangeBg handleFolderSelection={handleFolderSelection} />,
+    <Bears handleFolderSelection={handleFolderSelection} />,
     <HasloAccepted handleFolderSelection={handleFolderSelection} />,
   ];
 
