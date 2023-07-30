@@ -4,7 +4,7 @@ import classes from "./FolderItem.module.css";
 
 function FolderItem({ name, index, onClick }) {
   const handleClick = () => {
-    onClick(index); 
+    onClick(index);
   };
 
   return (

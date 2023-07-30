@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import classes from "./MainFolder.module.css";
 
-function Lista({ handleFolderSelection }) {
+function Quiz({ handleFolderSelection }) {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [startY, setStartY] = useState(0);
@@ -73,7 +73,7 @@ function Lista({ handleFolderSelection }) {
       onMouseUp={handleMouseUp}
     >
       <div className={classes.TitleBar}>
-        <div className={classes.Title}>Lista (nie ma)</div>
+        <div className={classes.Title}>Jednak nie (jeszcze)</div>
         <div className={classes.Icons}>
           <div className={classes.CloseButton} onClick={handleCloseClick}>
             ✕
@@ -84,4 +84,4 @@ function Lista({ handleFolderSelection }) {
   );
 }
 
-export default Lista;
+export default Quiz;
