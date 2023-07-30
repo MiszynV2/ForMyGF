@@ -4,6 +4,7 @@ import tapeta1 from "../../sources/tapeta.jpg";
 import tapeta2 from "../../sources/tapeta2.jpg";
 import tapeta3 from "../../sources/tapeta3.jpg";
 import tapeta4 from "../../sources/tapeta4.jpg";
+import tapeta5 from "../../sources/tapeta5.jpg";
 
 function ChangeBg({ handleFolderSelection }) {
   const [isDragging, setIsDragging] = useState(false);
@@ -112,7 +113,7 @@ function ChangeBg({ handleFolderSelection }) {
         </div>
         <div
           className={classes.ChangeBgOption}
-          onClick={() => handleBgChange(tapeta3)}
+          onClick={() => handleBgChange(tapeta5)}
         >
           Tapeta 3
         </div>
@@ -121,6 +122,12 @@ function ChangeBg({ handleFolderSelection }) {
           onClick={() => handleBgChange(tapeta4)}
         >
           Tapeta 4
+        </div>
+        <div
+          className={classes.ChangeBgOption}
+          onClick={() => handleBgChange(tapeta3)}
+        >
+          Tapeta 5
         </div>
       </div>
     </div>

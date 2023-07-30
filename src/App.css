@@ -66,3 +66,16 @@ body {
     background-position: 100% 50%;
   }
 }
+.app-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.moving-bear {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  transform: scaleX(-1);
+}

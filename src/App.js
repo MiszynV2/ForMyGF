@@ -3,9 +3,12 @@ import "./App.css";
 import FolderItem from "./components/FolderItem";
 import FolderList from "./components/FolderList";
 import Footer from "./components/Footer";
+import movingBear from "./sources/moving-bear.gif";
 
 function App() {
   const [angelHour, setAngelHour] = useState(null);
+  const [bearPosition, setBearPosition] = useState({ x: 0, y: 0 });
+  const [bearDirection, setBearDirection] = useState({ x: 1, y: 1 }); // Początkowe kierunki ruchu
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -46,11 +49,56 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    const moveBear = () => {
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+
+      const currentX = bearPosition.x;
+      const currentY = bearPosition.y;
+      let newX = currentX + bearDirection.x * 5; // Przesuń o wartość bearDirection.x * 5
+      let newY = currentY + bearDirection.y * 5; // Przesuń o wartość bearDirection.y * 5
+
+      // Sprawdź, czy niedźwiedź dotknął krawędzi i zmień kierunki dla osi X i Y, aby odbić się
+      if (newX + 100 > windowWidth || newX < 0) {
+        setBearDirection((prevDirection) => ({
+          ...prevDirection,
+          x: -prevDirection.x, // Odbij się w osi X
+        }));
+      }
+
+      if (newY + 100 > windowHeight || newY < 0) {
+        setBearDirection((prevDirection) => ({
+          ...prevDirection,
+          y: -prevDirection.y, // Odbij się w osi Y
+        }));
+      }
+
+      setBearPosition({ x: newX, y: newY });
+    };
+
+    const moveInterval = setInterval(moveBear, 50); // Przesuwaj niedźwiedzia co 50 milisekund
+
+    return () => {
+      clearInterval(moveInterval);
+    };
+  }, [bearDirection, bearPosition.x, bearPosition.y]);
+
   return (
     <div className="app-wrapper">
       {angelHour && (
         <div className="angel-hour-message">{`${angelHour} kocham cię!  ❤❤❤❤`}</div>
       )}
+      <img
+        src={movingBear}
+        alt="Moving Bear"
+        className={`moving-bear ${
+          bearDirection.x === -1 ? "mirror-x" : "" // Dodaj klasę "mirror-x" gdy niedźwiedź zmienia kierunek w osi X
+        } ${
+          bearDirection.y === -1 ? "mirror-y" : "" // Dodaj klasę "mirror-y" gdy niedźwiedź zmienia kierunek w osi Y
+        }`}
+        style={{ top: bearPosition.y, left: bearPosition.x }}
+      />
       <FolderList />
       <Footer />
     </div>

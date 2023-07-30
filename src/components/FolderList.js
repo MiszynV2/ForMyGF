@@ -19,18 +19,18 @@ function FolderList() {
   const [selectedFolderIndex, setSelectedFolderIndex] = useState(0);
   const [selectedFolders, setSelectedFolders] = useState([]);
   const selectedFolderNames = [
-    { name: "Najlepsza bff" },
-    { name: "Kocham cie" },
-    { name: "Sam and Colby!?!?" },
-    { name: "Lista do zrobienia z Kodą" },
-    { name: "nie wiem co to tu robi" },
-    { name: "Chat-gpt kto jest best gf?" },
-    { name: "Najlepsze dźwieki ever" },
-    { name: "Hasło (tajne)" },
-    { name: "Fanarty!" },
-    { name: "Wierszyk" },
-    { name: "Zrobiłem quiz" },
-    { name: "Zmień tło" },
+    { name: "Najlepsza gf", type: "folder" },
+    { name: "Kocham cie", type: "heart" },
+    { name: "Sam and Colby!?!?", type: "folder" },
+    { name: "Lista do zrobienia z Kodą", type: "folder" },
+    { name: "nie wiem co to tu robi", type: "folder" },
+    { name: "Chat-gpt kto jest best gf?", type: "folder" },
+    { name: "Najlepsze dźwieki ever", type: "folder" },
+    { name: "Hasło (tajne)", type: "setting" },
+    { name: "Fanarty!", type: "folder" },
+    { name: "Wierszyk", type: "folder" },
+    { name: "Zrobiłem quiz", type: "game" },
+    { name: "Zmień tło", type: "setting" },
   ];
 
   const [selectedClass, setSelectedClass] = useState(classes.FolderListWrapper);
@@ -72,6 +72,7 @@ function FolderList() {
     <div className={selectedClass}>
       {selectedFolderNames.map((folderName, index) => (
         <FolderItem
+          type={folderName.type}
           key={index}
           name={folderName.name}
           index={index}

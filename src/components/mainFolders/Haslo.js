@@ -16,10 +16,10 @@ function Haslo({ handleFolderSelection }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Sprawdzanie poprawności hasła (tutaj załóżmy, że poprawne hasło to "masło")
+  
     if (password === "masło") {
       setIsPasswordCorrect(true);
-      handleFolderSelection(13); // Przeniesie do komponentu HasloAccepted
+      handleFolderSelection(13); 
     } else {
       setIsPasswordCorrect(false);
     }
@@ -27,7 +27,7 @@ function Haslo({ handleFolderSelection }) {
 
   const handleChange = (e) => {
     setPassword(e.target.value);
-    setIsPasswordCorrect(true); // Resetowanie informacji o błędnym haśle po wprowadzeniu zmian
+    setIsPasswordCorrect(true); 
   };
 
   const handleMouseDown = (e) => {
@@ -79,20 +79,20 @@ function Haslo({ handleFolderSelection }) {
       className={classes.PasswordContainer}
       style={{ transform: `translate(${offsetX}px, ${offsetY}px)` }}
     >
-      <form onSubmit={handleSubmit} className={classes.PasswordForm}>
-        <div className={classes.PasswordTitleBar} onMouseDown={handleMouseDown}>
-          <div className={classes.PasswordTitle}>
-            Wskazówka rymuje się z mrówka
-          </div>
-          <div className={classes.PasswordIcons}>
-            <div
-              className={classes.PasswordCloseButton}
-              onClick={handleCloseClick}
-            >
-              ✕
-            </div>
+      <div className={classes.PasswordTitleBar} onMouseDown={handleMouseDown}>
+        <div className={classes.PasswordTitle}>
+          Wskazówka rymuje się z mrówka
+        </div>
+        <div className={classes.PasswordIcons}>
+          <div
+            className={classes.PasswordCloseButton}
+            onClick={handleCloseClick}
+          >
+            ✕
           </div>
         </div>
+      </div>
+      <form onSubmit={handleSubmit} className={classes.PasswordForm}>
         <div className={classes.PasswordContent}>
           <label htmlFor="password">Wprowadź hasło:</label>
           <input
