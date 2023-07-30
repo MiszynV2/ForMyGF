@@ -73,13 +73,9 @@ function ChangeBg({ handleFolderSelection }) {
     setSelectedBg(bg);
   };
 
-  // Używamy useEffect do zmiany tła na całej stronie
   useEffect(() => {
     document.body.style.backgroundImage = `url(${selectedBg})`;
-    return () => {
-      // Clean up - reset background image when component unmounts
-      // Tu nie resetujemy tła, aby zapamiętać wybraną tapetę nawet po zamknięciu komponentu
-    };
+    return () => {};
   }, [selectedBg]);
 
   return (

@@ -10,33 +10,33 @@ function App() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       const now = new Date();
-      const hours = now.getHours();
-      const minutes = now.getMinutes();
+      const hours = now.getHours().toString().padStart(2, "0");
+      const minutes = now.getMinutes().toString().padStart(2, "0");
       const isAngelHour =
-        (hours === 1 && minutes === 1) ||
-        (hours === 2 && minutes === 2) ||
-        (hours === 3 && minutes === 3) ||
-        (hours === 4 && minutes === 4) ||
-        (hours === 5 && minutes === 5) ||
-        (hours === 6 && minutes === 6) ||
-        (hours === 7 && minutes === 7) ||
-        (hours === 8 && minutes === 8) ||
-        (hours === 9 && minutes === 9) ||
-        (hours === 10 && minutes === 10) ||
-        (hours === 11 && minutes === 11) ||
-        (hours === 12 && minutes === 12) ||
-        (hours === 13 && minutes === 13) ||
-        (hours === 14 && minutes === 14) ||
-        (hours === 15 && minutes === 15) ||
-        (hours === 16 && minutes === 16) ||
-        (hours === 17 && minutes === 17) ||
-        (hours === 18 && minutes === 18) ||
-        (hours === 19 && minutes === 19) ||
-        (hours === 20 && minutes === 20) ||
-        (hours === 21 && minutes === 21) ||
-        (hours === 22 && minutes === 22) ||
-        (hours === 23 && minutes === 23) ||
-        (hours === 0 && minutes === 0);
+        (hours === "01" && minutes === "01") ||
+        (hours === "02" && minutes === "02") ||
+        (hours === "03" && minutes === "03") ||
+        (hours === "04" && minutes === "04") ||
+        (hours === "05" && minutes === "05") ||
+        (hours === "06" && minutes === "06") ||
+        (hours === "07" && minutes === "07") ||
+        (hours === "08" && minutes === "08") ||
+        (hours === "09" && minutes === "09") ||
+        (hours === "10" && minutes === "10") ||
+        (hours === "11" && minutes === "11") ||
+        (hours === "12" && minutes === "12") ||
+        (hours === "13" && minutes === "13") ||
+        (hours === "14" && minutes === "14") ||
+        (hours === "15" && minutes === "15") ||
+        (hours === "16" && minutes === "16") ||
+        (hours === "17" && minutes === "17") ||
+        (hours === "18" && minutes === "18") ||
+        (hours === "19" && minutes === "19") ||
+        (hours === "20" && minutes === "20") ||
+        (hours === "21" && minutes === "21") ||
+        (hours === "22" && minutes === "22") ||
+        (hours === "23" && minutes === "23") ||
+        (hours === "00" && minutes === "00");
 
       setAngelHour(isAngelHour ? `${hours}:${minutes}` : null);
     }, 1000);
