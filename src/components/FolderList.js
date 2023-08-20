@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import classes from "./FolderList.module.css";
 import FolderItem from "./FolderItem";
 import Kocham from "./mainFolders/Kocham";
@@ -34,6 +34,17 @@ function FolderList() {
     { name: "Zmień tło", type: "setting" },
     { name: "Generator miśkow!", type: "folder" },
   ];
+
+  const folderRef = useRef(null);
+
+  useEffect(() => {
+    if (folderRef.current) {
+      folderRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [selectedFolderIndex]);
 
   const [selectedClass, setSelectedClass] = useState(classes.FolderListWrapper);
 
@@ -79,10 +90,12 @@ function FolderList() {
           key={index}
           name={folderName.name}
           index={index}
-          onClick={() => handleFolderSelection(index + 1)}
+          onClick={() => setSelectedFolderIndex(index + 1)}
         />
       ))}
-      {selectedFolderIndex !== 0 && folderComponents[selectedFolderIndex]}
+      {selectedFolderIndex !== 0 && (
+        <div ref={folderRef}>{folderComponents[selectedFolderIndex]}</div>
+      )}
     </div>
   );
 }

@@ -16,10 +16,10 @@ function Haslo({ handleFolderSelection }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
     if (password === "masło") {
       setIsPasswordCorrect(true);
-      handleFolderSelection(13); 
+      handleFolderSelection(14);
     } else {
       setIsPasswordCorrect(false);
     }
@@ -27,7 +27,7 @@ function Haslo({ handleFolderSelection }) {
 
   const handleChange = (e) => {
     setPassword(e.target.value);
-    setIsPasswordCorrect(true); 
+    setIsPasswordCorrect(true);
   };
 
   const handleMouseDown = (e) => {

@@ -9,6 +9,12 @@
   max-width: 400px;
   max-height: 400px;
 }
+@media only screen and (max-width: 600px) {
+  .ChatGptWrapper {
+    background-color: lightblue;
+    width: 95%;
+  }
+}
 
 .TitleBar {
   display: flex;

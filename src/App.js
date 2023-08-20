@@ -68,7 +68,6 @@ function App() {
       let newX = currentX + bearDirection.x * 5;
       let newY = currentY + bearDirection.y * 5;
 
-      // Odbijanie miśka od krawędzi
       if (newX + 100 > windowWidth || newX < 0) {
         setBearDirection((prevDirection) => ({
           ...prevDirection,
@@ -97,16 +96,7 @@ function App() {
       {angelHour && (
         <div className="angel-hour-message">{`${angelHour} kocham cię!  ❤❤❤❤`}</div>
       )}
-      <img
-        src={movingBear}
-        alt="Moving Bear"
-        className={`moving-bear${isTouchingEdge ? " touching-edge" : ""}`}
-        style={{
-          top: bearPosition.y,
-          left: bearPosition.x,
-          transform: `scaleX(${bearDirection.x === -1 ? -1 : 1})`,
-        }}
-      />
+
       <FolderList />
       {!isMobile && <Footer />}
     </div>
