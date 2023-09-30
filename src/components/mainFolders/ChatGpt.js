@@ -81,7 +81,9 @@ function ChatGpt({ handleFolderSelection }) {
           </div>
         </div>
       </div>
-      <img src={chatgpt} className={classes.folderImage} alt="logo" />
+      <div className={classes.ImageWrapper}>
+        <img src={chatgpt} className={classes.folderImage} alt="logo" />
+      </div>
     </div>
   );
 }

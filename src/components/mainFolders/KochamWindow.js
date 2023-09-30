@@ -51,7 +51,9 @@ function ChatGptWindow({ title, image, onClose, onMinimize }) {
           </div>
         </div>
       </div>
-      <img src={image} className={classes.folderImage} alt={title} />
+      <div className={classes.ImageWrapper}>
+        <img src={image} className={classes.folderImage} alt={title} />
+      </div>
     </div>
   );
 }

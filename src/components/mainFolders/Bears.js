@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import classes from "./Bears.module.css";
 import misiek from "../../sources/moving-bear.gif";
+import Game from "./Game";
 
 function Bears({ handleFolderSelection }) {
   const [isDragging, setIsDragging] = useState(false);
@@ -66,30 +67,6 @@ function Bears({ handleFolderSelection }) {
     }
   }, [offsetX, offsetY, windowWidth, windowHeight]);
 
-  const addBear = () => {
-    const randomX = Math.floor(Math.random() * windowWidth);
-    const randomY = Math.floor(Math.random() * windowHeight);
-    const randomDirectionX = Math.random() < 0.5 ? 1 : -1;
-    const randomDirectionY = Math.random() < 0.5 ? 1 : -1;
-    setBears((prevBears) => [
-      ...prevBears,
-      {
-        x: randomX,
-        y: randomY,
-        directionX: randomDirectionX,
-        directionY: randomDirectionY,
-      },
-    ]);
-  };
-
-  const handleSummonBears = () => {
-    addBear();
-    // Opóźnienie dodawania kolejnych misiów
-    for (let i = 1; i < 5; i++) {
-      setTimeout(addBear, i * 500); // Dodawaj co 500ms
-    }
-  };
-
   return (
     <div
       className={classes.ChatGptWrapper}
@@ -107,20 +84,7 @@ function Bears({ handleFolderSelection }) {
         </div>
       </div>
       <div className={classes.ButtonImageWrapper}>
-        <button onClick={handleSummonBears}>Przywołaj miśki</button>
-        <div className={classes.ImageWrapper}>
-          {bears.map((bear, index) => (
-            <img
-              key={index}
-              src={misiek}
-              alt="Moving Bear"
-              className={`${classes.MovingBear} ${
-                bear.directionX === -1 ? classes.Reverse : ""
-              }`}
-              style={{ top: bear.y, left: bear.x }}
-            />
-          ))}
-        </div>
+        <Game />
       </div>
     </div>
   );

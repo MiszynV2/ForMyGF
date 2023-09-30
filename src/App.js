@@ -3,7 +3,6 @@ import "./App.css";
 import FolderItem from "./components/FolderItem";
 import FolderList from "./components/FolderList";
 import Footer from "./components/Footer";
-import movingBear from "./sources/moving-bear.gif";
 
 function App() {
   const [angelHour, setAngelHour] = useState(null);

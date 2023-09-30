@@ -1,47 +1,68 @@
 .PasswordContainer {
-  width: 400px;
+  position: absolute;
+  left: 5%;
+  top: 250px;
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
   background-color: #f0f0f0;
   border: 1px solid #999;
-  border-radius: 6px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   margin-bottom: 20px;
+  max-width: 400px;
   max-height: 400px;
-  max-width: 100vw;
+  border-color: rgb(239, 239, 239) rgb(0, 0, 0) rgb(0, 0, 0) rgb(239, 239, 239);
+}
+
+@media only screen and (max-width: 600px) {
+  .PasswordContainer {
+    background-color: lightblue;
+    width: 95%;
+  }
 }
 
 .PasswordTitleBar {
+  display: flex;
+  word-break: break-word;
+  -webkit-box-pack: justify;
+  white-space: normal;
+  justify-content: space-between;
+  -webkit-box-align: center;
   align-items: center;
+  font-size: 24px;
+  font-family: windowsxp;
+  background: linear-gradient(90deg, navy, rgb(16, 132, 208));
   background-color: #0078d4;
   color: white;
   font-weight: bold;
-  padding: 12px 20px;
+  padding-left: 30px;
   cursor: default;
-  width: 380px;
-  max-height: 80px;
-  justify-content: space-between;
+
+  min-height: 40px;
 }
 
 .PasswordTitle {
-  font-size: 12px;
+  font-size: 18px;
 }
 
 .PasswordCloseButton {
-  width: 64px;
-  height: 48px;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: 10px;
-  font-size: 28px;
+  font-size: 18px;
+  color: rgb(77, 77, 77);
   cursor: pointer;
-  user-select: none;
-  background-color: #d83b01;
   margin-right: 10px;
+  user-select: none;
+  background-color: #9e9e9e;
 }
 
 .PasswordCloseButton:hover {
-  background-color: #a4262c;
+  background-color: #2e2e2e;
 }
 
 .PasswordContent {
@@ -56,9 +77,20 @@ label {
 input[type="password"] {
   padding: 8px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 2px;
   font-size: 14px;
   outline: none;
+  border: 1px solid black;
+}
+
+input[type="password"]::before {
+  content: " ";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 1px solid black;
 }
 
 .PasswordInvalid {
@@ -72,18 +104,28 @@ input[type="password"] {
 }
 
 .PasswordSubmitButton {
+  border: 1px solid black;
   margin-top: 12px;
-  padding-bottom: 10px;
+  margin-bottom: 15px;
   padding: 8px 12px;
-  border: none;
+
   border-radius: 4px;
-  background-color: #0078d4;
-  color: #fff;
-  font-size: 14px;
+  background-color: white;
+  color: black;
+  font-size: 16x;
   cursor: pointer;
   outline: none;
 }
 
 .PasswordSubmitButton:hover {
-  background-color: #005a9e;
+  border: 1px solid blue;
+}
+.PasswordSubmitButton::before:hover {
+  content: " ";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 1px solid black;
 }

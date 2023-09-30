@@ -87,24 +87,26 @@ function SamAndColby({ handleFolderSelection }) {
           </div>
         </div>
       </div>
-      <div
-        className={`${classes.folderImageContainer} ${
-          imagePosition === "right" ? classes.imagePositionRight : ""
-        }`}
-      >
-        <img src={pointing} className={classes.folderImage} alt="logo" />
-        <a
-          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div className={classes.ImageWrapper}>
+        <div
+          className={`${classes.folderImageContainer} ${
+            imagePosition === "right" ? classes.imagePositionRight : ""
+          }`}
         >
-          <img
-            src={samAndColby}
-            className={classes.folderImageInside}
-            alt="logo"
-            onClick={handleImageClick}
-          />
-        </a>
+          <img src={pointing} className={classes.folderImage} alt="logo" />
+          <a
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={samAndColby}
+              className={classes.folderImageInside}
+              alt="logo"
+              onClick={handleImageClick}
+            />
+          </a>
+        </div>
       </div>
     </div>
   );

@@ -1,13 +1,11 @@
 .FolderItemWrapper {
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
   align-items: center;
-  justify-content: center;
   width: 90px;
   height: 90px;
   padding: 10px;
-  background-color: #f0f0f042;
-  border: 1px solid #b0b0b0;
   border-radius: 5px;
   margin: 5px;
 }
@@ -18,7 +16,7 @@
 }
 
 .FolderText {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: bold;
   margin-top: 10px;
   color: #333;

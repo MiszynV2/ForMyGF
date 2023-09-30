@@ -20,13 +20,13 @@ function FolderList() {
   const [selectedFolderIndex, setSelectedFolderIndex] = useState(0);
   const [selectedFolders, setSelectedFolders] = useState([]);
   const selectedFolderNames = [
-    { name: "Najlepsza gf to?", type: "folder" },
-    { name: "Kocham cie", type: "heart" },
-    { name: "Sam and Colby!?!?", type: "folder" },
-    { name: "Lista do zrobienia z Kodą", type: "folder" },
-    { name: "nie wiem co to tu robi", type: "folder" },
-    { name: "Chat-gpt kto jest best gf?", type: "folder" },
-    { name: "Najlepszy dźwiek ever", type: "folder" },
+    { name: "About me1", type: "text" },
+    { name: "Industry knowledge2", type: "heart" },
+    { name: "Projects3", type: "projects" },
+    { name: "Skills set 4", type: "folder" },
+    { name: "Experience", type: "folder" },
+    { name: "Education", type: "folder" },
+    { name: "Contact me", type: "contact" },
     { name: "Hasło (tajne)", type: "setting" },
     { name: "Fanarty!", type: "folder" },
     { name: "Wierszyk", type: "folder" },
@@ -36,15 +36,6 @@ function FolderList() {
   ];
 
   const folderRef = useRef(null);
-
-  useEffect(() => {
-    if (folderRef.current) {
-      folderRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  }, [selectedFolderIndex]);
 
   const [selectedClass, setSelectedClass] = useState(classes.FolderListWrapper);
 

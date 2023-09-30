@@ -23,16 +23,26 @@ function Kocham({ handleFolderSelection }) {
   };
 
   return (
-    <>
+    <div className={classes.KochamWrapper}>
       {images.map((image, index) => (
         <KochamWindow
           key={index}
           title={image.title}
           image={image.image}
           onClose={() => handleCloseClick(index)}
+          style={{
+            position: "absolute",
+            left: index === 0 ? "100px" : "auto",
+            top: index === 0 ? "300px" : "auto",
+            transform:
+              index === 0
+                ? "none"
+                : `translate(${index * 20}px, ${index * 20}px)`,
+            zIndex: images.length - index,
+          }}
         />
       ))}
-    </>
+    </div>
   );
 }
 

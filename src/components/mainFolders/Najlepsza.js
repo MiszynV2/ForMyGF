@@ -74,7 +74,7 @@ function Najlepsza({ handleFolderSelection }) {
       onMouseUp={handleMouseUp}
     >
       <div className={classes.TitleBar}>
-        <div className={classes.Title}>Koda Koda Koda Koda</div>
+        <div className={classes.Title}>About me</div>
         <div className={classes.Icons}>
           <div className={classes.CloseButton} onClick={handleCloseClick}>
             ✕

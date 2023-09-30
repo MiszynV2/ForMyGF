@@ -1,3 +1,12 @@
+@font-face {
+  font-family: windowsxp;
+  src: url("../src/sources/windows-xp-tahoma.ttf") format("truetype");
+}
+
+body {
+  font-family: "windowsxp";
+}
+
 .App {
   text-align: center;
 }
