@@ -128,20 +128,6 @@
   cursor: pointer;
 }
 
-button {
-  margin-left: 150px;
-  margin-top: 10px;
-  padding: 8px 16px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  font-family: windowsxp;
-  border: 1px solid #999;
-  border-color: rgb(239, 239, 239) rgb(0, 0, 0) rgb(0, 0, 0) rgb(239, 239, 239);
-  font-size: 14px;
-  cursor: pointer;
-}
-
 .moving-bear {
   position: absolute;
   width: 30px;

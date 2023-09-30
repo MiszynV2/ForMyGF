@@ -9,6 +9,13 @@
 }
 
 .ChatGptWrapper {
+  box-shadow: inset -1px -1px #00138c, inset 1px 1px #0831d9,
+    inset -2px -2px #001ea0, inset 2px 2px #166aee, inset -3px -3px #003bda,
+    inset 3px 3px #0855dd;
+  border-top-left-radius: 8px;
+  -webkit-font-smoothing: antialiased;
+  border-top-right-radius: 8px;
+  padding: 0 0 3px;
   position: absolute;
   left: 5%;
   top: 250px;
@@ -41,11 +48,21 @@
   align-items: center;
   font-size: 1.225rem;
   font-family: windowsxp;
-  background: linear-gradient(90deg, navy, rgb(16, 132, 208));
+  background: linear-gradient(
+    180deg,
+    #0997ff,
+    #0053ee 8%,
+    #0050ee 40%,
+    #06f 88%,
+    #06f 93%,
+    #005bff 95%,
+    #003dd7 96%,
+    #003dd7
+  );
   background-color: #0078d4;
   color: white;
   font-weight: bold;
-  padding-left: 30px;
+  padding-left: 10px;
   cursor: default;
 
   min-height: 40px;
@@ -53,6 +70,7 @@
 
 .Title {
   flex-grow: 1;
+  margin-left: 5px;
 }
 
 .Icons {
@@ -61,6 +79,9 @@
 
 .MinimizeButton,
 .CloseButton {
+  background-image: url("../../sources/close.svg");
+  background-repeat: no-repeat;
+  background-position: 50%;
   width: 24px;
   height: 24px;
   display: flex;
@@ -75,7 +96,7 @@
 }
 
 .CloseButton {
-  background-color: #9e9e9e;
+  background-image: url("../../sources/close-hover.svg");
 }
 
 .CloseButton:hover {
@@ -106,10 +127,11 @@
 }
 
 .Options {
+  border-bottom: solid 1px rgb(60, 60, 238);
   background-color: #cdcccc;
   display: flex;
   align-items: center;
-  height: 30px;
+  height: 20px;
   gap: 5px;
   padding-left: 5px;
 }
@@ -118,4 +140,15 @@ ul {
   margin-block-start: 0;
   margin-block-end: 0;
   padding: 0;
+}
+.TextWrapper {
+  padding: 10px;
+  height: 300px;
+  background-color: rgb(242, 235, 235);
+}
+.Text {
+  font-size: 24px;
+}
+.FolderLogo {
+  width: 20px;
 }

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import classes from "./FolderList.module.css";
 import FolderItem from "./FolderItem";
-import Kocham from "./mainFolders/Kocham";
+import Industry from "./mainFolders/Industry";
 import SamAndColby from "./mainFolders/SamAndColby";
 import Lista from "./mainFolders/Lista";
 import NieWiem from "./mainFolders/NieWiem";
@@ -10,7 +10,7 @@ import Dzwieki from "./mainFolders/Dzwieki";
 import Haslo from "./mainFolders/Haslo";
 import Fanarty from "./mainFolders/Fanarty";
 import Wierszyk from "./mainFolders/Wierszyk";
-import Najlepsza from "./mainFolders/Najlepsza";
+import AboutMe from "./mainFolders/AboutMe";
 import HasloAccepted from "./mainFolders/HasloAccepted";
 import Quiz from "./mainFolders/Quiz";
 import ChangeBg from "./mainFolders/ChangeBg";
@@ -57,8 +57,8 @@ function FolderList() {
 
   const folderComponents = [
     null,
-    <Najlepsza handleFolderSelection={handleFolderSelection} />,
-    <Kocham handleFolderSelection={handleFolderSelection} />,
+    <AboutMe handleFolderSelection={handleFolderSelection} />,
+    <Industry handleFolderSelection={handleFolderSelection} />,
     <SamAndColby handleFolderSelection={handleFolderSelection} />,
     <Lista handleFolderSelection={handleFolderSelection} />,
     <NieWiem handleFolderSelection={handleFolderSelection} />,
