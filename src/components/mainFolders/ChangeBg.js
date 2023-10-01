@@ -5,7 +5,7 @@ import tapeta2 from "../../sources/tapeta2.jpg";
 import tapeta3 from "../../sources/tapeta3.jpg";
 import tapeta4 from "../../sources/tapeta4.jpg";
 import tapeta5 from "../../sources/tapeta5.jpg";
-import tapeta6 from "../../sources/tapeta6.jpeg";
+import tapeta6 from "../../sources/tapeta6.jpg";
 
 function ChangeBg({ handleFolderSelection }) {
   const [isDragging, setIsDragging] = useState(false);
@@ -89,7 +89,7 @@ function ChangeBg({ handleFolderSelection }) {
       onMouseUp={handleMouseUp}
     >
       <div className={classes.ChangeBgTitleBar}>
-        <div className={classes.ChangeBgTitle}>Zmień tło (wybierz mądrze)</div>
+        <div className={classes.ChangeBgTitle}>Change the background image</div>
         <div className={classes.ChangeBgIcons}>
           <div
             className={classes.ChangeBgCloseButton}
@@ -132,7 +132,7 @@ function ChangeBg({ handleFolderSelection }) {
         </div>
         <div
           className={classes.ChangeBgOption}
-          onClick={() => handleBgChange(tapeta3)}
+          onClick={() => handleBgChange(tapeta6)}
         >
           Tapeta 6
         </div>

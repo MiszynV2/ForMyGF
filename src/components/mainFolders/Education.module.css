@@ -21,14 +21,13 @@
   top: 250px;
   display: flex;
   flex-direction: column;
-  height: 400px;
   width: 1000px;
   background-color: #f0f0f0;
   border: 1px solid #999;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   margin-bottom: 20px;
-  max-width: 600px;
+  max-width: 400px;
   max-height: 400px;
   border-color: rgb(239, 239, 239) rgb(0, 0, 0) rgb(0, 0, 0) rgb(239, 239, 239);
 }
@@ -136,35 +135,55 @@
   gap: 5px;
   padding-left: 5px;
 }
+
 .TextWrapper {
   padding: 10px;
   height: 300px;
   background-color: rgb(242, 235, 235);
 }
 .Text {
-  font-size: 24px;
+  font-size: 16px;
+  width: 50%;
+  margin-top: 80px;
 }
 .FolderLogo {
   width: 20px;
 }
-.InputWrapper {
-  width: 150px;
-  height: 4px;
-  margin: 0 16px 0 10px;
-  transform-origin: left;
-  transform: rotate(270deg) translateX(calc(-50% + 8px));
+.UlMain {
+  padding-top: 50px;
+  padding-left: 10px;
+  font-size: 18px;
 }
-.SlidesWrapper {
+.UlMain li {
+  list-style-type: none;
+  margin-top: 3px;
+  font-size: 17px;
+}
+.UlMain ul li {
+  position: relative;
+}
+.UlBeta {
+  padding-inline-start: 40px;
+  margin-top: 3px;
+  margin-left: 16px;
+  padding-left: 16px;
+  border-left: 1px dotted grey;
+  font-size: 14px;
+}
+.UlBeta li:before {
+  content: "";
+  position: absolute;
+  left: -17px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 13px;
+  height: 1px;
+
+  border-radius: 1px;
+  border-top: 1px dotted grey;
+}
+
+.ContentWrapper {
   display: flex;
-  height: 100%;
-  justify-content: center;
-}
-label {
-  margin: 0;
-  padding: 0;
-}
-.Slide {
-  width: 90px;
-  display: flex;
-  align-items: center;
+  height: 300px;
 }

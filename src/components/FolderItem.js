@@ -6,6 +6,7 @@ import text from "../sources/images/text.png";
 import setting from "../sources/setting.svg";
 import game from "../sources/game.svg";
 import heart from "../sources/heart.svg";
+import education from "../sources/images/education.png";
 
 import classes from "./FolderItem.module.css";
 
@@ -28,6 +29,15 @@ function FolderItem({ name, index, onClick, type }) {
           src={contact}
           className={classes.FolderLogo}
           alt="folder_contact"
+        />
+      ) : (
+        ""
+      )}{" "}
+      {SvgOption === "education" ? (
+        <img
+          src={education}
+          className={classes.FolderLogo}
+          alt="folder_education"
         />
       ) : (
         ""

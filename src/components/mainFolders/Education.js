@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import classes from "./MainFolder.module.css";
+import classes from "./Education.module.css";
 import chatgpt from "../../sources/chatgpt.png";
+import text from "../../sources/images/education.png";
+import CloseButton from "../../sources/close.svg";
 
-function ChatGpt({ handleFolderSelection }) {
+function Education({ handleFolderSelection }) {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [startY, setStartY] = useState(0);
@@ -74,18 +76,43 @@ function ChatGpt({ handleFolderSelection }) {
       onMouseUp={handleMouseUp}
     >
       <div className={classes.TitleBar}>
-        <div className={classes.Title}>ChatGpt</div>
-        <div className={classes.Icons}>
-          <div className={classes.CloseButton} onClick={handleCloseClick}>
-            ✕
-          </div>
-        </div>
+        <img src={text} className={classes.FolderLogo} alt="folder" />
+        <div className={classes.Title}>Education</div>
+
+        <button
+          onClick={handleCloseClick}
+          src={CloseButton}
+          className={classes.CloseButton}
+        />
       </div>
-      <div className={classes.ImageWrapper}>
-        <img src={chatgpt} className={classes.folderImage} alt="logo" />
+      <ul className={classes.Options}>
+        <il className={classes.OptionsFile}>File</il>
+        <il className={classes.OptionsEdit}>Edit</il>
+        <il className={classes.OptionsFormat}>Format</il>
+        <il className={classes.OptionsView}>View</il>
+        <il className={classes.OptionsHelp}>Help</il>
+      </ul>
+      <div className={classes.ContentWrapper}>
+        <ul className={classes.UlMain}>
+          <li>Szczecińskie collegium informatyczne</li>
+
+          <ul className={classes.UlBeta}>
+            <li>Programming</li>
+            <li>Linux</li>
+            <li>Project management</li>
+          </ul>
+        </ul>
+        <span className={classes.Text}>
+          Throughout my education, I honed my programming skills through
+          challenging task assignments and extracurricular activities such as
+          programming workshops and hackathons. These experiences have given me
+          a strong foundation in programming and problem-solving, empowering me
+          to approach complex technical challenges with confidence and
+          innovation.
+        </span>
       </div>
     </div>
   );
 }
 
-export default ChatGpt;
+export default Education;
