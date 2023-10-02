@@ -56,7 +56,7 @@ function FolderList() {
     null,
     <AboutMe handleFolderSelection={handleFolderSelection} />,
     <Industry handleFolderSelection={handleFolderSelection} />,
-    <SamAndColby handleFolderSelection={handleFolderSelection} />,
+    //<SamAndColby handleFolderSelection={handleFolderSelection} />,
     <Lista handleFolderSelection={handleFolderSelection} />,
     <Education handleFolderSelection={handleFolderSelection} />,
     <Experience handleFolderSelection={handleFolderSelection} />,

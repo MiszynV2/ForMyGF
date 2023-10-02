@@ -3,12 +3,7 @@ import classes from "./Contact.module.css";
 import dzwiek from "../../sources/dzwiek.png";
 import contact from "../../sources/images/contact.png";
 import firebase from "../../firebase";
-import {
-  getFirestore,
-  collection,
-  getDocs,
-  addDoc,
-} from "firebase/firestore/lite";
+import { collection, addDoc } from "firebase/firestore/lite";
 
 function Dzwieki({ handleFolderSelection }) {
   const [isDragging, setIsDragging] = useState(false);
