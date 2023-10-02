@@ -81,9 +81,7 @@ function App() {
   };
 
   return (
-    <div
-      className={`app-wrapper`} // Dodajemy klasę do app-wrapper
-    >
+    <div className={`app-wrapper`}>
       {angelHour && <div className="angel-hour-message">{`${angelHour}`}</div>}
 
       <FolderList />
