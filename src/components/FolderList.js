@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import classes from "./FolderList.module.css";
 import FolderItem from "./FolderItem";
 import Industry from "./mainFolders/Industry";
-import SamAndColby from "./mainFolders/SamAndColby";
 import Lista from "./mainFolders/Lista";
 import Education from "./mainFolders/Education";
 import Experience from "./mainFolders/Experience";
@@ -11,7 +10,6 @@ import Haslo from "./mainFolders/Haslo";
 import Fanarty from "./mainFolders/Fanarty";
 import Wierszyk from "./mainFolders/Wierszyk";
 import AboutMe from "./mainFolders/AboutMe";
-import HasloAccepted from "./mainFolders/HasloAccepted";
 import Quiz from "./mainFolders/Quiz";
 import ChangeBg from "./mainFolders/ChangeBg";
 import Bears from "./mainFolders/Bears";
@@ -56,18 +54,17 @@ function FolderList() {
     null,
     <AboutMe handleFolderSelection={handleFolderSelection} />,
     <Industry handleFolderSelection={handleFolderSelection} />,
-    //<SamAndColby handleFolderSelection={handleFolderSelection} />,
     <Lista handleFolderSelection={handleFolderSelection} />,
     <Education handleFolderSelection={handleFolderSelection} />,
     <Experience handleFolderSelection={handleFolderSelection} />,
     <Dzwieki handleFolderSelection={handleFolderSelection} />,
+    <Haslo handleFolderSelection={handleFolderSelection} />,
     <Haslo handleFolderSelection={handleFolderSelection} />,
     //<Fanarty />,
     //<Wierszyk handleFolderSelection={handleFolderSelection} />,
     <Quiz handleFolderSelection={handleFolderSelection} />,
     //<ChangeBg handleFolderSelection={handleFolderSelection} />,
     <Bears handleFolderSelection={handleFolderSelection} />,
-    <HasloAccepted handleFolderSelection={handleFolderSelection} />,
   ];
 
   return (

@@ -80,9 +80,7 @@ function Haslo({ handleFolderSelection }) {
       style={{ transform: `translate(${offsetX}px, ${offsetY}px)` }}
     >
       <div className={classes.PasswordTitleBar} onMouseDown={handleMouseDown}>
-        <div className={classes.PasswordTitle}>
-          Wskazówka rymuje się z mrówka
-        </div>
+        <div className={classes.PasswordTitle}>Placeholder</div>
         <div className={classes.PasswordIcons}>
           <div
             className={classes.PasswordCloseButton}
