@@ -28,7 +28,7 @@
   overflow: hidden;
   margin-bottom: 20px;
   max-width: 400px;
-  max-height: 800px;
+  max-height: 400px;
   border-color: rgb(239, 239, 239) rgb(0, 0, 0) rgb(0, 0, 0) rgb(239, 239, 239);
 }
 @media only screen and (max-width: 600px) {
@@ -146,4 +146,22 @@
 }
 .FolderLogo {
   width: 20px;
+}
+
+.Email input {
+  margin-left: 62px;
+}
+.Content {
+  display: flex;
+}
+.Content textarea {
+  height: 150px;
+  width: 220px;
+  margin-top: 30px;
+}
+.Content label {
+  margin-top: 30px;
+}
+.PasswordForm {
+  padding: 10px;
 }

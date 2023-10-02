@@ -21,16 +21,13 @@ import redpipe from "../../sources/redpipe.png";
 const Game = () => {
   const [isRightPressed, setIsRightPressed] = useState(false);
   const [isLeftPressed, setIsLeftPressed] = useState(false);
-
   useEffect(() => {
     const handleKeyDown = (event) => {
       switch (event.key) {
         case "ArrowRight":
-          console.log("rrr");
           setIsRightPressed(true);
           break;
         case "ArrowLeft":
-          console.log("lll");
           setIsLeftPressed(true);
           break;
         default:
@@ -59,7 +56,7 @@ const Game = () => {
       document.removeEventListener("keyup", handleKeyUp);
     };
   }, []);
-  console.log(isRightPressed, "  czy jest prawy?");
+
   useEffect(() => {
     const canvas = document.querySelector("canvas");
     const c = canvas.getContext("2d");
@@ -540,7 +537,13 @@ const Game = () => {
       platforms.forEach((platform) => {
         platform.draw();
       });
-
+      if (isRightPressed) {
+        player.moveRight();
+      } else if (isLeftPressed) {
+        player.moveLeft();
+      } else {
+        player.stopMoving();
+      }
       player.update();
 
       if (isRightPressed && player.position.x < canvas.width / 3) {

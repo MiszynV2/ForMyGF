@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import folder from "../sources/images/folder.png";
 import contact from "../sources/images/contact.png";
 import projects from "../sources/images/projects.png";
+import blocks from "../sources/images/experience.png";
+
 import text from "../sources/images/text.png";
 import setting from "../sources/setting.svg";
 import game from "../sources/game.svg";
@@ -30,6 +32,11 @@ function FolderItem({ name, index, onClick, type }) {
           className={classes.FolderLogo}
           alt="folder_contact"
         />
+      ) : (
+        ""
+      )}{" "}
+      {SvgOption === "blocks" ? (
+        <img src={blocks} className={classes.FolderLogo} alt="folder_contact" />
       ) : (
         ""
       )}{" "}

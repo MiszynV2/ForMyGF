@@ -150,9 +150,7 @@ function Quiz({ handleFolderSelection }) {
       <div className={classes.TitleBar}>
         <div className={classes.Title}>A jednak kółko i krzyżyk</div>
         <div className={classes.Icons}>
-          <div className={classes.CloseButton} onClick={handleCloseClick}>
-            ✕
-          </div>
+          <div className={classes.CloseButton} onClick={handleCloseClick}></div>
         </div>
       </div>
       {renderBoard()}

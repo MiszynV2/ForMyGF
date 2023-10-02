@@ -139,18 +139,18 @@
 .TextWrapper {
   padding: 10px;
   height: 300px;
+  z-index: 999;
+  display: flex;
   background-color: rgb(242, 235, 235);
 }
 .Text {
   font-size: 16px;
-  width: 50%;
-  margin-top: 80px;
 }
 .FolderLogo {
   width: 20px;
 }
 .UlMain {
-  padding-top: 50px;
+  padding-top: 30px;
   padding-left: 10px;
   font-size: 18px;
 }
@@ -186,4 +186,23 @@
 .ContentWrapper {
   display: flex;
   height: 300px;
+}
+.TextPaperClip {
+  width: 200px;
+  padding-top: 70px;
+}
+.ImagePaperClip {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  left: 290px;
+  top: 255px;
+}
+.CloudPaperClip {
+  width: 216px;
+  height: 158px;
+  position: absolute;
+  left: 183px;
+  top: 123px;
+  z-index: -1;
 }

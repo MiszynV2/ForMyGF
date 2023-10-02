@@ -6,7 +6,7 @@ import SamAndColby from "./mainFolders/SamAndColby";
 import Lista from "./mainFolders/Lista";
 import Education from "./mainFolders/Education";
 import Experience from "./mainFolders/Experience";
-import Dzwieki from "./mainFolders/Dzwieki";
+import Dzwieki from "./mainFolders/Contact";
 import Haslo from "./mainFolders/Haslo";
 import Fanarty from "./mainFolders/Fanarty";
 import Wierszyk from "./mainFolders/Wierszyk";
@@ -24,14 +24,11 @@ function FolderList() {
     { name: "Industry knowledge2", type: "setting" },
     { name: "Projects3", type: "projects" },
     { name: "Skills set 4", type: "folder" },
-    { name: "Education", type: "folder" },
+    { name: "Education", type: "blocks" },
     { name: "Experience", type: "education" },
     { name: "Contact me", type: "contact" },
     { name: "Hasło (tajne)", type: "setting" },
-    { name: "Fanarty!", type: "folder" },
-    { name: "Wierszyk", type: "folder" },
     { name: "Zrobiłem quiz", type: "game" },
-    { name: "Zmień tło", type: "setting" },
     { name: "Generator miśkow!", type: "folder" },
   ];
 
@@ -65,10 +62,10 @@ function FolderList() {
     <Experience handleFolderSelection={handleFolderSelection} />,
     <Dzwieki handleFolderSelection={handleFolderSelection} />,
     <Haslo handleFolderSelection={handleFolderSelection} />,
-    <Fanarty />,
-    <Wierszyk handleFolderSelection={handleFolderSelection} />,
+    //<Fanarty />,
+    //<Wierszyk handleFolderSelection={handleFolderSelection} />,
     <Quiz handleFolderSelection={handleFolderSelection} />,
-    <ChangeBg handleFolderSelection={handleFolderSelection} />,
+    //<ChangeBg handleFolderSelection={handleFolderSelection} />,
     <Bears handleFolderSelection={handleFolderSelection} />,
     <HasloAccepted handleFolderSelection={handleFolderSelection} />,
   ];

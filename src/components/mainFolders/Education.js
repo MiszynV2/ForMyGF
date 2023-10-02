@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import classes from "./Education.module.css";
 import chatgpt from "../../sources/chatgpt.png";
-import text from "../../sources/images/education.png";
+import text from "../../sources/images/experience.png";
 import CloseButton from "../../sources/close.svg";
+import paperclip from "../../sources/paperclip.png";
+import cloud from "../../sources/dymek.png";
 
 function Education({ handleFolderSelection }) {
   const [isDragging, setIsDragging] = useState(false);
@@ -102,14 +104,26 @@ function Education({ handleFolderSelection }) {
             <li>Project management</li>
           </ul>
         </ul>
-        <span className={classes.Text}>
-          Throughout my education, I honed my programming skills through
-          challenging task assignments and extracurricular activities such as
-          programming workshops and hackathons. These experiences have given me
-          a strong foundation in programming and problem-solving, empowering me
-          to approach complex technical challenges with confidence and
-          innovation.
-        </span>
+        <div className={classes.TextPaperClip}>
+          <img
+            className={classes.CloudPaperClip}
+            alt="text cloud"
+            src={cloud}
+          ></img>
+          <span className={classes.Text}>
+            Throughout my education, I honed my programming skills through
+            challenging task assignments and extracurricular activities such as
+            programming workshops and hackathons. These experiences have given
+            me a strong foundation in programming and problem-solving,
+            empowering me to approach complex technical challenges with
+            confidence and innovation.
+          </span>
+          <img
+            className={classes.ImagePaperClip}
+            alt="paper clip"
+            src={paperclip}
+          ></img>
+        </div>
       </div>
     </div>
   );

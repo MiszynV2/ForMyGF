@@ -1,15 +1,20 @@
-import React, { useState, useEffect } from "react";
 import "./App.css";
-import FolderItem from "./components/FolderItem";
+import React, { useState, useEffect } from "react";
+import tapeta from "./sources/tapeta.jpg";
+import tapeta6 from "./sources/tapeta6.jpg";
 import FolderList from "./components/FolderList";
 import Footer from "./components/Footer";
+import moonButton from "./sources/moonbutton.png";
+import sunButton from "./sources/sunbutton.png";
 
 function App() {
   const [angelHour, setAngelHour] = useState(null);
   const [bearPosition, setBearPosition] = useState({ x: 0, y: 0 });
   const [bearDirection, setBearDirection] = useState({ x: 1, y: 1 });
-  const [isTouchingEdge, setIsTouchingEdge] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 700);
+  const [currentWallpaper, setCurrentWallpaper] = useState(tapeta);
+  const [buttonIcon, setButtonIcon] = useState(moonButton);
+  const [currentTheme, setTheme] = useState("light"); // Dodajemy stan theme
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -57,47 +62,35 @@ function App() {
     };
   }, []);
 
-  useEffect(() => {
-    const moveBear = () => {
-      const windowWidth = window.innerWidth;
-      const windowHeight = window.innerHeight;
+  const toggleTheme = () => {
+    if (currentTheme === "light") {
+      setButtonIcon(sunButton);
+      document.documentElement.setAttribute("data-theme", "dark");
+      setTheme("dark");
+      return;
+    }
 
-      const currentX = bearPosition.x;
-      const currentY = bearPosition.y;
-      let newX = currentX + bearDirection.x * 5;
-      let newY = currentY + bearDirection.y * 5;
-
-      if (newX + 100 > windowWidth || newX < 0) {
-        setBearDirection((prevDirection) => ({
-          ...prevDirection,
-          x: -prevDirection.x,
-        }));
-      }
-      if (newY + 100 > windowHeight || newY < 0) {
-        setBearDirection((prevDirection) => ({
-          ...prevDirection,
-          y: -prevDirection.y,
-        }));
-      }
-
-      setBearPosition({ x: newX, y: newY });
-    };
-
-    const moveInterval = setInterval(moveBear, 50);
-
-    return () => {
-      clearInterval(moveInterval);
-    };
-  }, [bearDirection, bearPosition.x, bearPosition.y]);
+    document.documentElement.setAttribute("data-theme", "light");
+    setTheme("light");
+    setButtonIcon(moonButton);
+    setTimeout(() => {
+      setCurrentWallpaper((prevWallpaper) =>
+        prevWallpaper === tapeta ? tapeta6 : tapeta
+      );
+    }, 10);
+  };
 
   return (
-    <div className="app-wrapper">
-      {angelHour && (
-        <div className="angel-hour-message">{`${angelHour} kocham cię!  ❤❤❤❤`}</div>
-      )}
+    <div
+      className={`app-wrapper`} // Dodajemy klasę do app-wrapper
+    >
+      {angelHour && <div className="angel-hour-message">{`${angelHour}`}</div>}
 
       <FolderList />
       {!isMobile && <Footer />}
+      <button className="moonButton" onClick={toggleTheme}>
+        <img alt="switch theme button" src={buttonIcon} />
+      </button>
     </div>
   );
 }
