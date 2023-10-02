@@ -16,6 +16,7 @@ function Dzwieki({ handleFolderSelection }) {
   const [emailContentChange, setEmailContentChange] = useState("");
   const [startX, setStartX] = useState(0);
   const [isPasswordCorrect, setIsPasswordCorrect] = useState(true);
+  const [isEmailValid, setIsEmailValid] = useState(true);
   const [startY, setStartY] = useState(0);
   const [offsetX, setOffsetX] = useState(0);
   const [offsetY, setOffsetY] = useState(0);
@@ -34,6 +35,9 @@ function Dzwieki({ handleFolderSelection }) {
   };
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
+    if (email.length > 1) {
+      setIsEmailValid(true);
+    }
     setIsPasswordCorrect(true);
   };
   const handleEmailContentChange = (e) => {
@@ -51,17 +55,24 @@ function Dzwieki({ handleFolderSelection }) {
   };
   const handleEmailSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const messCol = collection(firebase, "messages");
-      await addDoc(messCol, {
-        to: email,
-        subject: "Temat wiadomości",
-        text: emailContentChange,
-      });
+    const regMail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    if (!email.match(regMail)) {
+      setIsEmailValid(false);
+      console.log("nie zgadza sie");
+      return;
+    } else {
+      try {
+        setIsEmailValid(true);
+        const messCol = collection(firebase, "messages");
+        await addDoc(messCol, {
+          Email: email,
+          text: emailContentChange,
+        });
 
-      console.log("E-mail został wysłany pomyślnie.");
-    } catch (error) {
-      console.error("Wystąpił błąd podczas wysyłania e-maila.", error);
+        console.log("E-mail został wysłany pomyślnie.");
+      } catch (error) {
+        console.error("Wystąpił błąd podczas wysyłania e-maila.", error);
+      }
     }
   };
   const handleMouseUp = () => {
@@ -124,6 +135,11 @@ function Dzwieki({ handleFolderSelection }) {
             id="password"
             value={email}
           />
+          {!isEmailValid ? (
+            <span className={classes.EmailValidSpan}>Incorrect email</span>
+          ) : (
+            ""
+          )}
         </div>
         <div className={classes.Content}>
           <label htmlFor="password">Write something to me :)</label>
