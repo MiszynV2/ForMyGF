@@ -73,7 +73,7 @@ function Lista({ handleFolderSelection }) {
       onMouseUp={handleMouseUp}
     >
       <div className={classes.TitleBar}>
-        <div className={classes.Title}>Lista (nie ma) *ale jeszcze będzie"</div>
+        <div className={classes.Title}>Lista (nie ma) ale jeszcze będzie"</div>
         <div className={classes.Icons}>
           <div className={classes.CloseButton} onClick={handleCloseClick}>
             ✕
