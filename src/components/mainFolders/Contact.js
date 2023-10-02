@@ -2,7 +2,13 @@ import React, { useState, useEffect } from "react";
 import classes from "./Contact.module.css";
 import dzwiek from "../../sources/dzwiek.png";
 import contact from "../../sources/images/contact.png";
-// import firebase from "../../firebase";
+import firebase from "../../firebase";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  addDoc,
+} from "firebase/firestore/lite";
 
 function Dzwieki({ handleFolderSelection }) {
   const [isDragging, setIsDragging] = useState(false);
@@ -45,21 +51,18 @@ function Dzwieki({ handleFolderSelection }) {
   };
   const handleEmailSubmit = async (e) => {
     e.preventDefault();
-    // try {
-    //   const db = firebase.firestore(); // Pobranie instancji bazy danych Firestore
-    //   const messagesCollection = db.collection("messages"); // Utworzenie kolekcji o nazwie "messages"
+    try {
+      const messCol = collection(firebase, "messages");
+      await addDoc(messCol, {
+        to: email,
+        subject: "Temat wiadomości",
+        text: emailContentChange,
+      });
 
-    //   // Dodanie dokumentu do kolekcji
-    //   await messagesCollection.add({
-    //     to: email,
-    //     subject: "Temat wiadomości",
-    //     text: emailContentChange,
-    //   });
-
-    //   console.log("E-mail został wysłany pomyślnie.");
-    // } catch (error) {
-    //   console.error("Wystąpił błąd podczas wysyłania e-maila.", error);
-    // }
+      console.log("E-mail został wysłany pomyślnie.");
+    } catch (error) {
+      console.error("Wystąpił błąd podczas wysyłania e-maila.", error);
+    }
   };
   const handleMouseUp = () => {
     setIsDragging(false);
@@ -112,7 +115,7 @@ function Dzwieki({ handleFolderSelection }) {
           <div className={classes.CloseButton} onClick={handleCloseClick}></div>
         </div>
       </div>
-      <form className={classes.PasswordForm}>
+      <form className={classes.PasswordForm} onSubmit={handleEmailSubmit}>
         <div className={classes.Email}>
           <label htmlFor="password">Your E-mail</label>
           <input
@@ -131,11 +134,7 @@ function Dzwieki({ handleFolderSelection }) {
             value={emailContentChange}
           />
         </div>
-        <button
-          type="submit"
-          onSubmit={handleEmailSubmit}
-          className={classes.PasswordSubmitButton}
-        >
+        <button type="submit" className={classes.PasswordSubmitButton}>
           Zatwierdź
         </button>
       </form>
