@@ -8,6 +8,7 @@ import moonButton from "./sources/moonbutton.png";
 import sunButton from "./sources/sunbutton.png";
 import MobileClock from "./components/mobileFolder/MobileClock";
 import MobileFooter from "./components/mobileFolder/MobileFooter";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [angelHour, setAngelHour] = useState(null);
@@ -84,6 +85,7 @@ function App() {
 
   return (
     <div className={`app-wrapper`}>
+      <Analytics />
       {isMobile && <MobileClock />}
       {angelHour && <div className="angel-hour-message">{`${angelHour}`}</div>}
 
