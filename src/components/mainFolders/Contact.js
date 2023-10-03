@@ -4,7 +4,7 @@ import contact from "../../sources/images/contact.png";
 import firebase from "../../firebase";
 import { collection, addDoc } from "firebase/firestore/lite";
 
-function Dzwieki({ handleFolderSelection }) {
+function Contact({ handleFolderSelection }) {
   const [isDragging, setIsDragging] = useState(false);
   const [email, setEmail] = useState("");
   const [emailContentChange, setEmailContentChange] = useState("");
@@ -160,4 +160,4 @@ function Dzwieki({ handleFolderSelection }) {
   );
 }
 
-export default Dzwieki;
+export default Contact;

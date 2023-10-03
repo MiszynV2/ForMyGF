@@ -5,7 +5,6 @@ import Industry from "./mainFolders/Industry";
 import Lista from "./mainFolders/Lista";
 import Education from "./mainFolders/Education";
 import Experience from "./mainFolders/Experience";
-import Dzwieki from "./mainFolders/Contact";
 import Haslo from "./mainFolders/Haslo";
 import AboutMe from "./mainFolders/AboutMe";
 import Quiz from "./mainFolders/Quiz";
@@ -44,7 +43,6 @@ function FolderList() {
     <SkillsSet handleFolderSelection={handleFolderSelection} />,
     <Education handleFolderSelection={handleFolderSelection} />,
     <Experience handleFolderSelection={handleFolderSelection} />,
-    <Dzwieki handleFolderSelection={handleFolderSelection} />,
     <Haslo handleFolderSelection={handleFolderSelection} />,
     <Quiz handleFolderSelection={handleFolderSelection} />,
     <Bears handleFolderSelection={handleFolderSelection} />,

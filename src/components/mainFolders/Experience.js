@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import classes from "./Experience.module.css";
+
 import text from "../../sources/images/education.png";
 import CloseButton from "../../sources/close.svg";
 

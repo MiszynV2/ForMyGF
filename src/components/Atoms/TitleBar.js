@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import classes from "./Bears.module.css";
 import Game from "./Game";
 
-function Bears({ handleFolderSelection }) {
+function TitleBar({ handleFolderSelection }) {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [startY, setStartY] = useState(0);
@@ -72,18 +72,8 @@ function Bears({ handleFolderSelection }) {
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
-    >
-      <div className={classes.TitleBar}>
-        <div className={classes.Title}>Duck.exe</div>
-        <div className={classes.Icons}>
-          <div className={classes.CloseButton} onClick={handleCloseClick}></div>
-        </div>
-      </div>
-      <div className={classes.ButtonImageWrapper}>
-        <Game />
-      </div>
-    </div>
+    ></div>
   );
 }
 
-export default Bears;
+export default TitleBar;
