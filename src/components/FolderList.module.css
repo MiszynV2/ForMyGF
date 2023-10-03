@@ -1,9 +1,9 @@
 @media (max-width: 700px) {
   .FolderListWrapper {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     height: 60%;
+    align-content: flex-end;
   }
 }
 @media (min-width: 701px) {
