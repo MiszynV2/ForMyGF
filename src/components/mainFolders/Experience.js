@@ -68,7 +68,7 @@ function Education({ handleFolderSelection }) {
 
   return (
     <div
-      className={classes.Wrapper}
+      className={classes.EducationWrapper}
       style={{ transform: `translate(${offsetX}px, ${offsetY}px)` }}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}

@@ -10,6 +10,7 @@ import AboutMe from "./mainFolders/AboutMe";
 import Quiz from "./mainFolders/Quiz";
 import Bears from "./mainFolders/Bears";
 import SkillsSet from "./mainFolders/SkillsSet";
+import Contact from "./mainFolders/Contact";
 
 function FolderList() {
   const [selectedFolderIndex, setSelectedFolderIndex] = useState(0);
@@ -43,6 +44,7 @@ function FolderList() {
     <SkillsSet handleFolderSelection={handleFolderSelection} />,
     <Education handleFolderSelection={handleFolderSelection} />,
     <Experience handleFolderSelection={handleFolderSelection} />,
+    <Contact handleFolderSelection={handleFolderSelection} />,
     <Haslo handleFolderSelection={handleFolderSelection} />,
     <Quiz handleFolderSelection={handleFolderSelection} />,
     <Bears handleFolderSelection={handleFolderSelection} />,
