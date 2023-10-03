@@ -52,6 +52,7 @@ function Dzwieki({ handleFolderSelection }) {
   const handleEmailSubmit = async (e) => {
     e.preventDefault();
     const regMail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    const date = new Date();
     if (!email.match(regMail)) {
       setIsEmailValid(false);
       console.log("nie zgadza sie");
@@ -63,6 +64,7 @@ function Dzwieki({ handleFolderSelection }) {
         await addDoc(messCol, {
           Email: email,
           text: emailContentChange,
+          date: date,
         });
         setIsEmailSend(true);
         console.log("E-mail został wysłany pomyślnie.");
@@ -146,11 +148,15 @@ function Dzwieki({ handleFolderSelection }) {
             value={emailContentChange}
           />
         </div>
-       
+
         <button type="submit" className={classes.PasswordSubmitButton}>
           Zatwierdź
         </button>
-        {isEmailSend && <span className={classes.SuccessfulSubmitText}>Massage has been send!!!</span>}
+        {isEmailSend && (
+          <span className={classes.SuccessfulSubmitText}>
+            Massage has been send!!!
+          </span>
+        )}
       </form>
     </div>
   );
