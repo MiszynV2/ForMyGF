@@ -125,7 +125,7 @@ function Industry({ handleFolderSelection }) {
               min="1"
               max="20"
               step="5"
-              value="5"
+              value="6"
             />
           </div>
         </div>
