@@ -39,6 +39,13 @@
     top: 250px;
   }
 }
+@media (min-width: 701px) {
+  .ChatGptWrapper {
+    background-color: lightblue;
+    top: 36%;
+    left: 36%;
+  }
+}
 
 .TitleBar {
   display: flex;

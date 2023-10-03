@@ -81,7 +81,7 @@ function Bears({ handleFolderSelection }) {
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
       >
-        <div className={classes.Title}>Generator miśków (darmowe)</div>
+        <div className={classes.Title}>Duck.exe</div>
         <div className={classes.Icons}>
           <div className={classes.CloseButton} onClick={handleCloseClick}></div>
         </div>

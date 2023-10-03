@@ -7,6 +7,8 @@ import blocks from "../sources/images/experience.png";
 import text from "../sources/images/text.png";
 import setting from "../sources/setting.svg";
 import game from "../sources/game.svg";
+import duck from "../sources/duck.png";
+import check from "../sources/check.svg";
 import heart from "../sources/heart.svg";
 import education from "../sources/images/education.png";
 
@@ -49,11 +51,25 @@ function FolderItem({ name, index, onClick, type }) {
       ) : (
         ""
       )}{" "}
+      {SvgOption === "duck" ? (
+        <img src={duck} className={classes.FolderLogo} alt="duck" />
+      ) : (
+        ""
+      )}{" "}
       {SvgOption === "projects" ? (
         <img
           src={projects}
           className={classes.FolderLogo}
           alt="folder_projects"
+        />
+      ) : (
+        ""
+      )}{" "}
+      {SvgOption === "check" ? (
+        <img
+          src={check}
+          className={classes.FolderLogo}
+          alt="checklist folder"
         />
       ) : (
         ""

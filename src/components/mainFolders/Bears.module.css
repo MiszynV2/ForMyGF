@@ -36,12 +36,7 @@
     background-color: lightblue;
   }
 }
-@media (min-width: 701px) {
-  .ChatGptWrapper {
-    max-width: 400px;
-    max-height: 400px;
-  }
-}
+
 .TitleBar {
   display: flex;
   word-break: break-word;
@@ -70,6 +65,14 @@
   cursor: default;
 
   min-height: 40px;
+}
+@media (min-width: 701px) {
+  .ChatGptWrapper {
+    max-width: 600px;
+    max-height: 700px;
+    left: 13%;
+    top: 15%;
+  }
 }
 
 .Title {

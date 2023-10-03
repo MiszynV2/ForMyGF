@@ -19,16 +19,16 @@ function FolderList() {
   const [selectedFolderIndex, setSelectedFolderIndex] = useState(0);
   const [selectedFolders, setSelectedFolders] = useState([]);
   const selectedFolderNames = [
-    { name: "About me1", type: "text" },
+    { name: "About me", type: "text" },
     { name: "Industry knowledge2", type: "setting" },
-    { name: "Projects3", type: "projects" },
-    { name: "Skills set 4", type: "folder" },
+    { name: "Projects", type: "projects" },
+    { name: "Skills set", type: "check" },
     { name: "Education", type: "blocks" },
     { name: "Experience", type: "education" },
     { name: "Contact me", type: "contact" },
     { name: "Hasło (tajne)", type: "setting" },
-    { name: "Zrobiłem quiz", type: "game" },
-    { name: "Generator miśkow!", type: "folder" },
+    { name: "Tic tac toe", type: "game" },
+    { name: "Duck.exe", type: "duck" },
   ];
 
   const folderRef = useRef(null);
