@@ -17,7 +17,7 @@ function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 700);
   const [currentWallpaper, setCurrentWallpaper] = useState(tapeta);
   const [buttonIcon, setButtonIcon] = useState(moonButton);
-  const [currentTheme, setTheme] = useState("light"); // Dodajemy stan theme
+  const [currentTheme, setTheme] = useState("light"); 
 
   useEffect(() => {
     const intervalId = setInterval(() => {

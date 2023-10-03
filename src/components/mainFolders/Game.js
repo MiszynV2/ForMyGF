@@ -593,7 +593,6 @@ const Game = () => {
       });
 
       if (scrollOffset > 2000) {
-        // Obsłuż dalszą logikę gry tutaj
       }
 
       if (player.position.y + 120 >= 700) {

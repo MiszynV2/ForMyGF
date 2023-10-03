@@ -49,10 +49,7 @@ function FolderList() {
     <Experience handleFolderSelection={handleFolderSelection} />,
     <Dzwieki handleFolderSelection={handleFolderSelection} />,
     <Haslo handleFolderSelection={handleFolderSelection} />,
-    //<Fanarty />,
-    //<Wierszyk handleFolderSelection={handleFolderSelection} />,
     <Quiz handleFolderSelection={handleFolderSelection} />,
-    //<ChangeBg handleFolderSelection={handleFolderSelection} />,
     <Bears handleFolderSelection={handleFolderSelection} />,
   ];
 
