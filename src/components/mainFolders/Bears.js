@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import classes from "./Bears.module.css";
-import misiek from "../../sources/moving-bear.gif";
 import Game from "./Game";
 
 function Bears({ handleFolderSelection }) {

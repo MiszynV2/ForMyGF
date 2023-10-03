@@ -7,11 +7,8 @@ import Education from "./mainFolders/Education";
 import Experience from "./mainFolders/Experience";
 import Dzwieki from "./mainFolders/Contact";
 import Haslo from "./mainFolders/Haslo";
-import Fanarty from "./mainFolders/Fanarty";
-import Wierszyk from "./mainFolders/Wierszyk";
 import AboutMe from "./mainFolders/AboutMe";
 import Quiz from "./mainFolders/Quiz";
-import ChangeBg from "./mainFolders/ChangeBg";
 import Bears from "./mainFolders/Bears";
 import SkillsSet from "./mainFolders/SkillsSet";
 

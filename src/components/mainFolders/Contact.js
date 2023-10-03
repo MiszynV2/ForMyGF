@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import classes from "./Contact.module.css";
-import dzwiek from "../../sources/dzwiek.png";
 import contact from "../../sources/images/contact.png";
 import firebase from "../../firebase";
 import { collection, addDoc } from "firebase/firestore/lite";

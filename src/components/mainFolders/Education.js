@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import classes from "./Education.module.css";
-import chatgpt from "../../sources/chatgpt.png";
 import text from "../../sources/images/experience.png";
 import CloseButton from "../../sources/close.svg";
 import paperclip from "../../sources/paperclip.png";
