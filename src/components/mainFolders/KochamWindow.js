@@ -39,7 +39,7 @@ function ChatGptWindow({ title, image, onClose, onMinimize }) {
 
   return (
     <div
-      className={classes.ChatGptWrapper}
+      className={classes.Wrapper}
       style={{ transform: `translate(${offsetX}px, ${offsetY}px)` }}
       onMouseDown={handleMouseDown}
     >

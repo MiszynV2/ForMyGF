@@ -21,7 +21,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .ChatGptWrapper {
+  .Wrapper {
     background-color: lightblue;
     width: 95%;
   }

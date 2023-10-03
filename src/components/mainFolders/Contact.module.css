@@ -42,7 +42,7 @@
   border-color: #e2e8f0;
 }
 
-.ChatGptWrapper {
+.Wrapper {
   box-shadow: inset -1px -1px #00138c, inset 1px 1px #0831d9,
     inset -2px -2px #001ea0, inset 2px 2px #166aee, inset -3px -3px #003bda,
     inset 3px 3px #0855dd;
@@ -66,7 +66,7 @@
   border-color: rgb(239, 239, 239) rgb(0, 0, 0) rgb(0, 0, 0) rgb(239, 239, 239);
 }
 @media (max-width: 700px) {
-  .ChatGptWrapper {
+  .Wrapper {
     background-color: lightblue;
     width: 95%;
     left: 0;
@@ -74,7 +74,7 @@
   }
 }
 @media (min-width: 701px) {
-  .ChatGptWrapper {
+  .Wrapper {
     background-color: lightblue;
     top: 36%;
     left: 36%;

@@ -50,10 +50,9 @@ function Education({ handleFolderSelection }) {
   }, []);
 
   useEffect(() => {
-    const chatGptWrapper = document.getElementById("chat-gpt-wrapper");
-    if (chatGptWrapper) {
-      const { top, left, right, bottom } =
-        chatGptWrapper.getBoundingClientRect();
+    const Wrapper = document.getElementById("chat-gpt-wrapper");
+    if (Wrapper) {
+      const { top, left, right, bottom } = Wrapper.getBoundingClientRect();
       if (left < 0) {
         setOffsetX(offsetX - left);
       } else if (right > windowWidth) {
@@ -69,7 +68,7 @@ function Education({ handleFolderSelection }) {
 
   return (
     <div
-      className={classes.ChatGptWrapper}
+      className={classes.Wrapper}
       style={{ transform: `translate(${offsetX}px, ${offsetY}px)` }}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
@@ -84,7 +83,7 @@ function Education({ handleFolderSelection }) {
           src={CloseButton}
           className={classes.CloseButton}
         />
-      </div >
+      </div>
       <ul className={classes.Options}>
         <il className={classes.OptionsFile}>File</il>
         <il className={classes.OptionsEdit}>Edit</il>
@@ -93,42 +92,42 @@ function Education({ handleFolderSelection }) {
         <il className={classes.OptionsHelp}>Help</il>
       </ul>
       <div className={classes.Wrapper}>
-      <div className={classes.ContentWrapper}>
-        <ul className={classes.UlMain}>
-          <li>Salling Group</li>
+        <div className={classes.ContentWrapper}>
+          <ul className={classes.UlMain}>
+            <li>Salling Group</li>
 
-          <ul className={classes.UlBeta}>
-            <li>ServiceNow</li>
-            <li>JavaScript</li>
-            <li>HTML5 / CSS3</li>
+            <ul className={classes.UlBeta}>
+              <li>ServiceNow</li>
+              <li>JavaScript</li>
+              <li>HTML5 / CSS3</li>
+            </ul>
           </ul>
-        </ul>
-        <span className={classes.Text}>
-          As a junior developer I maintained and optimized the ServiceNow
-          platform, gaining experience in platform administration, scripting,
-          and troubleshooting. I actively sought out opportunities to improve
-          the platform and implemented new projects that streamlined processes
-          and increased efficiency.
-        </span>
-      </div>
-      <div className={classes.ContentWrapper}>
-        <ul className={classes.UlMain}>
-          <li>AdCode</li>
+          <span className={classes.Text}>
+            As a junior developer I maintained and optimized the ServiceNow
+            platform, gaining experience in platform administration, scripting,
+            and troubleshooting. I actively sought out opportunities to improve
+            the platform and implemented new projects that streamlined processes
+            and increased efficiency.
+          </span>
+        </div>
+        <div className={classes.ContentWrapper}>
+          <ul className={classes.UlMain}>
+            <li>AdCode</li>
 
-          <ul className={classes.UlBeta}>
-            <li>React</li>
-            <li>JavaScript</li>
-            <li>HTML5 / CSS3</li>
+            <ul className={classes.UlBeta}>
+              <li>React</li>
+              <li>JavaScript</li>
+              <li>HTML5 / CSS3</li>
+            </ul>
           </ul>
-        </ul>
-        <span className={classes.Text}>
-          As a web developer, my responsibilities included implementing design
-          mockups into fully-functional websites for clients. I worked closely
-          with designers and project managers to ensure that the websites met
-          the client's specifications and provided a seamless user experience
-        </span>
+          <span className={classes.Text}>
+            As a web developer, my responsibilities included implementing design
+            mockups into fully-functional websites for clients. I worked closely
+            with designers and project managers to ensure that the websites met
+            the client's specifications and provided a seamless user experience
+          </span>
+        </div>
       </div>
-    </div>
     </div>
   );
 }

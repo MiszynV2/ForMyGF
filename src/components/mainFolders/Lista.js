@@ -47,10 +47,9 @@ function Lista({ handleFolderSelection }) {
   }, []);
 
   useEffect(() => {
-    const chatGptWrapper = document.getElementById("chat-gpt-wrapper");
-    if (chatGptWrapper) {
-      const { top, left, right, bottom } =
-        chatGptWrapper.getBoundingClientRect();
+    const Wrapper = document.getElementById("chat-gpt-wrapper");
+    if (Wrapper) {
+      const { top, left, right, bottom } = Wrapper.getBoundingClientRect();
       if (left < 0) {
         setOffsetX(offsetX - left);
       } else if (right > windowWidth) {
@@ -66,7 +65,7 @@ function Lista({ handleFolderSelection }) {
 
   return (
     <div
-      className={classes.ChatGptWrapper}
+      className={classes.Wrapper}
       style={{ transform: `translate(${offsetX}px, ${offsetY}px)` }}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
