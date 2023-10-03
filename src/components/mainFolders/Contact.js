@@ -12,6 +12,7 @@ function Dzwieki({ handleFolderSelection }) {
   const [startX, setStartX] = useState(0);
   const [isPasswordCorrect, setIsPasswordCorrect] = useState(true);
   const [isEmailValid, setIsEmailValid] = useState(true);
+  const [isEmailSend, setIsEmailSend] = useState(false);
   const [startY, setStartY] = useState(0);
   const [offsetX, setOffsetX] = useState(0);
   const [offsetY, setOffsetY] = useState(0);
@@ -63,7 +64,7 @@ function Dzwieki({ handleFolderSelection }) {
           Email: email,
           text: emailContentChange,
         });
-
+        setIsEmailSend(true);
         console.log("E-mail został wysłany pomyślnie.");
       } catch (error) {
         console.error("Wystąpił błąd podczas wysyłania e-maila.", error);
@@ -145,9 +146,11 @@ function Dzwieki({ handleFolderSelection }) {
             value={emailContentChange}
           />
         </div>
+       
         <button type="submit" className={classes.PasswordSubmitButton}>
           Zatwierdź
         </button>
+        {isEmailSend && <span className={classes.SuccessfulSubmitText}>Massage has been send!!!</span>}
       </form>
     </div>
   );

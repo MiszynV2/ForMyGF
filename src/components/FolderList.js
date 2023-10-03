@@ -13,6 +13,7 @@ import AboutMe from "./mainFolders/AboutMe";
 import Quiz from "./mainFolders/Quiz";
 import ChangeBg from "./mainFolders/ChangeBg";
 import Bears from "./mainFolders/Bears";
+import SkillsSet from "./mainFolders/SkillsSet";
 
 function FolderList() {
   const [selectedFolderIndex, setSelectedFolderIndex] = useState(0);
@@ -34,18 +35,6 @@ function FolderList() {
 
   const [selectedClass, setSelectedClass] = useState(classes.FolderListWrapper);
 
-  //   const handleFolderSelection = (index) => {
-  //     setSelectedFolders((prevSelectedFolders) => {
-  //       if (prevSelectedFolders.includes(index)) {
-  //         return prevSelectedFolders.filter(
-  //           (folderIndex) => folderIndex !== index
-  //         );
-  //       } else {
-  //         return [...prevSelectedFolders, index];
-  //       }
-  //     });
-  //   };
-
   const handleFolderSelection = (index) => {
     setSelectedFolderIndex(index);
   };
@@ -55,10 +44,10 @@ function FolderList() {
     <AboutMe handleFolderSelection={handleFolderSelection} />,
     <Industry handleFolderSelection={handleFolderSelection} />,
     <Lista handleFolderSelection={handleFolderSelection} />,
+    <SkillsSet handleFolderSelection={handleFolderSelection} />,
     <Education handleFolderSelection={handleFolderSelection} />,
     <Experience handleFolderSelection={handleFolderSelection} />,
     <Dzwieki handleFolderSelection={handleFolderSelection} />,
-    <Haslo handleFolderSelection={handleFolderSelection} />,
     <Haslo handleFolderSelection={handleFolderSelection} />,
     //<Fanarty />,
     //<Wierszyk handleFolderSelection={handleFolderSelection} />,

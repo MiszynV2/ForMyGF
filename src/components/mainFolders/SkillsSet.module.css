@@ -36,9 +36,10 @@
     background-color: lightblue;
     width: 95%;
     left: 0;
-    top: 150px;
+    top: 250px;
   }
 }
+
 .TitleBar {
   display: flex;
   word-break: break-word;
@@ -104,29 +105,6 @@
   background-color: #2e2e2e;
 }
 
-.folderImage {
-  width: 100%;
-  height: auto;
-  border-width: 2px;
-  border-style: solid;
-  border-color: rgb(80, 98, 152) rgb(239, 239, 239) rgb(239, 239, 239)
-    rgb(0, 0, 0);
-}
-
-.folderImageContainer {
-  position: relative;
-  display: inline-block;
-}
-
-.folderImageInside {
-  height: 20%;
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-}
-
 .Options {
   border-bottom: solid 1px rgb(60, 60, 238);
   background-color: #cdcccc;
@@ -141,53 +119,44 @@
   padding: 10px;
   height: 300px;
   background-color: rgb(242, 235, 235);
+  display: flex;
+  flex-direction: column;
 }
 .Text {
-  font-size: 16px;
-  width: 50%;
-  margin-top: 80px;
-  margin-left: 30px;
+  font-size: 24px;
 }
 .FolderLogo {
   width: 20px;
 }
-.UlMain {
-  padding-top: 50px;
-  padding-left: 10px;
-  font-size: 18px;
-}
-.UlMain li {
-  list-style-type: none;
-  margin-top: 3px;
-  font-size: 17px;
-}
-.UlMain ul li {
-  position: relative;
-}
-.UlBeta {
-  padding-inline-start: 40px;
-  margin-top: 3px;
-  margin-left: 16px;
-  padding-left: 16px;
-  border-left: 1px dotted grey;
-  font-size: 14px;
-}
-.UlBeta li:before {
-  content: "";
-  position: absolute;
-  left: -17px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 13px;
-  height: 1px;
-
-  border-radius: 1px;
-  border-top: 1px dotted grey;
-}
-
-.ContentWrapper {
+.TextWrapper input {
+  width: 30px;
+  height: 30px;
+  padding-top: 30px;
   display: flex;
 }
-.Wrapper {
-  height: 700px;
+.TextWrapper label {
+  font-size: 26px;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+.TextWrapper input[type="checkbox"]:before {
+  content: "";
+  position: absolute;
+  left: 13px;
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf,
+    inset 2px 2px #0a0a0a;
+  margin-right: 6px;
+}
+.TextWrapper input:after {
+  content: "";
+  width: 32px;
+  height: 32px;
+  background-image: url("../../sources/check.svg");
+  z-index: 4;
+}
+.TextWrapper div {
+  display: flex;
 }

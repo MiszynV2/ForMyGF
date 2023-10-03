@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import classes from "./MainFolder.module.css";
+import classes from "./Contact.module.css";
 
 function Lista({ handleFolderSelection }) {
   const [isDragging, setIsDragging] = useState(false);
@@ -75,9 +75,7 @@ function Lista({ handleFolderSelection }) {
       <div className={classes.TitleBar}>
         <div className={classes.Title}>Lista (nie ma) ale jeszcze będzie"</div>
         <div className={classes.Icons}>
-          <div className={classes.CloseButton} onClick={handleCloseClick}>
-            ✕
-          </div>
+          <div className={classes.CloseButton} onClick={handleCloseClick}></div>
         </div>
       </div>
     </div>

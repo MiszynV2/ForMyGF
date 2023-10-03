@@ -27,17 +27,20 @@
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   margin-bottom: 20px;
-  max-width: 400px;
-  max-height: 400px;
+
   border-color: rgb(239, 239, 239) rgb(0, 0, 0) rgb(0, 0, 0) rgb(239, 239, 239);
 }
 @media only screen and (max-width: 600px) {
   .ChatGptWrapper {
     background-color: lightblue;
-    width: 95%;
   }
 }
-
+@media (min-width: 701px) {
+  .ChatGptWrapper {
+    max-width: 400px;
+    max-height: 400px;
+  }
+}
 .TitleBar {
   display: flex;
   word-break: break-word;
@@ -146,4 +149,24 @@
 }
 .FolderLogo {
   width: 20px;
+}
+@media (max-width: 700px) {
+  .ChatGptWrapper {
+    border-top-left-radius: 8px;
+    -webkit-font-smoothing: antialiased;
+    border-top-right-radius: 8px;
+    padding: 0 0 3px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100%;
+    background-color: #f0f0f0;
+    border: 1px solid #999;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
 }

@@ -6,6 +6,8 @@ import FolderList from "./components/FolderList";
 import Footer from "./components/Footer";
 import moonButton from "./sources/moonbutton.png";
 import sunButton from "./sources/sunbutton.png";
+import MobileClock from "./components/mobileFolder/MobileClock";
+import MobileFooter from "./components/mobileFolder/MobileFooter";
 
 function App() {
   const [angelHour, setAngelHour] = useState(null);
@@ -82,6 +84,7 @@ function App() {
 
   return (
     <div className={`app-wrapper`}>
+      {isMobile && <MobileClock />}
       {angelHour && <div className="angel-hour-message">{`${angelHour}`}</div>}
 
       <FolderList />
@@ -89,6 +92,7 @@ function App() {
       <button className="moonButton" onClick={toggleTheme}>
         <img alt="switch theme button" src={buttonIcon} />
       </button>
+      {isMobile && <MobileFooter />}
     </div>
   );
 }
