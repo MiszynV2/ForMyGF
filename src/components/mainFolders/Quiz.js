@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import classes from "./Quiz.module.css";
 import Window from "../Atoms/Window";
+import TitleBar from "../Atoms/TitleBar";
+import image from "../../sources/heart.svg";
 
 function Quiz({ handleFolderSelection }) {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [isXNext, setIsXNext] = useState(true);
   const [winner, setWinner] = useState(null);
-
+  const title = "Tic Tac Toe";
   const handleCellClick = (index) => {
     if (board[index] || winner) return;
 
@@ -80,17 +82,11 @@ function Quiz({ handleFolderSelection }) {
 
   return (
     <Window>
-      <div className={classes.TitleBar}>
-        <div className={classes.Title}>A jednak kółko i krzyżyk</div>
-        <div className={classes.Icons}>
-          <div
-            className={classes.CloseButton}
-            onClick={() => {
-              handleFolderSelection(0);
-            }}
-          ></div>
-        </div>
-      </div>
+      <TitleBar
+        image={image}
+        title={title}
+        handleFolderSelection={handleFolderSelection}
+      />
       {renderBoard()}
       {renderGameResult()}
     </Window>

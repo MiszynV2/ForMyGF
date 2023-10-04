@@ -1,31 +1,22 @@
 import React from "react";
 import classes from "./AboutMe.module.css";
-import text from "../../sources/images/text.png";
+import image from "../../sources/images/text.png";
 import CloseButton from "../../sources/close.svg";
 import Window from "../Atoms/Window";
+import Options from "../Atoms/Options";
+import TitleBar from "../Atoms/TitleBar";
 
 function AboutMe({ handleFolderSelection }) {
+  const options = ["File", "Edit", "Format", "View", "Help"];
+  const title = "About me";
   return (
     <Window>
-      <div className={classes.TitleBar}>
-        <img src={text} className={classes.FolderLogo} alt="folder" />
-        <div className={classes.Title}>About me</div>
-
-        <button
-          onClick={() => {
-            handleFolderSelection(0);
-          }}
-          src={CloseButton}
-          className={classes.CloseButton}
-        />
-      </div>
-      <ul className={classes.Options}>
-        <il className={classes.OptionsFile}>File</il>
-        <il className={classes.OptionsEdit}>Edit</il>
-        <il className={classes.OptionsFormat}>Format</il>
-        <il className={classes.OptionsView}>View</il>
-        <il className={classes.OptionsHelp}>Help</il>
-      </ul>
+      <TitleBar
+        image={image}
+        title={title}
+        handleFolderSelection={handleFolderSelection}
+      />
+      <Options options={options} />
       <div className={classes.TextWrapper}>
         <span className={classes.Text}>
           As a Junior Front-End Engineer, I am passionate about creating

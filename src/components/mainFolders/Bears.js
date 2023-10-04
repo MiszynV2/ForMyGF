@@ -2,21 +2,18 @@ import React from "react";
 import classes from "./Bears.module.css";
 import Game from "./Game";
 import Window from "../Atoms/Window";
+import image from "../../sources/duck.png";
+import TitleBar from "../Atoms/TitleBar";
 
 function Bears({ handleFolderSelection }) {
+  const title = "Duck.exe";
   return (
     <Window>
-      <div className={classes.TitleBar}>
-        <div className={classes.Title}>Duck.exe</div>
-        <div className={classes.Icons}>
-          <div
-            className={classes.CloseButton}
-            onClick={() => {
-              handleFolderSelection(0);
-            }}
-          ></div>
-        </div>
-      </div>
+      <TitleBar
+        image={image}
+        title={title}
+        handleFolderSelection={handleFolderSelection}
+      />
       <div className={classes.ButtonImageWrapper}>
         <Game />
       </div>

@@ -1,32 +1,23 @@
 import React from "react";
 import classes from "./Experience.module.css";
 
-import text from "../../sources/images/education.png";
+import image from "../../sources/images/education.png";
 import CloseButton from "../../sources/close.svg";
 import Window from "../Atoms/Window";
+import TitleBar from "../Atoms/TitleBar";
+import Options from "../Atoms/Options";
 
 function Education({ handleFolderSelection }) {
+  const options = ["File", "Edit", "Format", "View", "Help"];
+  const title = "Education";
   return (
     <Window>
-      <div className={classes.TitleBar}>
-        <img src={text} className={classes.FolderLogo} alt="folder" />
-        <div className={classes.Title}>Experience</div>
-
-        <button
-          onClick={() => {
-            handleFolderSelection(0);
-          }}
-          src={CloseButton}
-          className={classes.CloseButton}
-        />
-      </div>
-      <ul className={classes.Options}>
-        <il className={classes.OptionsFile}>File</il>
-        <il className={classes.OptionsEdit}>Edit</il>
-        <il className={classes.OptionsFormat}>Format</il>
-        <il className={classes.OptionsView}>View</il>
-        <il className={classes.OptionsHelp}>Help</il>
-      </ul>
+      <TitleBar
+        image={image}
+        title={title}
+        handleFolderSelection={handleFolderSelection}
+      />
+      <Options options={options} />
       <div className={classes.Wrapper}>
         <div className={classes.ContentWrapper}>
           <ul className={classes.UlMain}>

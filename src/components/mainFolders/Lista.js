@@ -1,22 +1,19 @@
 import React from "react";
 import classes from "./Contact.module.css";
-
+import image from "../../sources/images/experience.png";
 import Window from "../Atoms/Window";
+import TitleBar from "../Atoms/TitleBar";
 
 function Lista({ handleFolderSelection }) {
+  const title = "Lista";
+
   return (
     <Window>
-      <div className={classes.TitleBar}>
-        <div className={classes.Title}>Lista (nie ma) ale jeszcze będzie"</div>
-        <div className={classes.Icons}>
-          <div
-            className={classes.CloseButton}
-            onClick={() => {
-              handleFolderSelection(0);
-            }}
-          ></div>
-        </div>
-      </div>
+      <TitleBar
+        image={image}
+        title={title}
+        handleFolderSelection={handleFolderSelection}
+      />
     </Window>
   );
 }

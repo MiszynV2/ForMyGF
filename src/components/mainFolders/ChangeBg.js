@@ -5,6 +5,7 @@ import tapeta2 from "../../sources/tapeta2.jpg";
 import tapeta4 from "../../sources/tapeta4.jpg";
 import tapeta5 from "../../sources/tapeta5.jpg";
 import tapeta6 from "../../sources/tapeta6.jpg";
+import TitleBar from "../Atoms/TitleBar";
 
 function ChangeBg({ handleFolderSelection }) {
   const [isDragging, setIsDragging] = useState(false);
@@ -82,19 +83,7 @@ function ChangeBg({ handleFolderSelection }) {
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
     >
-      <div className={classes.ChangeBgTitleBar}>
-        <div className={classes.ChangeBgTitle}>Change the background image</div>
-        <div className={classes.ChangeBgIcons}>
-          <div
-            className={classes.ChangeBgCloseButton}
-            onClick={() => {
-              handleFolderSelection(0);
-            }}
-          >
-            ✕
-          </div>
-        </div>
-      </div>
+         <TitleBar title={title} handleFolderSelection={handleFolderSelection} />
       <div className={classes.ChangeBgOptions}>
         <div
           className={classes.ChangeBgOption}

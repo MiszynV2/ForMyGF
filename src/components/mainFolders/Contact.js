@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import classes from "./Contact.module.css";
-import contact from "../../sources/images/contact.png";
+import image from "../../sources/images/contact.png";
 import firebase from "../../firebase";
 import { collection, addDoc } from "firebase/firestore/lite";
 import Window from "../Atoms/Window";
+import TitleBar from "../Atoms/TitleBar";
 
 function Contact({ handleFolderSelection }) {
   console.log(firebase);
@@ -11,7 +12,7 @@ function Contact({ handleFolderSelection }) {
   const [emailContentChange, setEmailContentChange] = useState("");
   const [isEmailValid, setIsEmailValid] = useState(true);
   const [isEmailSend, setIsEmailSend] = useState(false);
-
+  const title = "Contact me";
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
     if (email.length > 1) {
@@ -53,18 +54,11 @@ function Contact({ handleFolderSelection }) {
 
   return (
     <Window>
-      <div className={classes.TitleBar}>
-        <img src={contact} className={classes.FolderLogo} alt="folder" />
-        <div className={classes.Title}>Contact me</div>
-        <div className={classes.Icons}>
-          <div
-            className={classes.CloseButton}
-            onClick={() => {
-              handleFolderSelection(0);
-            }}
-          ></div>
-        </div>
-      </div>
+            <TitleBar
+        image={image}
+        title={title}
+        handleFolderSelection={handleFolderSelection}
+      />
       <form className={classes.PasswordForm} onSubmit={handleEmailSubmit}>
         <div className={classes.Email}>
           <label htmlFor="password">Your E-mail</label>
