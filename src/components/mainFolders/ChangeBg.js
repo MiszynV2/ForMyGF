@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import classes from "./ChangeBg.module.css";
 import tapeta1 from "../../sources/tapeta.jpg";
 import tapeta2 from "../../sources/tapeta2.jpg";
-import tapeta3 from "../../sources/tapeta3.jpg";
 import tapeta4 from "../../sources/tapeta4.jpg";
 import tapeta5 from "../../sources/tapeta5.jpg";
 import tapeta6 from "../../sources/tapeta6.jpg";
@@ -16,10 +15,6 @@ function ChangeBg({ handleFolderSelection }) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
   const [selectedBg, setSelectedBg] = useState(tapeta1);
-
-  const handleCloseClick = () => {
-    handleFolderSelection(0);
-  };
 
   const handleMouseDown = (e) => {
     setIsDragging(true);
@@ -92,7 +87,9 @@ function ChangeBg({ handleFolderSelection }) {
         <div className={classes.ChangeBgIcons}>
           <div
             className={classes.ChangeBgCloseButton}
-            onClick={handleCloseClick}
+            onClick={() => {
+              handleFolderSelection(0);
+            }}
           >
             ✕
           </div>

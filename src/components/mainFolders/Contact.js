@@ -1,63 +1,37 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import classes from "./Contact.module.css";
 import contact from "../../sources/images/contact.png";
 import firebase from "../../firebase";
 import { collection, addDoc } from "firebase/firestore/lite";
+import Window from "../Atoms/Window";
 
 function Contact({ handleFolderSelection }) {
-  const [isDragging, setIsDragging] = useState(false);
+  console.log(firebase);
   const [email, setEmail] = useState("");
   const [emailContentChange, setEmailContentChange] = useState("");
-  const [startX, setStartX] = useState(0);
-  const [isPasswordCorrect, setIsPasswordCorrect] = useState(true);
   const [isEmailValid, setIsEmailValid] = useState(true);
   const [isEmailSend, setIsEmailSend] = useState(false);
-  const [startY, setStartY] = useState(0);
-  const [offsetX, setOffsetX] = useState(0);
-  const [offsetY, setOffsetY] = useState(0);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
-  const handleCloseClick = (e) => {
-    handleFolderSelection(0);
-  };
-
-  const handleMouseDown = (e) => {
-    setIsDragging(true);
-    setStartX(e.clientX - offsetX);
-    setStartY(e.clientY - offsetY);
-    e.preventDefault();
-  };
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
     if (email.length > 1) {
       setIsEmailValid(true);
     }
-    setIsPasswordCorrect(true);
   };
   const handleEmailContentChange = (e) => {
     setEmailContentChange(e.target.value);
-    setIsPasswordCorrect(true);
   };
 
-  const handleMouseMove = (e) => {
-    if (isDragging) {
-      const newOffsetX = e.clientX - startX;
-      const newOffsetY = e.clientY - startY;
-      setOffsetX(newOffsetX);
-      setOffsetY(newOffsetY);
-    }
-  };
   const handleEmailSubmit = async (e) => {
     e.preventDefault();
     const regMail =
       /^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$/;
     const date = new Date();
-    console.log(!email.match(regMail));
-    console.log({ email });
-    console.log(!email.match(regMail));
+
     if (!email.match(regMail)) {
       setIsEmailValid(false);
+      console.log(process.env.API_KEY);
+
       console.log("nie zgadza sie");
       return;
     } else {
@@ -76,54 +50,19 @@ function Contact({ handleFolderSelection }) {
       }
     }
   };
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  const handleResize = () => {
-    setWindowWidth(window.innerWidth);
-    setWindowHeight(window.innerHeight);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    const Wrapper = document.getElementById("chat-gpt-wrapper");
-    if (Wrapper) {
-      const { top, left, right, bottom } = Wrapper.getBoundingClientRect();
-      if (left < 0) {
-        setOffsetX(offsetX - left);
-      } else if (right > windowWidth) {
-        setOffsetX(offsetX - (right - windowWidth));
-      }
-      if (top < 0) {
-        setOffsetY(offsetY - top);
-      } else if (bottom > windowHeight) {
-        setOffsetY(offsetY - (bottom - windowHeight));
-      }
-    }
-  }, [offsetX, offsetY, windowWidth, windowHeight]);
 
   return (
-    <div
-      className={classes.Wrapper}
-      style={{ transform: `translate(${offsetX}px, ${offsetY}px)` }}
-    >
-      <div
-        className={classes.TitleBar}
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-      >
+    <Window>
+      <div className={classes.TitleBar}>
         <img src={contact} className={classes.FolderLogo} alt="folder" />
         <div className={classes.Title}>Contact me</div>
         <div className={classes.Icons}>
-          <div className={classes.CloseButton} onClick={handleCloseClick}></div>
+          <div
+            className={classes.CloseButton}
+            onClick={() => {
+              handleFolderSelection(0);
+            }}
+          ></div>
         </div>
       </div>
       <form className={classes.PasswordForm} onSubmit={handleEmailSubmit}>
@@ -160,7 +99,7 @@ function Contact({ handleFolderSelection }) {
           </span>
         )}
       </form>
-    </div>
+    </Window>
   );
 }
 

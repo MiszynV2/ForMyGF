@@ -1,0 +1,33 @@
+.Wrapper {
+  box-shadow: inset -1px -1px #00138c, inset 1px 1px #0831d9,
+    inset -2px -2px #001ea0, inset 2px 2px #166aee, inset -3px -3px #003bda,
+    inset 3px 3px #0855dd;
+  border-top-left-radius: 8px;
+  -webkit-font-smoothing: antialiased;
+  border-top-right-radius: 8px;
+  padding: 0 0 3px;
+  position: absolute;
+  left: 5%;
+  top: 250px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  background-color: #f0f0f0;
+  border: 1px solid #999;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  margin-bottom: 20px;
+
+  border-color: rgb(239, 239, 239) rgb(0, 0, 0) rgb(0, 0, 0) rgb(239, 239, 239);
+}
+@media only screen and (max-width: 600px) {
+  .Wrapper {
+    background-color: lightblue;
+  }
+}
+@media (min-width: 701px) {
+  .Wrapper {
+    max-width: 400px;
+    max-height: 500px;
+  }
+}

@@ -61,8 +61,8 @@ const Game = () => {
     const canvas = document.querySelector("canvas");
     const c = canvas.getContext("2d");
 
-    canvas.width = 1000;
-    canvas.height = 700;
+    canvas.width = 700;
+    canvas.height = 400;
 
     const gravity = 0.2;
 

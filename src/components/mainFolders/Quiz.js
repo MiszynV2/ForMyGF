@@ -1,71 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import classes from "./Quiz.module.css";
+import Window from "../Atoms/Window";
 
 function Quiz({ handleFolderSelection }) {
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [startY, setStartY] = useState(0);
-  const [offsetX, setOffsetX] = useState(0);
-  const [offsetY, setOffsetY] = useState(0);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
-
   const [board, setBoard] = useState(Array(9).fill(null));
   const [isXNext, setIsXNext] = useState(true);
   const [winner, setWinner] = useState(null);
-
-  const handleCloseClick = () => {
-    handleFolderSelection(0);
-  };
-
-  const handleMouseDown = (e) => {
-    setIsDragging(true);
-    setStartX(e.clientX - offsetX);
-    setStartY(e.clientY - offsetY);
-    e.preventDefault();
-  };
-
-  const handleMouseMove = (e) => {
-    if (isDragging) {
-      const newOffsetX = e.clientX - startX;
-      const newOffsetY = e.clientY - startY;
-      setOffsetX(newOffsetX);
-      setOffsetY(newOffsetY);
-    }
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  const handleResize = () => {
-    setWindowWidth(window.innerWidth);
-    setWindowHeight(window.innerHeight);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    const Wrapper = document.getElementById("chat-gpt-wrapper");
-    if (Wrapper) {
-      const { top, left, right, bottom } = Wrapper.getBoundingClientRect();
-      if (left < 0) {
-        setOffsetX(offsetX - left);
-      } else if (right > windowWidth) {
-        setOffsetX(offsetX - (right - windowWidth));
-      }
-      if (top < 0) {
-        setOffsetY(offsetY - top);
-      } else if (bottom > windowHeight) {
-        setOffsetY(offsetY - (bottom - windowHeight));
-      }
-    }
-  }, [offsetX, offsetY, windowWidth, windowHeight]);
 
   const handleCellClick = (index) => {
     if (board[index] || winner) return;
@@ -139,22 +79,21 @@ function Quiz({ handleFolderSelection }) {
   };
 
   return (
-    <div
-      className={classes.QuizWrapper}
-      style={{ transform: `translate(${offsetX}px, ${offsetY}px)` }}
-      onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
-    >
+    <Window>
       <div className={classes.TitleBar}>
         <div className={classes.Title}>A jednak kółko i krzyżyk</div>
         <div className={classes.Icons}>
-          <div className={classes.CloseButton} onClick={handleCloseClick}></div>
+          <div
+            className={classes.CloseButton}
+            onClick={() => {
+              handleFolderSelection(0);
+            }}
+          ></div>
         </div>
       </div>
       {renderBoard()}
       {renderGameResult()}
-    </div>
+    </Window>
   );
 }
 
