@@ -9,9 +9,6 @@ import TitleBar from "../Atoms/TitleBar";
 function AboutMe({ close }) {
   const options = ["File", "Edit", "Format", "View", "Help"];
   const title = "About me";
-  console.log({ close });
-  const ID = close;
-  console.log({ ID });
   return (
     <Window>
       <TitleBar image={image} title={title} close={close} />

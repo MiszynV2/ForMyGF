@@ -6,7 +6,7 @@ import { collection, addDoc } from "firebase/firestore/lite";
 import Window from "../Atoms/Window";
 import TitleBar from "../Atoms/TitleBar";
 
-function Contact({ handleFolderSelection }) {
+function Contact({ close }) {
   const [email, setEmail] = useState("");
   const [emailContentChange, setEmailContentChange] = useState("");
   const [isEmailValid, setIsEmailValid] = useState(true);

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import classes from "./Haslo.module.css";
 import Window from "../Atoms/Window";
+import image from "../../sources/windowsLogo.png";
+import TitleBar from "../Atoms/TitleBar";
 
 function Haslo({ close }) {
   const [password, setPassword] = useState("");
@@ -20,7 +22,7 @@ function Haslo({ close }) {
     setPassword(e.target.value);
     setIsPasswordCorrect(true);
   };
-  const options = [];
+
   const title = "Placeholder";
   const endsWithMaslo = password.toLowerCase().endsWith("maslo");
   const endsWithMaslo2 = password.toLowerCase().endsWith("masło");
