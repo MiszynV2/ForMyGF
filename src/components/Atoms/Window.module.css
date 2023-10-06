@@ -25,6 +25,9 @@
     background-color: lightblue;
   }
 }
+.Wrapper:focus{
+  z-index: 99;
+}
 @media (min-width: 701px) {
   .Wrapper {
     max-width: 400px;

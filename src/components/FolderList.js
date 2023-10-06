@@ -104,16 +104,16 @@ function FolderList() {
     setActiveWindowsId((prevState) => [...new Set([...prevState, windowId])]);
   }
   function handleCloseWindows(windowId) {
-    if (activeWindowsId.length === 1) {
-      return setActiveWindowsId([]);
-    }
+    // if (activeWindowsId.length === 1) {
+    //   return setActiveWindowsId([]);
+    // }
     console.log("closewindow ", windowId.id);
     const filteredWindowsId = activeWindowsId.filter(
       (id) => id !== windowId.id
     );
     console.log("filteredWindowsId ", filteredWindowsId);
 
-    return setActiveWindowsId(...new Set([filteredWindowsId]));
+    return setActiveWindowsId(filteredWindowsId);
   }
 
   return (
@@ -133,6 +133,7 @@ function FolderList() {
         const Component = windowElement.Component;
         return (
           <Component
+            key={id}
             close={() => {
               handleCloseWindows(windowElement);
             }}

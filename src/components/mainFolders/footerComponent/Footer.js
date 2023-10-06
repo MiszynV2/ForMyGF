@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, userRef } from "react";
 import classes from "./Footer.module.css";
 import windowsLogo from "../../../sources/windowsLogo.png";
 import UserMenu from "./UserMenu";
 function Footer({ bears }) {
   const [currentTime, setCurrentTime] = useState(getCurrentTime());
   const [isMenuVisible, setIsMenuVisible] = useState(false);
-
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(getCurrentTime());

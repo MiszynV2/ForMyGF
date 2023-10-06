@@ -78,7 +78,6 @@ function App() {
   return (
     <div className={`app-wrapper`}>
       <Analytics />
-      {isMobile && <MobileClock />}
       {angelHour && <div className="angel-hour-message">{`${angelHour}`}</div>}
 
       <FolderList />

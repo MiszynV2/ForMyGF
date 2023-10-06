@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import classes from "./TitleBar.module.css";
 import CloseButton from "../../sources/close.svg";
 function TitleBar(props) {
-  function handleCloseClick() {
-    console.log("clicked  ", props.title);
-  }
   return (
     <div className={classes.TitleBar}>
       <div className={classes.ImgTitle}>

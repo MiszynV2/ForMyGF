@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import classes from "./Window.module.css";
 
 function Window({ children }) {
   const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [startY, setStartY] = useState(0);
-  const [offsetX, setOffsetX] = useState(0);
-  const [offsetY, setOffsetY] = useState(0);
-
+  const [startX, setStartX] = useState(Math.random() * 100);
+  const [startY, setStartY] = useState(Math.random() * 100);
+  const [offsetX, setOffsetX] = useState(Math.random() * 100);
+  const [offsetY, setOffsetY] = useState(Math.random() * 100);
+  const [zIndex, setZIndex] = useState(1);
+  const windowRef = useRef(null);
   const handleMouseDown = (e) => {
     setIsDragging(true);
     setStartX(e.clientX - offsetX);
@@ -26,14 +27,25 @@ function Window({ children }) {
   const handleMouseUp = () => {
     setIsDragging(false);
   };
-
+  const handleClick = () => {
+    windowRef.current.focus();
+  };
+  const handleClickOutside = () => {
+    setZIndex(1);
+  };
   return (
     <div
       className={classes.Wrapper}
-      style={{ transform: `translate(${offsetX}px, ${offsetY}px)` }}
+      style={{
+        transform: `translate(${offsetX}px, ${offsetY}px)`,
+      }}
+      ref={windowRef}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
+      onClick={handleClick}
+      onClickOutside={handleClickOutside}
+      tabIndex={0}
     >
       {children}
     </div>

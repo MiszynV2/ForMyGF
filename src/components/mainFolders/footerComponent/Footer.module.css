@@ -29,6 +29,7 @@
   color: #333;
   border-top: 1px solid #ccc;
   justify-content: space-between;
+  z-index: 999;
 }
 
 .CurrentTime {
