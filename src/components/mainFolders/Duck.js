@@ -5,15 +5,11 @@ import Window from "../Atoms/Window";
 import image from "../../sources/duck.png";
 import TitleBar from "../Atoms/TitleBar";
 
-function Bears({ handleFolderSelection }) {
+function Duck({ close }) {
   const title = "Duck.exe";
   return (
     <Window>
-      <TitleBar
-        image={image}
-        title={title}
-        handleFolderSelection={handleFolderSelection}
-      />
+      <TitleBar image={image} title={title} close={close} />
       <div className={classes.ButtonImageWrapper}>
         <Game />
       </div>
@@ -21,4 +17,4 @@ function Bears({ handleFolderSelection }) {
   );
 }
 
-export default Bears;
+export default Duck;

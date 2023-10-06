@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import tapeta from "./sources/tapeta.jpg";
 import tapeta6 from "./sources/tapeta6.jpg";
 import FolderList from "./components/FolderList";
-import Footer from "./components/Footer";
+import Footer from "./components/mainFolders/footerComponent/Footer";
 import moonButton from "./sources/moonbutton.png";
 import sunButton from "./sources/sunbutton.png";
 import MobileClock from "./components/mobileFolder/MobileClock";
@@ -12,12 +12,9 @@ import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [angelHour, setAngelHour] = useState(null);
-  const [bearPosition, setBearPosition] = useState({ x: 0, y: 0 });
-  const [bearDirection, setBearDirection] = useState({ x: 1, y: 1 });
   const [isMobile, setIsMobile] = useState(window.innerWidth < 700);
-  const [currentWallpaper, setCurrentWallpaper] = useState(tapeta);
   const [buttonIcon, setButtonIcon] = useState(moonButton);
-  const [currentTheme, setTheme] = useState("light"); 
+  const [currentTheme, setTheme] = useState("light");
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -76,11 +73,6 @@ function App() {
     document.documentElement.setAttribute("data-theme", "light");
     setTheme("light");
     setButtonIcon(moonButton);
-    setTimeout(() => {
-      setCurrentWallpaper((prevWallpaper) =>
-        prevWallpaper === tapeta ? tapeta6 : tapeta
-      );
-    }, 10);
   };
 
   return (
@@ -90,11 +82,11 @@ function App() {
       {angelHour && <div className="angel-hour-message">{`${angelHour}`}</div>}
 
       <FolderList />
-      {!isMobile && <Footer />}
+
       <button className="moonButton" onClick={toggleTheme}>
         <img alt="switch theme button" src={buttonIcon} />
       </button>
-      {isMobile && <MobileFooter />}
+      <Footer />
     </div>
   );
 }

@@ -4,7 +4,7 @@ import Window from "../Atoms/Window";
 import TitleBar from "../Atoms/TitleBar";
 import image from "../../sources/heart.svg";
 
-function Quiz({ handleFolderSelection }) {
+function Quiz({ close }) {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [isXNext, setIsXNext] = useState(true);
   const [winner, setWinner] = useState(null);
@@ -82,11 +82,7 @@ function Quiz({ handleFolderSelection }) {
 
   return (
     <Window>
-      <TitleBar
-        image={image}
-        title={title}
-        handleFolderSelection={handleFolderSelection}
-      />
+      <TitleBar image={image} title={title} close={close} />
       {renderBoard()}
       {renderGameResult()}
     </Window>

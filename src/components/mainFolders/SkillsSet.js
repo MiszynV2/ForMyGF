@@ -6,16 +6,12 @@ import Window from "../Atoms/Window";
 import TitleBar from "../Atoms/TitleBar";
 import Options from "../Atoms/Options";
 
-function SkillsSet({ handleFolderSelection }) {
+function SkillsSet({ close }) {
   const options = ["File", "Edit", "Format", "View", "Help"];
   const title = "Skills Set";
   return (
     <Window>
-      <TitleBar
-        image={image}
-        title={title}
-        handleFolderSelection={handleFolderSelection}
-      />
+      <TitleBar image={image} title={title} close={close} />
       <Options options={options} />
       <div className={classes.TextWrapper}>
         <div>

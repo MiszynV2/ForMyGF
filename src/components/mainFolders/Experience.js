@@ -7,16 +7,12 @@ import Window from "../Atoms/Window";
 import TitleBar from "../Atoms/TitleBar";
 import Options from "../Atoms/Options";
 
-function Education({ handleFolderSelection }) {
+function Education({ close }) {
   const options = ["File", "Edit", "Format", "View", "Help"];
   const title = "Education";
   return (
     <Window>
-      <TitleBar
-        image={image}
-        title={title}
-        handleFolderSelection={handleFolderSelection}
-      />
+      <TitleBar image={image} title={title} close={close} />
       <Options options={options} />
       <div className={classes.Wrapper}>
         <div className={classes.ContentWrapper}>

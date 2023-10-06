@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classes from "./Haslo.module.css";
 import Window from "../Atoms/Window";
 
-function Haslo({ handleFolderSelection }) {
+function Haslo({ close }) {
   const [password, setPassword] = useState("");
   const [isPasswordCorrect, setIsPasswordCorrect] = useState(true);
 
@@ -11,7 +11,6 @@ function Haslo({ handleFolderSelection }) {
 
     if (password === "masło") {
       setIsPasswordCorrect(true);
-      handleFolderSelection(14);
     } else {
       setIsPasswordCorrect(false);
     }
@@ -32,14 +31,7 @@ function Haslo({ handleFolderSelection }) {
       <div className={classes.PasswordTitleBar}>
         <div className={classes.PasswordTitle}>Placeholder</div>
         <div className={classes.PasswordIcons}>
-          <div
-            className={classes.PasswordCloseButton}
-            onClick={() => {
-              handleFolderSelection(0);
-            }}
-          >
-            ✕
-          </div>
+          <div className={classes.PasswordCloseButton}>✕</div>
         </div>
       </div>
       <form onSubmit={handleSubmit} className={classes.PasswordForm}>

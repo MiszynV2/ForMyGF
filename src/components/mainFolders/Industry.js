@@ -6,7 +6,7 @@ import Window from "../Atoms/Window";
 import Options from "../Atoms/Options";
 import TitleBar from "../Atoms/TitleBar";
 
-function Industry({ handleFolderSelection }) {
+function Industry({ close }) {
   const options = ["Options", "Help"];
   const values = [
     ["16", "Frontend"],
@@ -20,11 +20,7 @@ function Industry({ handleFolderSelection }) {
 
   return (
     <Window>
-      <TitleBar
-        image={image}
-        title={title}
-        handleFolderSelection={handleFolderSelection}
-      />
+      <TitleBar image={image} title={title} close={close} />
       <Options options={options} />
       <div className={classes.SlidesWrapper}>
         {values.map((range) => {

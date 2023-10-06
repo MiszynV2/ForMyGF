@@ -7,7 +7,6 @@ import Window from "../Atoms/Window";
 import TitleBar from "../Atoms/TitleBar";
 
 function Contact({ handleFolderSelection }) {
-  console.log(firebase);
   const [email, setEmail] = useState("");
   const [emailContentChange, setEmailContentChange] = useState("");
   const [isEmailValid, setIsEmailValid] = useState(true);
@@ -54,7 +53,7 @@ function Contact({ handleFolderSelection }) {
 
   return (
     <Window>
-            <TitleBar
+      <TitleBar
         image={image}
         title={title}
         handleFolderSelection={handleFolderSelection}

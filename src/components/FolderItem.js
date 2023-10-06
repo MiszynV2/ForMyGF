@@ -1,103 +1,12 @@
 import React, { useState } from "react";
-import folder from "../sources/images/folder.png";
-import contact from "../sources/images/contact.png";
-import projects from "../sources/images/projects.png";
-import blocks from "../sources/images/experience.png";
-
-import text from "../sources/images/text.png";
-import setting from "../sources/setting.svg";
-import game from "../sources/game.svg";
-import duck from "../sources/duck.png";
-import check from "../sources/check.svg";
-import heart from "../sources/heart.svg";
-import education from "../sources/images/education.png";
 
 import classes from "./FolderItem.module.css";
 
-function FolderItem({ name, index, onClick, type }) {
-  const [SvgOption, setSvgOption] = useState(type);
-
-  const handleClick = () => {
-    onClick(index);
-  };
-
+function FolderItem({ onClick, name, alt, icon }) {
   return (
-    <div className={classes.FolderItemWrapper} onClick={handleClick}>
-      {SvgOption === "folder" ? (
-        <img src={folder} className={classes.FolderLogo} alt="folder" />
-      ) : (
-        ""
-      )}{" "}
-      {SvgOption === "contact" ? (
-        <img
-          src={contact}
-          className={classes.FolderLogo}
-          alt="folder_contact"
-        />
-      ) : (
-        ""
-      )}{" "}
-      {SvgOption === "blocks" ? (
-        <img src={blocks} className={classes.FolderLogo} alt="folder_contact" />
-      ) : (
-        ""
-      )}{" "}
-      {SvgOption === "education" ? (
-        <img
-          src={education}
-          className={classes.FolderLogo}
-          alt="folder_education"
-        />
-      ) : (
-        ""
-      )}{" "}
-      {SvgOption === "duck" ? (
-        <img src={duck} className={classes.FolderLogo} alt="duck" />
-      ) : (
-        ""
-      )}{" "}
-      {SvgOption === "projects" ? (
-        <img
-          src={projects}
-          className={classes.FolderLogo}
-          alt="folder_projects"
-        />
-      ) : (
-        ""
-      )}{" "}
-      {SvgOption === "check" ? (
-        <img
-          src={check}
-          className={classes.FolderLogo}
-          alt="checklist folder"
-        />
-      ) : (
-        ""
-      )}{" "}
-      {SvgOption === "setting" ? (
-        <img
-          src={setting}
-          className={classes.FolderLogo}
-          alt="folder_setting"
-        />
-      ) : (
-        ""
-      )}
-      {SvgOption === "game" ? (
-        <img src={game} className={classes.FolderLogo} alt="folder_game" />
-      ) : (
-        ""
-      )}
-      {SvgOption === "heart" ? (
-        <img src={heart} className={classes.FolderLogo} alt="folder_heart" />
-      ) : (
-        ""
-      )}
-      {SvgOption === "text" ? (
-        <img src={text} className={classes.FolderLogo} alt="folder_heart" />
-      ) : (
-        ""
-      )}
+    <div className={classes.FolderItemWrapper} onClick={onClick}>
+      {/* Alt is an empty string as the icon does not add any additional value over name of the folder */}
+      <img src={icon} className={classes.FolderLogo} alt={""} />
       <h1 className={classes.FolderText}>{name}</h1>
     </div>
   );

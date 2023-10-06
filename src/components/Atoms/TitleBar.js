@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import classes from "./TitleBar.module.css";
 import CloseButton from "../../sources/close.svg";
 function TitleBar(props) {
-  console.log(props.options);
-
+  function handleCloseClick() {
+    console.log("clicked  ", props.title);
+  }
   return (
     <div className={classes.TitleBar}>
       <div className={classes.ImgTitle}>
@@ -18,9 +19,7 @@ function TitleBar(props) {
         <button
           className={classes.CloseButton}
           src={CloseButton}
-          onClick={() => {
-            props.handleFolderSelection(0);
-          }}
+          onClick={props.close}
         />
       </div>
     </div>

@@ -6,16 +6,15 @@ import Window from "../Atoms/Window";
 import Options from "../Atoms/Options";
 import TitleBar from "../Atoms/TitleBar";
 
-function AboutMe({ handleFolderSelection }) {
+function AboutMe({ close }) {
   const options = ["File", "Edit", "Format", "View", "Help"];
   const title = "About me";
+  console.log({ close });
+  const ID = close;
+  console.log({ ID });
   return (
     <Window>
-      <TitleBar
-        image={image}
-        title={title}
-        handleFolderSelection={handleFolderSelection}
-      />
+      <TitleBar image={image} title={title} close={close} />
       <Options options={options} />
       <div className={classes.TextWrapper}>
         <span className={classes.Text}>

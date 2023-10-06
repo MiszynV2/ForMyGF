@@ -2,70 +2,149 @@ import React, { useState, useRef, useEffect } from "react";
 import classes from "./FolderList.module.css";
 import FolderItem from "./FolderItem";
 import Industry from "./mainFolders/Industry";
-import Lista from "./mainFolders/Lista";
+import Projects from "./mainFolders/Projects";
 import Education from "./mainFolders/Education";
 import Experience from "./mainFolders/Experience";
 import Haslo from "./mainFolders/Haslo";
 import AboutMe from "./mainFolders/AboutMe";
-import Quiz from "./mainFolders/Quiz";
-import Bears from "./mainFolders/Bears";
+import TicTacToe from "./mainFolders/TicTacToe";
+import Duck from "./mainFolders/Duck";
 import SkillsSet from "./mainFolders/SkillsSet";
 import Contact from "./mainFolders/Contact";
 
+import folder from "../sources/images/folder.png";
+import contact from "../sources/images/contact.png";
+import projects from "../sources/images/projects.png";
+import blocks from "../sources/images/experience.png";
+import text from "../sources/images/text.png";
+import setting from "../sources/setting.svg";
+import game from "../sources/game.svg";
+import duck from "../sources/duck.png";
+import check from "../sources/check.svg";
+import heart from "../sources/heart.svg";
+import education from "../sources/images/education.png";
+
+const WINDOWS_DATA = [
+  {
+    id: "about_me",
+    isOpen: false,
+    name: "About me",
+    icon: text,
+    Component: AboutMe,
+  },
+  {
+    id: "industry",
+    isOpen: false,
+    name: "Industry knowledge2",
+    icon: setting,
+    Component: Industry,
+  },
+  {
+    id: "project",
+    isOpen: false,
+    name: "Projects",
+    icon: projects,
+    Component: Projects,
+  },
+  {
+    id: "skills_set",
+    isOpen: false,
+    name: "Skills set",
+    icon: check,
+    Component: SkillsSet,
+  },
+  {
+    id: "education",
+    isOpen: false,
+    name: "Education",
+    icon: blocks,
+    Component: Education,
+  },
+  {
+    id: "experience",
+    isOpen: false,
+    name: "Experience",
+    icon: education,
+    Component: Experience,
+  },
+  {
+    id: "contact",
+    isOpen: false,
+    name: "Contact me",
+    icon: contact,
+    Component: Contact,
+  },
+  {
+    id: "haslo",
+    isOpen: false,
+    name: "Hasło (tajne)",
+    icon: setting,
+    Component: Haslo,
+  },
+  {
+    id: "tic_tac_toe",
+    isOpen: false,
+    name: "Tic tac toe",
+    icon: game,
+    Component: TicTacToe,
+  },
+  {
+    id: "duck",
+    isOpen: false,
+    name: "Duck.exe",
+    icon: duck,
+    Component: Duck,
+  },
+];
+
 function FolderList() {
-  const [selectedFolderIndex, setSelectedFolderIndex] = useState(0);
-  const [selectedFolders, setSelectedFolders] = useState([]);
-  const selectedFolderNames = [
-    { name: "About me", type: "text" },
-    { name: "Industry knowledge2", type: "setting" },
-    { name: "Projects", type: "projects" },
-    { name: "Skills set", type: "check" },
-    { name: "Education", type: "blocks" },
-    { name: "Experience", type: "education" },
-    { name: "Contact me", type: "contact" },
-    { name: "Hasło (tajne)", type: "setting" },
-    { name: "Tic tac toe", type: "game" },
-    { name: "Duck.exe", type: "duck" },
-  ];
+  const [activeWindowsId, setActiveWindowsId] = useState([]);
 
-  const folderRef = useRef(null);
+  function handleOpenWindows(windowId) {
+    setActiveWindowsId((prevState) => [...new Set([...prevState, windowId])]);
+  }
+  function handleCloseWindows(windowId) {
+    if (activeWindowsId.length === 1) {
+      return setActiveWindowsId([]);
+    }
+    console.log("closewindow ", windowId.id);
+    const filteredWindowsId = activeWindowsId.filter(
+      (id) => id !== windowId.id
+    );
+    console.log("filteredWindowsId ", filteredWindowsId);
 
-  const [selectedClass, setSelectedClass] = useState(classes.FolderListWrapper);
-
-  const handleFolderSelection = (index) => {
-    setSelectedFolderIndex(index);
-  };
-
-  const folderComponents = [
-    null,
-    <AboutMe handleFolderSelection={handleFolderSelection} />,
-    <Industry handleFolderSelection={handleFolderSelection} />,
-    <Lista handleFolderSelection={handleFolderSelection} />,
-    <SkillsSet handleFolderSelection={handleFolderSelection} />,
-    <Education handleFolderSelection={handleFolderSelection} />,
-    <Experience handleFolderSelection={handleFolderSelection} />,
-    <Contact handleFolderSelection={handleFolderSelection} />,
-    <Haslo handleFolderSelection={handleFolderSelection} />,
-    <Quiz handleFolderSelection={handleFolderSelection} />,
-    <Bears handleFolderSelection={handleFolderSelection} />,
-  ];
+    return setActiveWindowsId(...new Set([filteredWindowsId]));
+  }
 
   return (
-    <div className={selectedClass}>
-      {selectedFolderNames.map((folderName, index) => (
+    <div className={classes.FolderListWrapper}>
+      {WINDOWS_DATA.map((folderData) => (
         <FolderItem
-          type={folderName.type}
-          key={index}
-          name={folderName.name}
-          index={index}
-          onClick={() => setSelectedFolderIndex(index + 1)}
+          icon={folderData.icon}
+          key={folderData.id}
+          name={folderData.name}
+          onClick={() => {
+            handleOpenWindows(folderData.id);
+          }}
         />
       ))}
-      {selectedFolderIndex !== 0 && (
-        <div ref={folderRef}>{folderComponents[selectedFolderIndex]}</div>
-      )}
+      {activeWindowsId.map((id) => {
+        const windowElement = WINDOWS_DATA.find((element) => element.id === id);
+        const Component = windowElement.Component;
+        return (
+          <Component
+            close={() => {
+              handleCloseWindows(windowElement);
+            }}
+          />
+        );
+      })}
+      {/* 1.przemapuj po aktywnych oknac 2.wez folder data dla id 3.wyrenderuj */}
     </div>
   );
 }
+
+// Struktury danych
+// Design Pattern
 
 export default FolderList;
