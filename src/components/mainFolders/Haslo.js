@@ -20,7 +20,8 @@ function Haslo({ close }) {
     setPassword(e.target.value);
     setIsPasswordCorrect(true);
   };
-
+  const options = [];
+  const title = "Placeholder";
   const endsWithMaslo = password.toLowerCase().endsWith("maslo");
   const endsWithMaslo2 = password.toLowerCase().endsWith("masło");
   const endsWithOwka = password.toLowerCase().endsWith("ówka");
@@ -28,12 +29,7 @@ function Haslo({ close }) {
   const hasUpperCase = /[A-Z]/.test(password);
   return (
     <Window>
-      <div className={classes.PasswordTitleBar}>
-        <div className={classes.PasswordTitle}>Placeholder</div>
-        <div className={classes.PasswordIcons}>
-          <div className={classes.PasswordCloseButton}>✕</div>
-        </div>
-      </div>
+      <TitleBar image={image} title={title} close={close} />
       <form onSubmit={handleSubmit} className={classes.PasswordForm}>
         <div className={classes.PasswordContent}>
           <label htmlFor="password">Wprowadź hasło:</label>

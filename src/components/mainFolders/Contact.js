@@ -53,11 +53,7 @@ function Contact({ handleFolderSelection }) {
 
   return (
     <Window>
-      <TitleBar
-        image={image}
-        title={title}
-        handleFolderSelection={handleFolderSelection}
-      />
+      <TitleBar image={image} title={title} close={close} />
       <form className={classes.PasswordForm} onSubmit={handleEmailSubmit}>
         <div className={classes.Email}>
           <label htmlFor="password">Your E-mail</label>
