@@ -39,7 +39,7 @@ function FolderItem({ onClick, name, alt, icon }) {
   return (
     <div
       className={`${classes.FolderItemWrapper} ${
-        isHighlighted ? classes. : ""
+        isHighlighted ? classes.Highlighted : ""
       }`}
       style={{
         transform: `translate(${offsetX}px, ${offsetY}px)`,
