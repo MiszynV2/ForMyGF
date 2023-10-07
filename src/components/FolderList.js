@@ -103,7 +103,13 @@ function FolderList() {
     "skills_set",
     "about_me",
   ]);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 700);
 
+  useEffect(() => {
+    if (isMobile) {
+      setActiveWindowsId([]);
+    }
+  }, []);
   function handleOpenWindows(windowId) {
     setActiveWindowsId((prevState) => [...new Set([...prevState, windowId])]);
   }
