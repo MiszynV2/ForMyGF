@@ -22,3 +22,8 @@
   font-weight: bold;
   margin-top: 10px;
 }
+.Highlighted h1 {
+  padding: 0px 3px 2px;
+  background-color: rgb(11, 97, 255);
+  text-align: center;
+}
