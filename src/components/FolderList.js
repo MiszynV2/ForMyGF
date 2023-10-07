@@ -98,7 +98,11 @@ const WINDOWS_DATA = [
 ];
 
 function FolderList() {
-  const [activeWindowsId, setActiveWindowsId] = useState([]);
+  const [activeWindowsId, setActiveWindowsId] = useState([
+    "duck",
+    "skills_set",
+    "about_me",
+  ]);
 
   function handleOpenWindows(windowId) {
     setActiveWindowsId((prevState) => [...new Set([...prevState, windowId])]);

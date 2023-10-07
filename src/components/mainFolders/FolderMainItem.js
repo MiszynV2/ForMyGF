@@ -4,7 +4,7 @@ import classes from "./FolderMainItem.module.css";
 
 function FolderMainItem({ name, index }) {
   return (
-    <div className={classes.FolderMainItem}>
+    <div className={classes.FolderMainItem} tabIndex={1}>
       <img src={folder} className={classes.FolderLogo} alt="logo" />
       <h1 className={classes.FolderText}>{name}</h1>
     </div>
