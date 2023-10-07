@@ -115,5 +115,11 @@ body {
   background-image: var(--main-background-image);
   height: 100vh;
   background-size: cover;
+  display: flex;
   transition: background-image var(--transition-duration) ease-in-out;
+}
+@media (max-width: 600px) {
+  .app-wrapper {
+    flex-direction: column-reverse;
+  }
 }
