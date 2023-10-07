@@ -44,7 +44,7 @@ function Window({ children }) {
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
       onClick={handleClick}
-      tabIndex={0}
+      tabIndex={2}
     >
       {children}
     </div>
