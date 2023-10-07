@@ -7,7 +7,6 @@ function Window({ children }) {
   const [startY, setStartY] = useState(Math.random() * 100);
   const [offsetX, setOffsetX] = useState(Math.random() * 100);
   const [offsetY, setOffsetY] = useState(Math.random() * 100);
-  const [zIndex, setZIndex] = useState(1);
   const windowRef = useRef(null);
   const handleMouseDown = (e) => {
     setIsDragging(true);
@@ -30,9 +29,7 @@ function Window({ children }) {
   const handleClick = () => {
     windowRef.current.focus();
   };
-  const handleClickOutside = () => {
-    setZIndex(1);
-  };
+
   return (
     <div
       className={classes.Wrapper}
@@ -44,7 +41,6 @@ function Window({ children }) {
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
       onClick={handleClick}
-      onClickOutside={handleClickOutside}
       tabIndex={0}
     >
       {children}

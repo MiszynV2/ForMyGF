@@ -1,10 +1,13 @@
-import React, { useState, useEffect, userRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import classes from "./Footer.module.css";
 import windowsLogo from "../../../sources/windowsLogo.png";
 import UserMenu from "./UserMenu";
-function Footer({ bears }) {
+
+function Footer() {
   const [currentTime, setCurrentTime] = useState(getCurrentTime());
   const [isMenuVisible, setIsMenuVisible] = useState(false);
+  const userMenuRef = useRef(null);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(getCurrentTime());
@@ -12,10 +15,12 @@ function Footer({ bears }) {
 
     return () => clearInterval(interval);
   }, []);
+
   function handleUserMenuOptions() {
     const isVisible = !isMenuVisible;
     setIsMenuVisible(isVisible);
   }
+
   function getCurrentTime() {
     const now = new Date();
     const hours = String(now.getHours()).padStart(2, "0");
@@ -24,9 +29,21 @@ function Footer({ bears }) {
     return `${hours}:${minutes}`;
   }
 
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (userMenuRef.current && !userMenuRef.current.contains(event.target)) {
+        setIsMenuVisible(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <div className={classes.FooterWrapper}>
-      {isMenuVisible && <UserMenu />}
       <button
         onClick={handleUserMenuOptions}
         className={classes.FooterStartButton}
@@ -38,6 +55,9 @@ function Footer({ bears }) {
         />
         <span>Start</span>
       </button>
+      <div ref={userMenuRef}>
+        {isMenuVisible && <UserMenu onClose={handleUserMenuOptions} />}
+      </div>
       <div className={classes.FooterOptionsWrapper}>
         <div className={classes.FooterOptions}>
           <img
