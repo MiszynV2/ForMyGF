@@ -1,5 +1,4 @@
 Windows XP Portfolio
-Website Link: windows-xp-portfolio.vercel.app
 
 The Windows XP Portfolio is an interactive website built using React that emulates the Windows XP user interface. This website offers various features reminiscent of the classic Windows XP operating system.
 
