@@ -55,7 +55,7 @@ function UserMenu() {
         <ul className={classes.UserMenuLeftSectionWrapper}>
           {USER_MENU_DATA1.map((element) => {
             return (
-              <div className={classes.UserMenuLeftSectionItem}>
+              <li className={classes.UserMenuLeftSectionItem}>
                 <img
                   className={classes.UserMenuLeftSectionImage}
                   src={element.icon}
@@ -65,15 +65,15 @@ function UserMenu() {
                   <span className={classes.title}>{element.title}</span>
                   <span className={classes.subtitle}>{element.subtitle}</span>
                 </div>
-              </div>
+              </li>
             );
           })}
         </ul>
 
         <ul className={classes.UserMenuRightSectionWrapper}>
-          {USER_MENU_DATA2.map((element) => {
+          {USER_MENU_DATA2.map((element, index) => {
             return (
-              <div className={classes.UserMenuRightSectionItem}>
+              <li className={classes.UserMenuRightSectionItem} key={index}>
                 <img
                   className={classes.UserMenuRightSectionImage}
                   src={element.icon}
@@ -83,7 +83,7 @@ function UserMenu() {
                   <span className={classes.title}>{element.title}</span>
                   <span className={classes.subtitle}>{element.subtitle}</span>
                 </div>
-              </div>
+              </li>
             );
           })}
         </ul>

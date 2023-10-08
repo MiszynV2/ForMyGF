@@ -7,6 +7,7 @@ function FolderItem({ onClick, name, alt, icon }) {
   const [offsetX, setOffsetX] = useState(0);
   const [offsetY, setOffsetY] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 700);
   const [isHighlighted, setIsHighlighted] = useState(false);
 
   const handleMouseDown = (e) => {
@@ -27,9 +28,6 @@ function FolderItem({ onClick, name, alt, icon }) {
   const handleMouseUp = () => {
     setIsDragging(false);
     setIsHighlighted(true);
-    setTimeout(() => {
-      setIsHighlighted(false);
-    }, 760);
   };
 
   const handleClick = () => {
@@ -38,9 +36,7 @@ function FolderItem({ onClick, name, alt, icon }) {
 
   return (
     <div
-      className={`${classes.FolderItemWrapper} ${
-        isHighlighted ? classes.Highlighted : ""
-      }`}
+      className={`${classes.FolderItemWrapper} ${classes.isHighlighted}`}
       style={{
         transform: `translate(${offsetX}px, ${offsetY}px)`,
       }}
@@ -49,6 +45,7 @@ function FolderItem({ onClick, name, alt, icon }) {
       onMouseUp={handleMouseUp}
       onDoubleClick={onClick}
       onClick={handleClick}
+      tabIndex={0}
     >
       <img src={icon} className={classes.FolderLogo} alt={""} />
       <h1 className={classes.FolderText}>{name}</h1>

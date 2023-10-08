@@ -6,6 +6,14 @@ import Window from "../Atoms/Window";
 import TitleBar from "../Atoms/TitleBar";
 import Options from "../Atoms/Options";
 
+const SKILLSET_DATA = [
+  { htmlFor: "react", text: "react.js" },
+  { htmlFor: "html", text: "html" },
+  { htmlFor: "css", text: "css" },
+  { htmlFor: "fast", text: "fast learner" },
+  { htmlFor: "minded", text: "open minded" },
+  { htmlFor: "people", text: "open for people" },
+];
 function SkillsSet({ close }) {
   const options = ["File", "Edit", "Format", "View", "Help"];
   const title = "Skills Set";
@@ -14,72 +22,20 @@ function SkillsSet({ close }) {
       <TitleBar image={image} title={title} close={close} />
       <Options options={options} />
       <div className={classes.TextWrapper}>
-        <div>
-          <input
-            className={classes.InputReact}
-            checked
-            type="checkbox"
-            htmlFor="react"
-          ></input>
-          <label className={classes.LabelReact} for="react">
-            react.js
-          </label>
-        </div>
-        <div>
-          <input
-            className={classes.InputHtml}
-            checked
-            type="checkbox"
-            htmlFor="html"
-          ></input>
-          <label className={classes.LabelHtml} for="html">
-            html
-          </label>
-        </div>
-        <div>
-          <input
-            className={classes.InputCss}
-            checked
-            type="checkbox"
-            htmlFor="css"
-          ></input>
-          <label className={classes.LabelCss} for="css">
-            css
-          </label>
-        </div>
-        <div>
-          <input
-            className={classes.InputFast}
-            checked
-            type="checkbox"
-            htmlFor="fast"
-          ></input>
-          <label className={classes.LabelFast} for="fast">
-            fast learner
-          </label>
-        </div>
-        <div>
-          <input
-            className={classes.InputMinded}
-            checked
-            type="checkbox"
-            htmlFor="minded"
-          ></input>
-          <label className={classes.LabelReact} for="minded">
-            open minded
-          </label>
-        </div>
-        <div>
-          <input
-            className={classes.InputPeople}
-            checked
-            type="checkbox"
-            htmlFor="people"
-          ></input>
-          <label className={classes.LabelPeople} for="people">
-            open for people
-          </label>
-        </div>
+        {SKILLSET_DATA.map((element, index) => {
+          return (
+            <div key={index}>
+              <input
+                className={classes.InputReact}
+                type="checkbox"
+                htmlFor={element.htmlFor}
+              ></input>
+              <label className={classes.LabelReact} htmlFor={element.htmlFor}>
+                {element.text}
+              </label>
+            </div>
+          );
+        })}
       </div>
     </Window>
   );

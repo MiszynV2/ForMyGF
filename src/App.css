@@ -123,3 +123,7 @@ body {
     flex-direction: column-reverse;
   }
 }
+
+li {
+  list-style: none;
+}

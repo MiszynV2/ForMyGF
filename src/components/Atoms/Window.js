@@ -51,9 +51,9 @@ function Window({ children }) {
             transform: `translate(${offsetX}px, ${offsetY}px)`,
           }}
           ref={windowRef}
-          ontouchstart={handleMouseDown}
-          ontouchmove={handleMouseDown}
-          ontouchend={handleMouseUp}
+          onTouchStart={handleMouseDown}
+          onTouchMove={handleMouseDown}
+          onTouchEnd={handleMouseUp}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
@@ -70,9 +70,9 @@ function Window({ children }) {
             transform: `translate(${offsetX}px, ${offsetY}px)`,
           }}
           ref={windowRef}
-          ontouchstart={handleMouseDown}
-          ontouchmove={handleMouseDown}
-          ontouchend={handleMouseUp}
+          onTouchStart={handleMouseDown}
+          onTouchMove={handleMouseDown}
+          onTouchEnd={handleMouseUp}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
