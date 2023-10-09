@@ -2,12 +2,13 @@ import React, { useState, useEffect, useRef } from "react";
 import classes from "./Footer.module.css";
 import windowsLogo from "../../../sources/windowsLogo.png";
 import UserMenu from "./UserMenu";
+import FooterWindowsItem from "./FooterWindowItem";
 
-function Footer() {
+function Footer({ activeWindowsId, clickedWindow, setClickedWindow }) {
   const [currentTime, setCurrentTime] = useState(getCurrentTime());
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const userMenuRef = useRef(null);
-
+  console.log({ activeWindowsId });
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(getCurrentTime());
@@ -57,6 +58,18 @@ function Footer() {
       </button>
       <div ref={userMenuRef}>
         {isMenuVisible && <UserMenu onClose={handleUserMenuOptions} />}
+      </div>
+      <div className={classes.FooterWindowsItemWrapper}>
+        {activeWindowsId.map((window) => {
+          return (
+            <FooterWindowsItem
+              clickedWindow={clickedWindow}
+              activeWindowsId={activeWindowsId}
+              setClickedWindow={setClickedWindow}
+              title={window}
+            />
+          );
+        })}
       </div>
       <div className={classes.FooterOptionsWrapper}>
         <div className={classes.FooterOptions}>

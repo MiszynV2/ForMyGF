@@ -163,3 +163,7 @@
   width: 100%;
   background-color: rgb(47, 113, 205);
 }
+.UserMenuFooter div {
+  display: flex;
+  align-items: center;
+}

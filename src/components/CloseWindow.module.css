@@ -1,0 +1,95 @@
+.Wrapper {
+  margin-top: 30vh;
+  width: 300px;
+  height: 190px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 99;
+}
+
+.TopSection {
+  height: 42px;
+  display: flex;
+  padding-left: 10px;
+  align-items: center;
+  background: rgb(9, 33, 120);
+  justify-content: space-between;
+}
+.TopSection img {
+  height: 30px;
+  width: 30px;
+}
+.TopSection span {
+  color: white;
+  font-size: 17px;
+}
+.MiddleSection {
+  flex: 1 1 0%;
+  background: linear-gradient(
+    to right,
+    rgb(51, 73, 224) 0%,
+    rgb(97, 126, 230) 47%,
+    rgb(97, 126, 230) 53%,
+    rgb(51, 73, 224) 100%
+  );
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0px 30px;
+  position: relative;
+}
+.MiddleSection div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.MiddleSection img {
+  height: 30px;
+  width: 30px;
+}
+.MiddleSection span {
+  padding-top: 3px;
+  font-weight: bold;
+  font-size: 11px;
+}
+.BottomSection {
+  height: 42px;
+  background: rgb(9, 33, 120);
+  display: flex;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.AllScreen {
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  display: flex;
+  background-color: rgba(240, 248, 255, 0.357);
+  position: relative;
+  animation: changeBackgroundColor 4s ease-in-out forwards;
+}
+
+@keyframes changeBackgroundColor {
+  0% {
+    background-color: rgba(240, 248, 255, 0);
+  }
+  100% {
+    background-color: rgba(3, 3, 3, 0.865);
+  }
+}
+.Filter {
+  filter: opacity(0.5);
+  width: 100vw;
+  height: 100vh;
+}

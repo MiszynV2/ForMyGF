@@ -1,20 +1,113 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import tapeta from "./sources/tapeta.jpg";
-import tapeta6 from "./sources/tapeta6.jpg";
 import FolderList from "./components/FolderList";
 import Footer from "./components/mainFolders/footerComponent/Footer";
 import moonButton from "./sources/moonbutton.png";
 import sunButton from "./sources/sunbutton.png";
-import MobileClock from "./components/mobileFolder/MobileClock";
-import MobileFooter from "./components/mobileFolder/MobileFooter";
 import { Analytics } from "@vercel/analytics/react";
+import Industry from "./components/mainFolders/Industry";
+import Projects from "./components/mainFolders/Projects";
+import Education from "./components/mainFolders/Education";
+import Experience from "./components/mainFolders/Experience";
+import Haslo from "./components/mainFolders/Haslo";
+import AboutMe from "./components/mainFolders/AboutMe";
+import TicTacToe from "./components/mainFolders/TicTacToe";
+import Duck from "./components/mainFolders/Duck";
+import SkillsSet from "./components/mainFolders/SkillsSet";
+import Contact from "./components/mainFolders/Contact";
+import contact from "./sources/images/contact.png";
+import projects from "./sources/images/projects.png";
+import blocks from "./sources/images/experience.png";
+import text from "./sources/images/text.png";
+import setting from "./sources/setting.svg";
+import game from "./sources/game.svg";
+import duck from "./sources/duck.png";
+import check from "./sources/check.svg";
+import education from "./sources/images/education.png";
+const WINDOWS_DATA = [
+  {
+    id: "about_me",
+    isOpen: false,
+    name: "About me",
+    icon: text,
+    Component: AboutMe,
+  },
+  {
+    id: "industry",
+    isOpen: false,
+    name: "Industry knowledge2",
+    icon: setting,
+    Component: Industry,
+  },
+  {
+    id: "project",
+    isOpen: false,
+    name: "Projects",
+    icon: projects,
+    Component: Projects,
+  },
+  {
+    id: "skills_set",
+    isOpen: false,
+    name: "Skills set",
+    icon: check,
+    Component: SkillsSet,
+  },
+  {
+    id: "education",
+    isOpen: false,
+    name: "Education",
+    icon: blocks,
+    Component: Education,
+  },
+  {
+    id: "experience",
+    isOpen: false,
+    name: "Experience",
+    icon: education,
+    Component: Experience,
+  },
+  {
+    id: "contact",
+    isOpen: false,
+    name: "Contact me",
+    icon: contact,
+    Component: Contact,
+  },
+  {
+    id: "haslo",
+    isOpen: false,
+    name: "Hasło (tajne)",
+    icon: setting,
+    Component: Haslo,
+  },
+  {
+    id: "tic_tac_toe",
+    isOpen: false,
+    name: "Tic tac toe",
+    icon: game,
+    Component: TicTacToe,
+  },
+  {
+    id: "duck",
+    isOpen: false,
+    name: "Duck.exe",
+    icon: duck,
+    Component: Duck,
+  },
+];
 
 function App() {
   const [angelHour, setAngelHour] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 700);
   const [buttonIcon, setButtonIcon] = useState(moonButton);
   const [currentTheme, setTheme] = useState("light");
+  const [clickedWindow, setClickedWindow] = useState("about_me");
+  const [activeWindowsId, setActiveWindowsId] = useState([
+    "duck",
+    "skills_set",
+    "about_me",
+  ]);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -49,7 +142,6 @@ function App() {
 
       setAngelHour(isAngelHour ? `${hours}:${minutes}` : null);
     }, 1000);
-
     const handleResize = () => {
       setIsMobile(window.innerWidth < 700);
     };
@@ -80,12 +172,20 @@ function App() {
       <Analytics />
       {angelHour && <div className="angel-hour-message">{`${angelHour}`}</div>}
 
-      <FolderList />
+      <FolderList
+        setActiveWindowsId={setActiveWindowsId}
+        activeWindowsId={activeWindowsId}
+        data={WINDOWS_DATA}
+      />
 
       <button className="moonButton" onClick={toggleTheme}>
         <img alt="switch theme button" src={buttonIcon} />
       </button>
-      <Footer />
+      <Footer
+        setClickedWindow={setClickedWindow}
+        clickedWindow={clickedWindow}
+        activeWindowsId={activeWindowsId}
+      />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import windowsLogo from "../../../sources/windowsLogo.png";
 import car from "../../../sources/car.png";
 import logoff from "../../../sources/logoff.png";
 import turnoff from "../../../sources/turnoff.png";
+import CloseWindow from "../../CloseWindow";
 
 const USER_MENU_DATA1 = [
   { title: "Internet", icon: windowsLogo, subtitle: "Intenet Explorer" },
@@ -45,6 +46,10 @@ const USER_MENU_DATA2 = [
   },
 ];
 function UserMenu() {
+  const [isButtonClicked, setIsButtonClicked] = useState(false);
+  function handleImgClick() {
+    setIsButtonClicked(!isButtonClicked);
+  }
   return (
     <div className={classes.UserMenuWrapper}>
       <div className={classes.MenuHeader}>
@@ -89,19 +94,25 @@ function UserMenu() {
         </ul>
       </div>
       <div className={classes.UserMenuFooter}>
-        <img
-          className={classes.UserMenuLeftSectionImage}
-          src={logoff}
-          alt={"close off logo"}
-        />
-        <span>Log Off</span>
-        <img
-          className={classes.UserMenuRightSectionImage}
-          src={turnoff}
-          alt={"turn off logo"}
-        />
-        <span>Turn Off Computer</span>
+        <div onClick={handleImgClick}>
+          <img
+            className={classes.UserMenuLeftSectionImage}
+            src={logoff}
+            alt={"close off logo"}
+            onClick={handleImgClick}
+          />
+          <span>Log Off</span>
+        </div>
+        <div onClick={handleImgClick}>
+          <img
+            className={classes.UserMenuRightSectionImage}
+            src={turnoff}
+            alt={"turn off logo"}
+          />
+          <span>Turn Off Computer</span>
+        </div>
       </div>
+      {isButtonClicked && <CloseWindow onCancelClick={handleImgClick}/>}
     </div>
   );
 }
