@@ -16,12 +16,11 @@ function FooterWindowsItem({
   const windowRef = useRef(null);
   const handleClick = () => {
     windowRef.current.focus();
-    console.log("łołi");
   };
   setClickedWindow(title);
   return (
     <div
-      tabIndex={1}
+      tabIndex={0}
       ref={windowRef}
       onClick={handleClick}
       className={classes.Item}

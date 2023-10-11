@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./Bears.module.css";
+import classes from "./Duck.module.css";
 import Game from "./Game";
 import Window from "../Atoms/Window";
 import image from "../../sources/duck.png";

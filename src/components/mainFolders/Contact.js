@@ -30,9 +30,7 @@ function Contact({ close }) {
 
     if (!email.match(regMail)) {
       setIsEmailValid(false);
-      console.log(process.env.API_KEY);
 
-      console.log("nie zgadza sie");
       return;
     } else {
       try {
@@ -44,7 +42,6 @@ function Contact({ close }) {
           date: date,
         });
         setIsEmailSend(true);
-        console.log("E-mail został wysłany pomyślnie.");
       } catch (error) {
         console.error("Wystąpił błąd podczas wysyłania e-maila.", error);
       }

@@ -3,8 +3,6 @@ import classes from "./FolderList.module.css";
 import FolderItem from "./FolderItem";
 
 function FolderList({ data, activeWindowsId, setActiveWindowsId }) {
-  console.log({ data });
-
   const [isMobile, setIsMobile] = useState(window.innerWidth < 700);
 
   useEffect(() => {
@@ -16,11 +14,9 @@ function FolderList({ data, activeWindowsId, setActiveWindowsId }) {
     setActiveWindowsId((prevState) => [...new Set([...prevState, windowId])]);
   }
   function handleCloseWindows(windowId) {
-    console.log("closewindow ", windowId.id);
     const filteredWindowsId = activeWindowsId.filter(
       (id) => id !== windowId.id
     );
-    console.log("filteredWindowsId ", filteredWindowsId);
 
     return setActiveWindowsId(filteredWindowsId);
   }

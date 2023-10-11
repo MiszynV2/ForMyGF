@@ -8,7 +8,6 @@ function Footer({ activeWindowsId, clickedWindow, setClickedWindow }) {
   const [currentTime, setCurrentTime] = useState(getCurrentTime());
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const userMenuRef = useRef(null);
-  console.log({ activeWindowsId });
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(getCurrentTime());
@@ -41,7 +40,7 @@ function Footer({ activeWindowsId, clickedWindow, setClickedWindow }) {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  });
 
   return (
     <div className={classes.FooterWrapper}>

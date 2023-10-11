@@ -15,9 +15,10 @@ function Lista({ close }) {
   return (
     <Window>
       <TitleBar image={image} title={title} close={close} />
-      <Options options={options} />
       <div className={classes.ProjectContent}>
-        <textarea tabIndex={1} value={txtChange} onChange={handleTxtChange} />
+        <Options options={options} />
+
+        <textarea value={txtChange} onChange={handleTxtChange} />
       </div>
     </Window>
   );

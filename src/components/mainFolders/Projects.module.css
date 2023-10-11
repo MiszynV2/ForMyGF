@@ -3,7 +3,39 @@
   display: flex;
 }
 .ProjectContent textarea {
-  width: 400px;
   height: 400px;
   font-size: 20px;
+}
+@font-face {
+  font-family: "windowsxp";
+  src: url("../../sources/windows-xp-tahoma.ttf") format("truetype");
+}
+
+.ImageWrapper {
+  padding: 0.5rem;
+  border-color: #e2e8f0;
+}
+
+.Icons {
+  display: flex;
+}
+
+.ProjectContent {
+  display: flex;
+  height: 300px;
+  padding: 0 5px 5px;
+  background-color: #0997ff;
+  flex-direction: column;
+}
+.ProjectContent textarea {
+  flex: 1 1 auto;
+  outline: none;
+  font-family: "Lucida Console", monospace;
+  font-size: 13px;
+  line-height: 19px;
+  resize: none;
+  overflow: scroll;
+}
+.FolderLogo {
+  width: 20px;
 }

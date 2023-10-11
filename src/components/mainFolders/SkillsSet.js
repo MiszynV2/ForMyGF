@@ -20,22 +20,24 @@ function SkillsSet({ close }) {
   return (
     <Window>
       <TitleBar image={image} title={title} close={close} />
-      <Options options={options} />
       <div className={classes.TextWrapper}>
-        {SKILLSET_DATA.map((element, index) => {
-          return (
-            <div key={index}>
-              <input
-                className={classes.InputReact}
-                type="checkbox"
-                htmlFor={element.htmlFor}
-              ></input>
-              <label className={classes.LabelReact} htmlFor={element.htmlFor}>
-                {element.text}
-              </label>
-            </div>
-          );
-        })}
+        <Options options={options} />
+        <div className={classes.UlWrapper}>
+          {SKILLSET_DATA.map((element, index) => {
+            return (
+              <div key={index}>
+                <input
+                  className={classes.InputReact}
+                  type="checkbox"
+                  htmlFor={element.htmlFor}
+                ></input>
+                <label className={classes.LabelReact} htmlFor={element.htmlFor}>
+                  {element.text}
+                </label>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </Window>
   );

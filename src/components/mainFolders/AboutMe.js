@@ -12,9 +12,10 @@ function AboutMe({ close }) {
   return (
     <Window>
       <TitleBar image={image} title={title} close={close} />
-      <Options options={options} />
       <div className={classes.TextWrapper}>
-        <span className={classes.Text}>
+        <Options options={options} />
+
+        <textarea className={classes.Text} spellCheck="false">
           As a Junior Front-End Engineer, I am passionate about creating
           engaging user experiences and building responsive web applications.
           With a strong foundation in HTML, CSS, and JavaScript, I am
@@ -24,7 +25,7 @@ function AboutMe({ close }) {
           to create high-quality end products. Outside of work, I stay
           up-to-date with the latest industry news and trends and enjoy making
           new recipes in my kitchen.
-        </span>
+        </textarea>
       </div>
     </Window>
   );
