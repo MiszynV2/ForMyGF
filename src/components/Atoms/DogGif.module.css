@@ -1,0 +1,26 @@
+.dogoImg {
+  position: absolute;
+  left: 90%;
+  top: 80%;
+  width: 150px;
+  height: 140px;
+}
+.CloudPaperClip {
+  position: absolute;
+  display: flex;
+  left: 80%;
+  top: 70%;
+  height: 154px;
+  width: 63px;
+  align-items: center;
+  justify-content: center;
+}
+.Cloud {
+  position: absolute;
+}
+.Text {
+  position: absolute;
+  width: 190px;
+  text-align: center;
+  font-size: 20px;
+}

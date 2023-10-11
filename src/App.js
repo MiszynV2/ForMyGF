@@ -9,7 +9,7 @@ import Industry from "./components/mainFolders/Industry";
 import Projects from "./components/mainFolders/Projects";
 import Education from "./components/mainFolders/Education";
 import Experience from "./components/mainFolders/Experience";
-import Haslo from "./components/mainFolders/Haslo";
+import Computer from "./components/mainFolders/Computer";
 import AboutMe from "./components/mainFolders/AboutMe";
 import TicTacToe from "./components/mainFolders/TicTacToe";
 import Duck from "./components/mainFolders/Duck";
@@ -21,9 +21,13 @@ import blocks from "./sources/images/experience.png";
 import text from "./sources/images/text.png";
 import setting from "./sources/setting.svg";
 import game from "./sources/game.svg";
+import computer from "./sources/images/computer.png";
 import duck from "./sources/duck.png";
 import check from "./sources/check.svg";
 import education from "./sources/images/education.png";
+import dogo from "./sources/dogo.gif";
+import DogGif from "./components/Atoms/DogGif";
+
 const WINDOWS_DATA = [
   {
     id: "about_me",
@@ -75,11 +79,11 @@ const WINDOWS_DATA = [
     Component: Contact,
   },
   {
-    id: "haslo",
+    id: "Computer",
     isOpen: false,
-    name: "Hasło (tajne)",
-    icon: setting,
-    Component: Haslo,
+    name: "My Computer",
+    icon: computer,
+    Component: Computer,
   },
   {
     id: "tic_tac_toe",
@@ -181,6 +185,7 @@ function App() {
       <button className="moonButton" onClick={toggleTheme}>
         <img alt="switch theme button" src={buttonIcon} />
       </button>
+      {!isMobile && <DogGif />}
       <Footer
         setClickedWindow={setClickedWindow}
         clickedWindow={clickedWindow}
