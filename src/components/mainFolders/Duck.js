@@ -4,12 +4,14 @@ import Game from "./Game";
 import Window from "../Atoms/Window";
 import image from "../../sources/duck.png";
 import TitleBar from "../Atoms/TitleBar";
+import Options from "../Atoms/Options";
 
 function Duck({ close }) {
   const title = "Duck.exe";
   return (
     <Window>
       <TitleBar image={image} title={title} close={close} />
+      <Options options={["To play use WSAD or Arrows"]} />
       <div className={classes.ButtonImageWrapper}>
         <Game />
       </div>
