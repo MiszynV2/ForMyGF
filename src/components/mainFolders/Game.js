@@ -140,6 +140,12 @@ const Game = () => {
         this.position.y
       );
     }
+    die() {
+      contextRef.current.clearRect(0, 0, canvasWidth, canvasHeight);
+      contextRef.current.fillStyle = "red";
+      contextRef.current.font = "bold 98px Arial";
+      contextRef.current.fillText("You are dead", 180, canvasHeight / 2);
+    }
 
     update() {
       if (this.velocity.x !== 0 || this.velocity.y !== 0) {
@@ -396,6 +402,11 @@ const Game = () => {
           decoration.position.x += player.current.speed * 0.13;
         }
       });
+    }
+    console.log(player.current.position);
+
+    if (player.current.position.y > 610) {
+      player.current.die();
     }
     player.current.stopMoving();
 
