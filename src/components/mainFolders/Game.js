@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import platform from "../../sources/platform.png";
 import hills from "../../sources/hills.png";
 import background from "../../sources/background.png";
@@ -11,6 +11,7 @@ import duckLeftStand from "../../sources/duckLeftStand.png";
 import yellowpipe from "../../sources/yellowpipe.png";
 import purplepipe from "../../sources/purplepipe.png";
 import redpipe from "../../sources/redpipe.png";
+import classes from "./Duck.module.css";
 
 const createImage = (imageSrc) => {
   const image = new Image();
@@ -18,7 +19,7 @@ const createImage = (imageSrc) => {
   return image;
 };
 
-const Game = () => {
+const Game = ({ setIsDead, isDead }) => {
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
   const animationIdRef = useRef(null);
@@ -32,7 +33,22 @@ const Game = () => {
   const canvasHeight = 1020;
 
   const gravity = 0.2;
+  const generateRandomPlatforms = () => {
+    const randomPlatforms = [];
+    const numPlatforms = 1000;
 
+    for (let i = 0; i < numPlatforms; i++) {
+      const x = Math.random() * (canvasWidth + platformImage.width * 400);
+      const y = Math.random() * (canvasHeight - 400);
+      const randomImage = Math.random() > 0.5 ? platformImage : floatingImage;
+      randomPlatforms.push(
+        new Platform({ y: 628, x: 0, image: platformImage })
+      );
+      randomPlatforms.push(new Platform({ x, y, image: randomImage }));
+    }
+
+    return randomPlatforms;
+  };
   useEffect(() => {
     const canvas = canvasRef.current;
     const context = canvas.getContext("2d");
@@ -67,7 +83,7 @@ const Game = () => {
     document.addEventListener("keyup", handleKeyUp);
 
     animate();
-
+    platforms = generateRandomPlatforms();
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("keyup", handleKeyUp);
@@ -141,15 +157,7 @@ const Game = () => {
       );
     }
     die() {
-      contextRef.current.clearRect(0, 0, canvasWidth, canvasHeight);
-      contextRef.current.fillStyle = "red";
-      contextRef.current.font = "bold 98px Arial";
-      contextRef.current.fillText("You are dead", 80, canvasHeight / 4);
-      contextRef.current.fillText(
-        player.current.position.x,
-        400,
-        canvasHeight / 2
-      );
+      setIsDead(true);
     }
 
     update() {
@@ -343,6 +351,98 @@ const Game = () => {
       x: platformImage.width * 20,
       image: yellowPipeImage,
     }),
+    new Platform({
+      x: platformImage.width * 21,
+      y: 428,
+      image: yellowPipeImage,
+    }),
+    new Platform({
+      x: platformImage.width * 22,
+      y: 328,
+      image: yellowPipeImage,
+    }),
+    new Platform({
+      x: platformImage.width * 23,
+      y: 428,
+      image: yellowPipeImage,
+    }),
+    new Platform({
+      x: platformImage.width * 24,
+      y: 328,
+      image: purplePipeImage,
+    }),
+    new Platform({
+      x: platformImage.width * 25,
+      y: 428,
+      image: yellowPipeImage,
+    }),
+    new Platform({ x: platformImage.width * 26, y: 528, image: floatingImage }),
+    new Platform({ x: platformImage.width * 27, y: 528, image: floatingImage }),
+    new Platform({ x: platformImage.width * 28, y: 628, image: platformImage }),
+    new Platform({ x: platformImage.width * 29, y: 628, image: platformImage }),
+    new Platform({ x: platformImage.width * 30, y: 628, image: platformImage }),
+    new Platform({ x: platformImage.width * 31, y: 628, image: platformImage }),
+    new Platform({ x: platformImage.width * 32, y: 628, image: platformImage }),
+    new Platform({ x: platformImage.width * 33, y: 628, image: platformImage }),
+    new Platform({ x: platformImage.width * 34, y: 628, image: platformImage }),
+    new Platform({ x: platformImage.width * 35, y: 628, image: platformImage }),
+    new Platform({ x: platformImage.width * 36, y: 628, image: platformImage }),
+    new Platform({ x: platformImage.width * 37, y: 628, image: platformImage }),
+    new Platform({ x: platformImage.width * 38, y: 628, image: platformImage }),
+    new Platform({ x: platformImage.width * 39, y: 628, image: platformImage }),
+    new Platform({ x: platformImage.width * 40, y: 628, image: platformImage }),
+    new Platform({ x: platformImage.width * 41, y: 628, image: platformImage }),
+    new Platform({ x: platformImage.width * 42, y: 628, image: platformImage }),
+    new Platform({ x: platformImage.width * 43, y: 628, image: platformImage }),
+    new Platform({ x: platformImage.width * 44, y: 628, image: platformImage }),
+    new Platform({ x: platformImage.width * 45, y: 628, image: platformImage }),
+    new Platform({ x: platformImage.width * 46, y: 528, image: floatingImage }),
+    new Platform({ x: platformImage.width * 47, y: 528, image: floatingImage }),
+    new Platform({ x: platformImage.width * 48, y: 528, image: floatingImage }),
+    new Platform({ x: platformImage.width * 49, y: 528, image: floatingImage }),
+    new Platform({ x: platformImage.width * 50, y: 528, image: floatingImage }),
+    new Platform({
+      x: platformImage.width * 51,
+      y: 428,
+      image: yellowPipeImage,
+    }),
+    new Platform({
+      x: platformImage.width * 52,
+      y: 428,
+      image: yellowPipeImage,
+    }),
+    new Platform({
+      x: platformImage.width * 53,
+      y: 428,
+      image: yellowPipeImage,
+    }),
+    new Platform({
+      x: platformImage.width * 54,
+      y: 428,
+      image: yellowPipeImage,
+    }),
+    new Platform({
+      x: platformImage.width * 55,
+      y: 328,
+      image: purplePipeImage,
+    }),
+    new Platform({
+      x: platformImage.width * 56,
+      y: 328,
+      image: purplePipeImage,
+    }),
+    new Platform({
+      x: platformImage.width * 57,
+      y: 328,
+      image: purplePipeImage,
+    }),
+    new Platform({
+      x: platformImage.width * 58,
+      y: 328,
+      image: purplePipeImage,
+    }),
+    new Platform({ x: platformImage.width * 59, y: 228, image: redPipeImage }),
+    new Platform({ x: platformImage.width * 60, y: 228, image: redPipeImage }),
   ];
   let decorations = [
     new Decoration({ y: 0, x: 0, image: backgroundImage }),
@@ -435,7 +535,11 @@ const Game = () => {
     animationIdRef.current = requestAnimationFrame(animate);
   }
 
-  return <canvas ref={canvasRef}></canvas>;
+  return (
+    <>
+      <canvas ref={canvasRef}></canvas>
+    </>
+  );
 };
 
 export default Game;
