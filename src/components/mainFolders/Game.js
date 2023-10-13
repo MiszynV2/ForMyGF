@@ -46,7 +46,7 @@ const Game = () => {
     isLeftPressedRef.current = false;
 
     const handleKeyDown = (event) => {
-      if (event.key === "d") {
+      if (event.key === "d" || event.key === "ArrowRight") {
         isRightPressedRef.current = true;
       } else if (event.key === "a" || event.key === "ArrowLeft") {
         isLeftPressedRef.current = true;
@@ -56,7 +56,7 @@ const Game = () => {
     };
 
     const handleKeyUp = (event) => {
-      if (event.key === "d") {
+      if (event.key === "d" || event.key === "ArrowRight") {
         isRightPressedRef.current = false;
       } else if (event.key === "a" || event.key === "ArrowLeft") {
         isLeftPressedRef.current = false;
