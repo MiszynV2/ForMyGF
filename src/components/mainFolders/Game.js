@@ -42,7 +42,7 @@ const Game = ({ setIsDead, isDead }) => {
       const y = Math.random() * (canvasHeight - 400);
       const randomImage = Math.random() > 0.5 ? platformImage : floatingImage;
       randomPlatforms.push(
-        new Platform({ y: 628, x: 300w, image: platformImage })
+        new Platform({ y: 628, x: 300, image: platformImage })
       );
       randomPlatforms.push(new Platform({ x, y, image: randomImage }));
     }
