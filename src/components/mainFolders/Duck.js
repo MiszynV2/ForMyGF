@@ -9,7 +9,7 @@ import Options from "../Atoms/Options";
 function Duck({ close }) {
   const title = "Duck.exe";
   return (
-    <Window>
+    <Window width={650}>
       <TitleBar image={image} title={title} close={close} />
       <Options options={["To play use WSAD or Arrows"]} />
       <div className={classes.ButtonImageWrapper}>

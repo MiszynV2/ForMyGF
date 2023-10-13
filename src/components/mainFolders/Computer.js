@@ -9,7 +9,7 @@ function Computer({ close }) {
   const title = "My Computer";
   const options = ["File", "Edit", "View", "Favorites", "Tools", "Help"];
   return (
-    <Window>
+    <Window width={660}>
       <TitleBar image={image} title={title} close={close} />
       <div className={classes.Wrapper}>
         <Options options={options} />

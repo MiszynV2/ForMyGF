@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import classes from "./TitleBar.module.css";
 import CloseButton from "../../sources/close.svg";
+import MinimizeButton from "../../sources/minimize.svg";
 function TitleBar(props) {
   return (
     <div className={classes.TitleBar}>
@@ -13,6 +14,7 @@ function TitleBar(props) {
         <span className={classes.Title}>{props.title}</span>
       </div>
       <div className={classes.Icons}>
+        <button className={classes.MinimizeButton} src={MinimizeButton} />
         <button
           className={classes.CloseButton}
           src={CloseButton}

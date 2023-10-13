@@ -25,13 +25,17 @@
   padding-left: 10px;
   cursor: default;
 
-  min-height: 40px;
+  min-height: 30px;
 }
 .CloseButton {
   background-image: url("../../sources/close-hover.svg");
   height: 24px;
   width: 24px;
-  margin-right: 10px;
+}
+.MinimizeButton {
+  background-image: url("../../sources/minimize.svg");
+  height: 24px;
+  width: 24px;
 }
 .FolderLogo {
   width: 20px;
@@ -46,4 +50,11 @@
   width: 140px;
   text-align: end;
   text-wrap: nowrap;
+}
+.Icons {
+  width: 100px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 13px;
+  margin-right: 10px;
 }

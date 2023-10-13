@@ -1,15 +1,15 @@
 import React, { useState, useRef, useEffect } from "react";
 import classes from "./Window.module.css";
 
-function Window({ children }) {
+function Window({ children, width = 400, height = 100 }) {
   const [mobile, setMobile] = useState("");
   const [isMobile, setIsMobile] = useState(window.innerWidth < 700);
 
   const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(Math.random() * 100 + 100);
-  const [startY, setStartY] = useState(Math.random() * 100 + 1);
-  const [offsetX, setOffsetX] = useState(Math.random() * 500);
-  const [offsetY, setOffsetY] = useState(Math.random() * -100);
+  const [startX, setStartX] = useState(0);
+  const [startY, setStartY] = useState(0);
+  const [offsetX, setOffsetX] = useState(0);
+  const [offsetY, setOffsetY] = useState(0);
   const windowRef = useRef(null);
   const handleMouseDown = (e) => {
     setIsDragging(true);
@@ -17,12 +17,11 @@ function Window({ children }) {
     setStartY(e.clientY - offsetY);
   };
   useEffect(() => {
-    if (isMobile) {
-      setMobile("Mobile");
-      setStartX(0);
-      setStartY(0);
-      setOffsetX(0);
-      setOffsetY(0);
+    if (!isMobile) {
+      setStartX(Math.random() * 100 + 100);
+      setStartY(Math.random() * 100 + 1);
+      setOffsetX(Math.random() * 500);
+      setOffsetY(Math.random() * -100);
     }
   }, []);
 
@@ -68,6 +67,7 @@ function Window({ children }) {
           className={classes.Wrapper}
           style={{
             transform: `translate(${offsetX}px, ${offsetY}px)`,
+            width: `${width}px`,
           }}
           ref={windowRef}
           onTouchStart={handleMouseDown}

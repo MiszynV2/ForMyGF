@@ -18,9 +18,8 @@ function FolderList({ data, activeWindowsId, setActiveWindowsId }) {
       (id) => id !== windowId.id
     );
 
-    return setActiveWindowsId(filteredWindowsId);
+    setActiveWindowsId(filteredWindowsId);
   }
-
   return (
     <div className={classes.FolderListWrapper}>
       {data.map((folderData, index) => (

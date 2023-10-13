@@ -28,8 +28,8 @@ const Game = () => {
 
   const player = useRef(null);
 
-  const canvasWidth = 850;
-  const canvasHeight = 1650;
+  const canvasWidth = 960;
+  const canvasHeight = 1020;
 
   const gravity = 0.2;
 
@@ -81,7 +81,7 @@ const Game = () => {
       this.isRight = true;
       this.lastIsRight = true;
 
-      this.speed = 3;
+      this.speed = 5;
       this.position = {
         x: 100,
         y: 100,
@@ -108,9 +108,10 @@ const Game = () => {
     }
 
     jump() {
-      if (!this.isJumping) {
-        this.velocity.y = 78;
+      if (!this.isJumping && this.isOnPlatform) {
+        this.velocity.y = 7;
         this.isJumping = true;
+        this.isOnPlatform = false;
       }
     }
 
@@ -152,7 +153,7 @@ const Game = () => {
         this.isRight = false;
       }
       if (this.isOnPlatform && this.isJumping) {
-        this.velocity.y = -this.speed * 2.4;
+        this.velocity.y = -this.speed * 1.4;
         this.isJumping = false;
       }
       if (isLeftPressedRef.current) {
@@ -364,18 +365,9 @@ const Game = () => {
       platform.draw();
     });
 
-    if (isRightPressedRef.current) {
+    if (isRightPressedRef.current && player.current.position.x < 600) {
       player.current.moveRight();
-    } else if (isLeftPressedRef.current) {
-      player.current.moveLeft();
-    } else {
-      player.current.stopMoving();
-    }
-    player.current.update();
-
-    if (isRightPressedRef.current && player.current.position.x < 300) {
-      player.current.moveRight();
-    } else if (isLeftPressedRef.current && player.current.position.x > 100) {
+    } else if (isLeftPressedRef.current && player.current.position.x > 300) {
       player.current.moveLeft();
     } else {
       player.current.stopMoving();
@@ -423,6 +415,7 @@ const Game = () => {
         player.current.isOnPlatform = true;
       }
     });
+    player.current.update();
 
     animationIdRef.current = requestAnimationFrame(animate);
   }

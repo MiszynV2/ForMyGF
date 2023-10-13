@@ -30,71 +30,61 @@ import DogGif from "./components/Atoms/DogGif";
 
 const WINDOWS_DATA = [
   {
-    id: "about_me",
-    isOpen: false,
+    id: "About me",
     name: "About me",
     icon: text,
     Component: AboutMe,
   },
   {
-    id: "industry",
-    isOpen: false,
-    name: "Industry knowledge2",
+    id: "Industry knowledge",
+    name: "Industry knowledge",
     icon: setting,
     Component: Industry,
   },
   {
-    id: "project",
-    isOpen: false,
+    id: "Projects",
     name: "Projects",
     icon: projects,
     Component: Projects,
   },
   {
-    id: "skills_set",
-    isOpen: false,
+    id: "Skills set",
     name: "Skills set",
     icon: check,
     Component: SkillsSet,
   },
   {
-    id: "education",
-    isOpen: false,
+    id: "Education",
     name: "Education",
     icon: blocks,
     Component: Education,
   },
   {
-    id: "experience",
-    isOpen: false,
+    id: "Experience",
     name: "Experience",
     icon: education,
     Component: Experience,
   },
   {
-    id: "contact",
-    isOpen: false,
+    id: "Contact me",
     name: "Contact me",
     icon: contact,
     Component: Contact,
   },
   {
-    id: "Computer",
-    isOpen: false,
+    id: "My Computer",
     name: "My Computer",
     icon: computer,
     Component: Computer,
   },
   {
-    id: "tic_tac_toe",
-    isOpen: false,
+    id: "Tic tac toe",
     name: "Tic tac toe",
     icon: game,
     Component: TicTacToe,
   },
   {
-    id: "duck",
-    isOpen: false,
+    id: "Duck.exe",
     name: "Duck.exe",
     icon: duck,
     Component: Duck,
@@ -106,11 +96,11 @@ function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 700);
   const [buttonIcon, setButtonIcon] = useState(moonButton);
   const [currentTheme, setTheme] = useState("light");
-  const [clickedWindow, setClickedWindow] = useState("about_me");
+  const [clickedWindow, setClickedWindow] = useState("About me");
   const [activeWindowsId, setActiveWindowsId] = useState([
-    "duck",
-    "skills_set",
-    "about_me",
+    "Duck.exe",
+    "Skills set",
+    "About me",
   ]);
 
   useEffect(() => {
