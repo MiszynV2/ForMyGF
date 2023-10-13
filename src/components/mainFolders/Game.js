@@ -408,7 +408,6 @@ const Game = () => {
         }
       });
     }
-    console.log(player.current.position);
 
     if (player.current.position.y > 610) {
       player.current.die();

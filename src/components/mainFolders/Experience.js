@@ -9,7 +9,7 @@ import Options from "../Atoms/Options";
 
 function Education({ close }) {
   const options = ["File", "Edit", "Format", "View", "Help"];
-  const title = "Education";
+  const title = "Experience";
   return (
     <Window>
       <TitleBar image={image} title={title} close={close} />

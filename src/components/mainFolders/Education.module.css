@@ -98,10 +98,15 @@
   top: 255px;
 }
 .CloudPaperClip {
-  width: 216px;
-  height: 158px;
+  width: 209px;
+  height: 185px;
   position: absolute;
-  left: 183px;
-  top: 123px;
+  left: 185px;
+  top: 119px;
   z-index: -1;
+}
+.TextWrapper {
+  padding: 10px;
+  background-color: #ffffcb00;
+  height: 100%;
 }

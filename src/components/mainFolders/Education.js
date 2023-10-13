@@ -32,14 +32,16 @@ function Education({ close }) {
             alt="text cloud"
             src={cloud}
           ></img>
-          <span className={classes.Text}>
-            Throughout my education, I honed my programming skills through
-            challenging task assignments and extracurricular activities such as
-            programming workshops and hackathons. These experiences have given
-            me a strong foundation in programming and problem-solving,
-            empowering me to approach complex technical challenges with
-            confidence and innovation.
-          </span>
+          <div className={classes.TextWrapper}>
+            <span className={classes.Text}>
+              Throughout my education, I honed my programming skills through
+              challenging task assignments and extracurricular activities such
+              as programming workshops and hackathons. These experiences have
+              given me a strong foundation in programming and problem-solving,
+              empowering me to approach complex technical challenges with
+              confidence and innovation.
+            </span>
+          </div>
           <img
             className={classes.ImagePaperClip}
             alt="paper clip"
