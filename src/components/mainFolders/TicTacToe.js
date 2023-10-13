@@ -81,7 +81,7 @@ function Quiz({ close }) {
   };
 
   return (
-    <Window>
+    <Window width={300}>
       <TitleBar image={image} title={title} close={close} />
       {renderBoard()}
       {renderGameResult()}

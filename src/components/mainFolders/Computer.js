@@ -6,6 +6,7 @@ import TitleBar from "../Atoms/TitleBar";
 import Options from "../Atoms/Options";
 import ComputerNavSection from "../Atoms/ComputerNavSection";
 import ComputerRightSection from "../Atoms/ComputerRightSection";
+import ComputerOptions from "../Atoms/ComputerOptions";
 
 function Computer({ close }) {
   const title = "My Computer";
@@ -16,6 +17,8 @@ function Computer({ close }) {
       <TitleBar image={image} title={title} close={close} />
       <div className={classes.Wrapper}>
         <Options options={options} />
+        <ComputerOptions />
+
         <div className={classes.SectionWrapper}>
           <ComputerNavSection />
 

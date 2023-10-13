@@ -144,7 +144,12 @@ const Game = () => {
       contextRef.current.clearRect(0, 0, canvasWidth, canvasHeight);
       contextRef.current.fillStyle = "red";
       contextRef.current.font = "bold 98px Arial";
-      contextRef.current.fillText("You are dead", 180, canvasHeight / 2);
+      contextRef.current.fillText("You are dead", 80, canvasHeight / 4);
+      contextRef.current.fillText(
+        player.current.position.x,
+        400,
+        canvasHeight / 2
+      );
     }
 
     update() {
