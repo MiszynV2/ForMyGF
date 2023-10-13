@@ -1,0 +1,54 @@
+.NavSectionItem {
+  width: 70%;
+  height: 18px;
+  margin-left: 5px;
+  margin-top: 3px;
+}
+
+.NavSectionItem img {
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
+}
+.NavSectionItem span {
+  font-size: 13px;
+  line-height: 14px;
+  color: rgb(12, 50, 125);
+}
+.NavSectionHeader {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  height: 23px;
+  padding-left: 11px;
+  padding-right: 2px;
+  cursor: pointer;
+  background: linear-gradient(
+    to right,
+    rgb(240, 240, 255) 0px,
+    rgb(240, 240, 255) 30%,
+    rgb(168, 188, 255) 100%
+  );
+}
+.NavSectionHeader span {
+  font-weight: 700;
+  color: rgb(12, 50, 125);
+  flex: 1 1 0%;
+}
+.NavSection {
+  width: 180px;
+
+  background: linear-gradient(rgb(116, 138, 255) 0%, rgb(64, 87, 211) 100%);
+  overflow: auto;
+  padding: 10px;
+}
+.NavSectionList {
+  background: linear-gradient(
+      to right,
+      rgb(180, 200, 251) 0%,
+      rgb(164, 185, 251) 50%,
+      rgb(180, 200, 251) 100%
+    )
+    rgba(198, 211, 255, 0.87);
+  margin-top: 15px;
+}

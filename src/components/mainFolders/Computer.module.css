@@ -1,34 +1,11 @@
 .Wrapper {
   display: flex;
-  width: 390px;
   padding: 0 5px 5px;
   background-color: #0997ff;
   flex-direction: column;
 }
-.NavSection {
-  width: 30%;
-  display: flex;
-  background: linear-gradient(rgb(116, 138, 255) 0%, rgb(64, 87, 211) 100%);
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.NavSection div {
-  width: 90%;
-  height: 60px;
-  background: linear-gradient(
-      to right,
-      rgb(180, 200, 251) 0%,
-      rgb(164, 185, 251) 50%,
-      rgb(180, 200, 251) 100%
-    )
-    rgba(198, 211, 255, 0.87);
-}
-.RightSection {
-  background-color: antiquewhite;
-  width: 69%;
-  height: 400px;
-}
+
 .SectionWrapper {
   display: flex;
+  width: 100%;
 }

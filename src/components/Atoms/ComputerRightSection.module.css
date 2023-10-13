@@ -1,0 +1,38 @@
+.RightSection {
+  background-color: rgb(255, 255, 255);
+  width: 74%;
+  height: 400px;
+}
+.RightSectionList {
+  padding: 15px;
+}
+.RightSectionListTitle {
+  width: 300px;
+  font-weight: 700;
+  padding: 2px 0px 3px 12px;
+  position: relative;
+}
+.RightSectionListTitle:after {
+  content: "";
+  display: block;
+  background: linear-gradient(
+    to right,
+    rgb(112, 191, 255) 0px,
+    rgb(255, 255, 255) 100%
+  );
+  position: absolute;
+  bottom: 0px;
+  left: -12px;
+  height: 1px;
+  width: 100%;
+}
+.RightSectionItem {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 15px 15px 0px;
+}
+.RightSectionItem img {
+  margin-right: 10px;
+}
