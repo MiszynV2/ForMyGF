@@ -46,19 +46,19 @@ const Game = () => {
     isLeftPressedRef.current = false;
 
     const handleKeyDown = (event) => {
-      if (event.key === "d" || event.key === "ArrowRight") {
+      if (event.key === "d") {
         isRightPressedRef.current = true;
-      } else if (event.key === "a" || event.key === "ArrowLeft") {
+      } else if (event.key === "a") {
         isLeftPressedRef.current = true;
-      } else if (event.key === "w" || event.key === "ArrowUp") {
+      } else if (event.key === "w") {
         player.current.jump();
       }
     };
 
     const handleKeyUp = (event) => {
-      if (event.key === "d" || event.key === "ArrowRight") {
+      if (event.key === "d") {
         isRightPressedRef.current = false;
-      } else if (event.key === "a" || event.key === "ArrowLeft") {
+      } else if (event.key === "a") {
         isLeftPressedRef.current = false;
       }
     };

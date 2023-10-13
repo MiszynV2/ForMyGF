@@ -11,7 +11,7 @@ function Duck({ close }) {
   return (
     <Window width={650}>
       <TitleBar image={image} title={title} close={close} />
-      <Options options={["To play use WSAD or Arrows"]} />
+      <Options options={["To play use WSAD keys"]} />
       <div className={classes.ButtonImageWrapper}>
         <Game />
       </div>
