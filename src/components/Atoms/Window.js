@@ -37,9 +37,6 @@ function Window({ children, width = 400, height = 100 }) {
   const handleMouseUp = () => {
     setIsDragging(false);
   };
-  const handleClick = () => {
-    windowRef.current.focus();
-  };
 
   return (
     <div>
@@ -56,7 +53,6 @@ function Window({ children, width = 400, height = 100 }) {
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
-          onClick={handleClick}
           tabIndex={0}
         >
           {children}
@@ -76,7 +72,6 @@ function Window({ children, width = 400, height = 100 }) {
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
-          onClick={handleClick}
           tabIndex={0}
         >
           {children}

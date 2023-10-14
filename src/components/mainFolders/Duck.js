@@ -10,7 +10,6 @@ import DeathScreen from "../DeathScreen";
 function Duck({ close }) {
   const title = "Duck.exe";
   const [isDead, setIsDead] = useState(false);
-  const [bestScore, setBestScore] = useState(0);
 
   return (
     <Window width={650}>
