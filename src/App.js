@@ -27,6 +27,8 @@ import check from "./sources/check.svg";
 import education from "./sources/images/education.png";
 import dogo from "./sources/dogo.gif";
 import DogGif from "./components/Atoms/DogGif";
+import minesweeper from "./sources/minesweeper.png";
+import Minesweeper from "./components/Minesweeper";
 
 const WINDOWS_DATA = [
   {
@@ -88,6 +90,12 @@ const WINDOWS_DATA = [
     name: "Duck.exe",
     icon: duck,
     Component: Duck,
+  },
+  {
+    id: "Minesweeper",
+    name: "Minesweeper",
+    icon: minesweeper,
+    Component: Minesweeper,
   },
 ];
 
