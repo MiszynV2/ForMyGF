@@ -5,7 +5,11 @@ import dogo from "../../sources/dogo.gif";
 
 function DogGif() {
   const textList = [
-    "'My computer' windows is now in portfolio!!! Duck.exe and contact me is now Better!!! (click me for more facts)",
+    "Minesweeper is now ready to play! Don't forget to check others difficulties! (click me for more facts)",
+    "next step - paint prototype",
+    "You can always write to me via 'contact me' window",
+    "'My computer' windows is now in portfolio!!! Duck.exe and contact me is now Better!!! ",
+    "Im soo happy to make this project",
     "The Eiffel Tower in Paris, France, is 324 meters tall and weighs approximately 10,100 tons.",
     "The Great Barrier Reef in Australia is the world's largest coral reef system and is visible from space.",
     "Penguins are flightless birds that are highly adapted for life in the water.",

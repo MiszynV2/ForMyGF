@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./Minesweeper.module.css";
 import MinesweeperLogo from "./../sources/minesweeper.png";
 import Window from "./Atoms/Window";
@@ -6,26 +6,48 @@ import TitleBar from "./Atoms/TitleBar";
 import Options from "./Atoms/Options";
 import MinesweeperGame from "./MinesweeperGame";
 import repeat from "../sources/repeat.svg";
+import MinesweeperOptions from "./Atoms/MinesweeperOptions";
 
 function Minesweeper({ close }) {
   const [Restart, SetRestart] = useState(true);
   const [GameMod, SetGameMod] = useState("Easy");
+  const [Width, SetWidth] = useState(250);
+
   const [GameOptions, SetGameOptions] = useState([8, 8, 10]);
 
   const options = ["Game", "Help", "Easy", "Medium", "Hard"];
   const title = "Minesweeper";
   function handleRestart() {
     SetRestart(!Restart);
-    console.log({ Restart });
+  }
+
+  function handleGameMod(title) {
+    SetGameMod(title);
+    if (title === "Easy") {
+      SetWidth(250);
+      SetGameOptions([8, 8, 10]);
+    } else if (title === "Medium") {
+      SetWidth(420);
+
+      SetGameOptions([16, 16, 40]);
+    } else if (title === "Hard") {
+      SetWidth(750);
+      SetGameOptions([16, 30, 99]);
+    }
+    console.log({ GameMod }, { GameOptions });
   }
 
   return (
-    <Window width={250}>
+    <Window width={Width}>
       <TitleBar image={MinesweeperLogo} title={title} close={close} />
       <div className={classes.TextWrapper}>
-        <Options options={options} />
-        {!Restart && <MinesweeperGame Restart={handleRestart} />}
-        {Restart && <MinesweeperGame Restart={handleRestart} />}{" "}
+        <MinesweeperOptions SetTitle={handleGameMod} options={options} />
+        {!Restart && (
+          <MinesweeperGame GameOptions={GameOptions} Restart={handleRestart} />
+        )}
+        {Restart && (
+          <MinesweeperGame GameOptions={GameOptions} Restart={handleRestart} />
+        )}{" "}
       </div>
     </Window>
   );

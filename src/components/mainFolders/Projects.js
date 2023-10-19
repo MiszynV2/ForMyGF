@@ -6,7 +6,9 @@ import TitleBar from "../Atoms/TitleBar";
 import Options from "../Atoms/Options";
 
 function Lista({ close }) {
-  const [txtChange, setTxtChange] = useState("");
+  const [txtChange, setTxtChange] = useState(
+    "Check my github: https://github.com/MiszynV2"
+  );
   const options = ["File", "Edit", "Format", "View", "Help"];
   const title = "Untilted - txt";
   const handleTxtChange = (e) => {

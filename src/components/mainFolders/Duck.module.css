@@ -70,6 +70,7 @@
   padding: 0 5px 5px;
   background-color: #0997ff;
   flex-direction: column;
+  height: 450px;
 }
 .Text {
   font-size: 24px;

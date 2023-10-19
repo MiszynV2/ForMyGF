@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classes from "./Minesweeper.module.css";
 import bomb from "../sources/bomb.png";
 import repeat from "../sources/repeat.svg";
 
-function MinesweeperGame({ Restart }) {
-  const [board, setBoard] = useState(generateBoard(8, 8, 10));
+function MinesweeperGame({ Restart, GameOptions }) {
+  const [board, setBoard] = useState(generateBoard(...GameOptions));
   const [started, setStarted] = useState(false);
+  useEffect(() => {
+    setBoard(generateBoard(...GameOptions));
+    setStarted(false); // Reset the game state when options change
+  }, [GameOptions]);
+
   function generateBoard(rows, columns, mines) {
     const board = [];
     for (let i = 0; i < rows; i++) {

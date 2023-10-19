@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import classes from "./Options.module.css";
 
-function Options(props) {
+function MinesweeperOptions(props) {
+  function handleTitle(title) {
+    return () => {
+      props.SetTitle(title);
+    };
+  }
+
   return (
     <ul className={classes.Options}>
       {props.options.map((title, index) => {
         return (
-          <li key={index}>
+          <li onClick={handleTitle(title)} key={index}>
             {title}
           </li>
         );
@@ -15,4 +21,4 @@ function Options(props) {
   );
 }
 
-export default Options;
+export default MinesweeperOptions;
