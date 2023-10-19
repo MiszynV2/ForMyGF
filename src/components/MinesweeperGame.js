@@ -69,13 +69,27 @@ function MinesweeperGame({ Restart }) {
 
     const updatedBoard = [...board];
 
-    updatedBoard[row][col].revealed = true;
+    if (updatedBoard[row][col].value === "M") {
+      revealAllBombs(updatedBoard);
+    } else {
+      updatedBoard[row][col].revealed = true;
 
-    if (updatedBoard[row][col].value === 0) {
-      revealAdjacentCells(row, col, updatedBoard);
+      if (updatedBoard[row][col].value === 0) {
+        revealAdjacentCells(row, col, updatedBoard);
+      }
     }
 
     setBoard(updatedBoard);
+  }
+
+  function revealAllBombs(board) {
+    for (let row = 0; row < board.length; row++) {
+      for (let col = 0; col < board[0].length; col++) {
+        if (board[row][col].value === "M") {
+          board[row][col].revealed = true;
+        }
+      }
+    }
   }
 
   function revealAdjacentCells(row, col, board) {

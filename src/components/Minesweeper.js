@@ -9,7 +9,10 @@ import repeat from "../sources/repeat.svg";
 
 function Minesweeper({ close }) {
   const [Restart, SetRestart] = useState(true);
-  const options = ["Game", "Help"];
+  const [GameMod, SetGameMod] = useState("Easy");
+  const [GameOptions, SetGameOptions] = useState([8, 8, 10]);
+
+  const options = ["Game", "Help", "Easy", "Medium", "Hard"];
   const title = "Minesweeper";
   function handleRestart() {
     SetRestart(!Restart);
