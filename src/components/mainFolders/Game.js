@@ -489,7 +489,6 @@ const Game = ({
       setHighestPoints(newPoints);
     }
 
-    console.log({ points, distanceMoved, highestPoints });
 
     if (isRightPressedRef.current && player.current.position.x < 600) {
       player.current.moveRight();

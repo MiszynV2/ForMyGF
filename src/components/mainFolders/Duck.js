@@ -12,7 +12,6 @@ function Duck({ close }) {
   const [isDead, setIsDead] = useState(false);
   const [highestPoints, setHighestPoints] = useState(0);
   const [points, setPoints] = useState(0);
-  console.log({ highestPoints });
   return (
     <Window width={650}>
       <TitleBar image={image} title={title} close={close} />
