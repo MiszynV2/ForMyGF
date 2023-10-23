@@ -10,14 +10,31 @@ import DeathScreen from "../DeathScreen";
 function Duck({ close }) {
   const title = "Duck.exe";
   const [isDead, setIsDead] = useState(false);
-
+  const [highestPoints, setHighestPoints] = useState(0);
+  const [points, setPoints] = useState(0);
+  console.log({ highestPoints });
   return (
     <Window width={650}>
       <TitleBar image={image} title={title} close={close} />
       <Options options={["To play use WSAD or ARROW keys"]} />
       <div className={classes.ButtonImageWrapper}>
-        {!isDead && <Game isDead={isDead} setIsDead={setIsDead} />}
-        {isDead && <DeathScreen setIsDead={setIsDead} />}
+        {!isDead && (
+          <Game
+            points={points}
+            setPoints={setPoints}
+            isDead={isDead}
+            setIsDead={setIsDead}
+            setHighestPoints={setHighestPoints}
+            highestPoints={highestPoints}
+          />
+        )}
+        {isDead && (
+          <DeathScreen
+            points={points}
+            highestPoints={highestPoints}
+            setIsDead={setIsDead}
+          />
+        )}
       </div>
     </Window>
   );

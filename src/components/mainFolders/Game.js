@@ -19,7 +19,13 @@ const createImage = (imageSrc) => {
   return image;
 };
 
-const Game = ({ setIsDead, isDead }) => {
+const Game = ({
+  setIsDead,
+  setHighestPoints,
+  highestPoints,
+  setPoints,
+  points,
+}) => {
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
   const animationIdRef = useRef(null);
@@ -476,6 +482,15 @@ const Game = ({ setIsDead, isDead }) => {
       platform.draw();
     });
 
+    const distanceMoved = scrollOffset;
+    const newPoints = Math.floor(distanceMoved / 100);
+    setPoints(newPoints);
+    if (newPoints > highestPoints) {
+      setHighestPoints(newPoints);
+    }
+
+    console.log({ points, distanceMoved, highestPoints });
+
     if (isRightPressedRef.current && player.current.position.x < 600) {
       player.current.moveRight();
     } else if (isLeftPressedRef.current && player.current.position.x > 300) {
@@ -538,6 +553,7 @@ const Game = ({ setIsDead, isDead }) => {
   return (
     <>
       <canvas ref={canvasRef}></canvas>
+      <div className={classes.Points}>Points: {points}</div>
     </>
   );
 };

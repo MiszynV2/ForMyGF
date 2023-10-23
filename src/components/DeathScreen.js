@@ -6,13 +6,18 @@ import Restart from "./../sources/restart.ico";
 import windowsLogo from "./../sources/windowsLogo.png";
 import Duck from "./../sources/duckDead.png";
 
-function DeathScreen({ setIsDead }) {
+function DeathScreen({ setIsDead, highestPoints, points }) {
   return (
     <div className={classes.DeathScreen}>
       <div className={classes.Window}>
         <div className={classes.Content}>
           <img className={classes.DuckImage} src={Duck} alt="Duck" />
           <h1 className={classes.DeathText}>Game Over</h1>
+          <h2 className={classes.DeathSubtextPoints}>Points: {points}</h2>
+
+          <h2 className={classes.DeathSubtextHighscore}>
+            Highscore: {highestPoints}
+          </h2>
           <button
             className={classes.RestartButton}
             onClick={() => setIsDead(false)}

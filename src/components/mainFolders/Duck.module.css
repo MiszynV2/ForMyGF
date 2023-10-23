@@ -81,3 +81,10 @@
 .Points {
   position: absolute;
 }
+.Points {
+  position: absolute;
+  top: 90px;
+  left: 80%;
+  font-size: 38px;
+  color: #b5b0b1;
+}

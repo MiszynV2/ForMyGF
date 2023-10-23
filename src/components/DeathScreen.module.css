@@ -55,7 +55,7 @@
 }
 
 .DeathText {
-  font-size: 24px;
+  font-size: 34px;
   color: #a9121e;
   margin-bottom: 20px;
 }
@@ -71,5 +71,15 @@
 }
 
 .RestartButton:hover {
-  background: #005757; /* Adjust the hover background color as needed */
+  background: #005757;
+}
+.DeathSubtextHighscore {
+  font-size: 18px;
+  color: #b5b0b1;
+  margin-bottom: 20px;
+}
+.DeathSubtextPoints {
+  font-size: 18px;
+  color: #b5b0b1;
+  margin-bottom: 20px;
 }
