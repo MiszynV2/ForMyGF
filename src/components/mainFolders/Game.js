@@ -48,7 +48,7 @@ const Game = ({
       const y = Math.random() * (canvasHeight - 400);
       const randomImage = Math.random() > 0.5 ? platformImage : floatingImage;
       randomPlatforms.push(
-        new Platform({ y: 628, x: 300, image: platformImage })
+        new Platform({ y: 328, x: 0, image: platformImage })
       );
       randomPlatforms.push(new Platform({ x, y, image: randomImage }));
     }
@@ -315,141 +315,8 @@ const Game = ({
 
   let background1 = new Background({ y: 0, x: 0, image: backgroundImage });
 
-  let platforms = [
-    new Platform({ y: 628, x: 0, image: platformImage }),
-    new Platform({ y: 628, x: platformImage.width, image: platformImage }),
-    new Platform({ y: 628, x: platformImage.width * 2, image: platformImage }),
-    new Platform({ y: 628, x: platformImage.width * 4, image: platformImage }),
-    new Platform({ y: 628, x: platformImage.width * 5, image: platformImage }),
-    new Platform({ y: 628, x: platformImage.width * 6, image: platformImage }),
-    new Platform({ y: 628, x: platformImage.width * 7, image: platformImage }),
-    new Platform({ y: 528, x: platformImage.width * 3, image: floatingImage }),
-    new Platform({ y: 528, x: platformImage.width * 8, image: floatingImage }),
-    new Platform({ y: 428, x: platformImage.width * 9, image: floatingImage }),
-    new Platform({ y: 328, x: platformImage.width * 10, image: floatingImage }),
-    new Platform({ y: 228, x: platformImage.width * 11, image: floatingImage }),
-    new Platform({ y: 328, x: platformImage.width * 12, image: floatingImage }),
-    new Platform({ y: 128, x: platformImage.width * 13, image: floatingImage }),
-    new Platform({ y: 528, x: platformImage.width * 14, image: floatingImage }),
-    new Platform({
-      y: 428,
-      x: platformImage.width * 15,
-      image: yellowPipeImage,
-    }),
-    new Platform({
-      y: 328,
-      x: platformImage.width * 16,
-      image: yellowPipeImage,
-    }),
-    new Platform({
-      y: 428,
-      x: platformImage.width * 17,
-      image: purplePipeImage,
-    }),
-    new Platform({
-      y: 328,
-      x: platformImage.width * 18,
-      image: purplePipeImage,
-    }),
-    new Platform({ y: 328, x: platformImage.width * 19, image: redPipeImage }),
-    new Platform({
-      y: 428,
-      x: platformImage.width * 20,
-      image: yellowPipeImage,
-    }),
-    new Platform({
-      x: platformImage.width * 21,
-      y: 428,
-      image: yellowPipeImage,
-    }),
-    new Platform({
-      x: platformImage.width * 22,
-      y: 328,
-      image: yellowPipeImage,
-    }),
-    new Platform({
-      x: platformImage.width * 23,
-      y: 428,
-      image: yellowPipeImage,
-    }),
-    new Platform({
-      x: platformImage.width * 24,
-      y: 328,
-      image: purplePipeImage,
-    }),
-    new Platform({
-      x: platformImage.width * 25,
-      y: 428,
-      image: yellowPipeImage,
-    }),
-    new Platform({ x: platformImage.width * 26, y: 528, image: floatingImage }),
-    new Platform({ x: platformImage.width * 27, y: 528, image: floatingImage }),
-    new Platform({ x: platformImage.width * 28, y: 628, image: platformImage }),
-    new Platform({ x: platformImage.width * 29, y: 628, image: platformImage }),
-    new Platform({ x: platformImage.width * 30, y: 628, image: platformImage }),
-    new Platform({ x: platformImage.width * 31, y: 628, image: platformImage }),
-    new Platform({ x: platformImage.width * 32, y: 628, image: platformImage }),
-    new Platform({ x: platformImage.width * 33, y: 628, image: platformImage }),
-    new Platform({ x: platformImage.width * 34, y: 628, image: platformImage }),
-    new Platform({ x: platformImage.width * 35, y: 628, image: platformImage }),
-    new Platform({ x: platformImage.width * 36, y: 628, image: platformImage }),
-    new Platform({ x: platformImage.width * 37, y: 628, image: platformImage }),
-    new Platform({ x: platformImage.width * 38, y: 628, image: platformImage }),
-    new Platform({ x: platformImage.width * 39, y: 628, image: platformImage }),
-    new Platform({ x: platformImage.width * 40, y: 628, image: platformImage }),
-    new Platform({ x: platformImage.width * 41, y: 628, image: platformImage }),
-    new Platform({ x: platformImage.width * 42, y: 628, image: platformImage }),
-    new Platform({ x: platformImage.width * 43, y: 628, image: platformImage }),
-    new Platform({ x: platformImage.width * 44, y: 628, image: platformImage }),
-    new Platform({ x: platformImage.width * 45, y: 628, image: platformImage }),
-    new Platform({ x: platformImage.width * 46, y: 528, image: floatingImage }),
-    new Platform({ x: platformImage.width * 47, y: 528, image: floatingImage }),
-    new Platform({ x: platformImage.width * 48, y: 528, image: floatingImage }),
-    new Platform({ x: platformImage.width * 49, y: 528, image: floatingImage }),
-    new Platform({ x: platformImage.width * 50, y: 528, image: floatingImage }),
-    new Platform({
-      x: platformImage.width * 51,
-      y: 428,
-      image: yellowPipeImage,
-    }),
-    new Platform({
-      x: platformImage.width * 52,
-      y: 428,
-      image: yellowPipeImage,
-    }),
-    new Platform({
-      x: platformImage.width * 53,
-      y: 428,
-      image: yellowPipeImage,
-    }),
-    new Platform({
-      x: platformImage.width * 54,
-      y: 428,
-      image: yellowPipeImage,
-    }),
-    new Platform({
-      x: platformImage.width * 55,
-      y: 328,
-      image: purplePipeImage,
-    }),
-    new Platform({
-      x: platformImage.width * 56,
-      y: 328,
-      image: purplePipeImage,
-    }),
-    new Platform({
-      x: platformImage.width * 57,
-      y: 328,
-      image: purplePipeImage,
-    }),
-    new Platform({
-      x: platformImage.width * 58,
-      y: 328,
-      image: purplePipeImage,
-    }),
-    new Platform({ x: platformImage.width * 59, y: 228, image: redPipeImage }),
-    new Platform({ x: platformImage.width * 60, y: 228, image: redPipeImage }),
-  ];
+  let platforms = [];
+
   let decorations = [
     new Decoration({ y: 0, x: 0, image: backgroundImage }),
     new Decoration({ y: 548, x: 0, image: hillsImage }),
@@ -488,7 +355,6 @@ const Game = ({
     if (newPoints > highestPoints) {
       setHighestPoints(newPoints);
     }
-
 
     if (isRightPressedRef.current && player.current.position.x < 600) {
       player.current.moveRight();

@@ -25,10 +25,13 @@ import computer from "./sources/images/computer.png";
 import duck from "./sources/duck.png";
 import check from "./sources/check.svg";
 import education from "./sources/images/education.png";
+import paintlogo from "./sources/images/paint.png";
 import dogo from "./sources/dogo.gif";
 import DogGif from "./components/Atoms/DogGif";
 import minesweeper from "./sources/minesweeper.png";
+import paint from "./sources/images/education.png";
 import Minesweeper from "./components/Minesweeper";
+import Paint from "./components/Paint";
 
 const WINDOWS_DATA = [
   {
@@ -96,6 +99,12 @@ const WINDOWS_DATA = [
     name: "Minesweeper",
     icon: minesweeper,
     Component: Minesweeper,
+  },
+  {
+    id: "Paint",
+    name: "Paint",
+    icon: paintlogo,
+    Component: Paint,
   },
 ];
 

@@ -5,9 +5,9 @@ import dogo from "../../sources/dogo.gif";
 
 function DogGif() {
   const textList = [
-    "Minesweeper is now ready to play! Don't forget to check others difficulties! (click me for more facts)",
+    "Paint is now available!!!!  (click me for more facts)",
+    "Minesweeper is now ready to play! Don't forget to check others difficulties!",
     "Duck.exe has now points system!",
-    "next step - paint prototype",
     "You can always write to me via 'contact me' window",
     "'My computer' windows is now in portfolio!!! Duck.exe and contact me is now Better!!! ",
     "Im soo happy to make this project",
