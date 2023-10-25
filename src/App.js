@@ -26,12 +26,13 @@ import duck from "./sources/duck.png";
 import check from "./sources/check.svg";
 import education from "./sources/images/education.png";
 import paintlogo from "./sources/images/paint.png";
-import dogo from "./sources/dogo.gif";
 import DogGif from "./components/Atoms/DogGif";
 import minesweeper from "./sources/minesweeper.png";
 import paint from "./sources/images/education.png";
+import internet from "./sources/images/internet.png";
 import Minesweeper from "./components/Minesweeper";
 import Paint from "./components/Paint";
+import CountryStats from "./components/CountryStats";
 
 const WINDOWS_DATA = [
   {
@@ -105,6 +106,12 @@ const WINDOWS_DATA = [
     name: "Paint",
     icon: paintlogo,
     Component: Paint,
+  },
+  {
+    id: "Country_Statistics.html",
+    name: "Country_Statistics.html",
+    icon: internet,
+    Component: CountryStats,
   },
 ];
 
