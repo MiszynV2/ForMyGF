@@ -38,23 +38,28 @@ const Game = ({
   const canvasWidth = 960;
   const canvasHeight = 1020;
 
-  const gravity = 0.2;
+  const gravity = 0.15;
   const generateRandomPlatforms = () => {
     const randomPlatforms = [];
-    const numPlatforms = 1000;
+    const numPlatforms = 200;
+    const maxXSpacing = canvasWidth / 5;
+    const maxDistance = canvasWidth * 2;
+    randomPlatforms.push(new Platform({ y: 328, x: 0, image: platformImage }));
+    platforms = platforms.filter(
+      (platform) =>
+        platform.position.x + platform.width > scrollOffset - maxDistance
+    );
 
     for (let i = 0; i < numPlatforms; i++) {
-      const x = Math.random() * (canvasWidth + platformImage.width * 400);
+      const x = i * maxXSpacing + Math.random() * maxXSpacing + scrollOffset;
       const y = Math.random() * (canvasHeight - 400);
       const randomImage = Math.random() > 0.5 ? platformImage : floatingImage;
-      randomPlatforms.push(
-        new Platform({ y: 328, x: 0, image: platformImage })
-      );
       randomPlatforms.push(new Platform({ x, y, image: randomImage }));
     }
 
     return randomPlatforms;
   };
+
   useEffect(() => {
     const canvas = canvasRef.current;
     const context = canvas.getContext("2d");

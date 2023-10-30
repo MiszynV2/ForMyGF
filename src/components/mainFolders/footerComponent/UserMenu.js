@@ -4,14 +4,56 @@ import windowsLogo from "../../../sources/windowsLogo.png";
 import car from "../../../sources/car.png";
 import logoff from "../../../sources/logoff.png";
 import turnoff from "../../../sources/turnoff.png";
+import aboutme from "../../../sources/images/text.png";
+import mycomputer from "../../../sources/images/computer.png";
+import project from "../../../sources/images/projects.png";
+import duckexe from "../../../sources/duck.png";
+import minesweeper from "../../../sources/minesweeper.png";
+import skillset from "../../../sources/check.svg";
+import education from "../../../sources/images/education.png";
+import paint from "../../../sources/images/paint.png";
+import contactme from "../../../sources/images/contact.png";
+import internet from "../../../sources/images/internet.png";
+import experience from "../../../sources/images/experience.png";
+import folder from "../../../sources/images/folder.png";
 import CloseWindow from "../../CloseWindow";
+import { computeHeadingLevel } from "@testing-library/react";
 
 const USER_MENU_DATA1 = [
-  { title: "Internet", icon: windowsLogo, subtitle: "Intenet Explorer" },
-  { title: "E-mail", icon: windowsLogo, subtitle: "Outlook Express" },
-  { title: "TicTacToe", icon: windowsLogo, subtitle: "" },
-  { title: "Notepad", icon: windowsLogo, subtitle: "" },
+  { title: "Internet", icon: internet, subtitle: "Intenet Explorer" },
+  { title: "My Computer", icon: mycomputer, subtitle: "My computer" },
+  { title: "Duck.exe", icon: duckexe, subtitle: "Play this awesome 2D game!" },
+  { title: "About me", icon: aboutme, subtitle: "" },
 
+  {
+    title: "Windows Media Player",
+    icon: windowsLogo,
+    subtitle: "",
+  },
+  {
+    title: "Paint",
+    icon: paint,
+    subtitle: "",
+  },
+];
+const USER_MENU_DATA2 = [
+  { title: "Internet", icon: internet, subtitle: "" },
+  { title: "My Computer", icon: mycomputer, subtitle: "" },
+  { title: "Duck.exe", icon: duckexe, subtitle: "" },
+  { title: "About me", icon: aboutme, subtitle: "" },
+
+  {
+    title: "Windows Media Player",
+    icon: windowsLogo,
+    subtitle: "",
+  },
+  {
+    title: "Paint",
+    icon: paint,
+    subtitle: "",
+  },
+  { title: "Winamp", icon: windowsLogo, subtitle: "" },
+  { title: "Games", icon: folder, subtitle: "" },
   {
     title: "Windows Media Player",
     icon: windowsLogo,
@@ -22,18 +64,8 @@ const USER_MENU_DATA1 = [
     icon: windowsLogo,
     subtitle: "",
   },
-];
-const USER_MENU_DATA2 = [
-  { title: "Internet", icon: windowsLogo, subtitle: "Intenet Explorer" },
-  { title: "E-mail", icon: windowsLogo, subtitle: "Outlook Express" },
-  { title: "TicTacToe", icon: windowsLogo, subtitle: "" },
-  { title: "Notepad", icon: windowsLogo, subtitle: "" },
   { title: "Winamp", icon: windowsLogo, subtitle: "" },
-  { title: "Paint", icon: windowsLogo, subtitle: "" },
-  { title: "TicTacToe", icon: windowsLogo, subtitle: "" },
-  { title: "Notepad", icon: windowsLogo, subtitle: "" },
-  { title: "Winamp", icon: windowsLogo, subtitle: "" },
-  { title: "Paint", icon: windowsLogo, subtitle: "" },
+  { title: "Games", icon: folder, subtitle: "" },
   {
     title: "Windows Media Player",
     icon: windowsLogo,
@@ -112,7 +144,7 @@ function UserMenu() {
           <span>Turn Off Computer</span>
         </div>
       </div>
-      {isButtonClicked && <CloseWindow onCancelClick={handleImgClick}/>}
+      {isButtonClicked && <CloseWindow onCancelClick={handleImgClick} />}
     </div>
   );
 }

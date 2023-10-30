@@ -56,7 +56,14 @@ function Footer({ activeWindowsId, clickedWindow, setClickedWindow }) {
         <span>Start</span>
       </button>
       <div ref={userMenuRef}>
-        {isMenuVisible && <UserMenu onClose={handleUserMenuOptions} />}
+        {isMenuVisible && (
+          <UserMenu
+            activeWindowsId={activeWindowsId}
+            clickedWindow={clickedWindow}
+            setClickedWindow={setClickedWindow}
+            onClose={handleUserMenuOptions}
+          />
+        )}
       </div>
       <div className={classes.FooterWindowsItemWrapper}>
         {activeWindowsId.map((window) => {

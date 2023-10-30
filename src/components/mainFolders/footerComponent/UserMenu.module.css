@@ -25,6 +25,7 @@
   width: 100%;
   background-color: rgb(47, 113, 205);
 }
+
 .UserMenuLeftSectionItem div {
   display: flex;
   flex-direction: column;
@@ -166,4 +167,7 @@
 .UserMenuFooter div {
   display: flex;
   align-items: center;
+}
+.UserMenuRightSectionItem img {
+  margin-right: 5px;
 }
