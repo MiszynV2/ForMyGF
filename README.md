@@ -1,7 +1,7 @@
 <p align="center">
   <img
     width="400"
-    src="https://raw.githubusercontent.com/starship/starship/master/media/logo.png"
+    src="https://raw.githubusercontent.com/MiszynV2/WindowsXP-portfolio/main/src/sources/duck.png"
     alt="Windows XP Portfolio"
   />
 </p>
