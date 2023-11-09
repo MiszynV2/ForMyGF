@@ -1,6 +1,7 @@
 <p align="center">
   <img
-    width="400"
+    width="200"
+    height="200"
     src="https://raw.githubusercontent.com/MiszynV2/WindowsXP-portfolio/main/src/sources/duck.png"
     alt="Windows XP Portfolio"
   />
