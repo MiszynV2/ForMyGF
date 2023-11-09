@@ -45,6 +45,3 @@ This project was created by Wojciech Marciniszyn. You can reach me at wmarcinisz
 
 ---
 
-<p align="center">
-  <!-- Add your social/contact links here -->
-</p>
