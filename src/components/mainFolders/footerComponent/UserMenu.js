@@ -20,18 +20,35 @@ import CloseWindow from "../../CloseWindow";
 import { computeHeadingLevel } from "@testing-library/react";
 
 const USER_MENU_DATA1 = [
-  { title: "Internet", icon: internet, subtitle: "Intenet Explorer" },
-  { title: "My Computer", icon: mycomputer, subtitle: "My computer" },
-  { title: "Duck.exe", icon: duckexe, subtitle: "Play this awesome 2D game!" },
-  { title: "About me", icon: aboutme, subtitle: "" },
+  {
+    title: "Internet",
+    id: "Country_Statistics.html",
+    icon: internet,
+    subtitle: "Intenet Explorer",
+  },
+  {
+    title: "My Computer",
+    id: "My Computer",
+    icon: mycomputer,
+    subtitle: "My computer",
+  },
+  {
+    title: "Duck.exe",
+    id: "Duck.exe",
+    icon: duckexe,
+    subtitle: "Play this awesome 2D game!",
+  },
+  { title: "About me", id: "About me", icon: aboutme, subtitle: "" },
 
   {
-    title: "Windows Media Player",
-    icon: windowsLogo,
+    title: "Minesweeper",
+    id: "Minesweeper",
+    icon: minesweeper,
     subtitle: "",
   },
   {
     title: "Paint",
+    id: "Paint",
     icon: paint,
     subtitle: "",
   },
@@ -65,23 +82,19 @@ const USER_MENU_DATA2 = [
     subtitle: "",
   },
   { title: "Winamp", icon: windowsLogo, subtitle: "" },
-  { title: "Games", icon: folder, subtitle: "" },
-  {
-    title: "Windows Media Player",
-    icon: windowsLogo,
-    subtitle: "",
-  },
-  {
-    title: "Windows Messenger",
-    icon: windowsLogo,
-    subtitle: "",
-  },
 ];
-function UserMenu() {
+function UserMenu({ activeWindowsId, setActiveWindowsId }) {
+  console.log(activeWindowsId);
+  console.log(setActiveWindowsId);
+
   const [isButtonClicked, setIsButtonClicked] = useState(false);
   function handleImgClick() {
     setIsButtonClicked(!isButtonClicked);
   }
+  function handleOpenWindows(windowId) {
+    setActiveWindowsId((prevState) => [...new Set([...prevState, windowId])]);
+  }
+
   return (
     <div className={classes.UserMenuWrapper}>
       <div className={classes.MenuHeader}>
@@ -92,7 +105,12 @@ function UserMenu() {
         <ul className={classes.UserMenuLeftSectionWrapper}>
           {USER_MENU_DATA1.map((element) => {
             return (
-              <li className={classes.UserMenuLeftSectionItem}>
+              <li
+                className={classes.UserMenuLeftSectionItem}
+                onClick={() => {
+                  handleOpenWindows(element.id);
+                }}
+              >
                 <img
                   className={classes.UserMenuLeftSectionImage}
                   src={element.icon}

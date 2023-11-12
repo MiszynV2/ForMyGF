@@ -12,17 +12,16 @@
     rgba(255, 255, 255, 0.2) 1px 1px 1px inset;
   position: relative;
   display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-}
-.Wrapper {
-  position: absolute;
-  left: 27px;
-  right: 8px;
-  white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.Title {
+  width: 50%;
+  height: 5px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
 .Item:hover {
   background-color: rgb(83, 163, 255);
   box-shadow: rgba(0, 0, 0, 0.3) -1px 0px inset,
@@ -32,4 +31,8 @@
   background-color: rgb(30, 82, 183);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset,
     rgba(0, 0, 0, 0.7) 1px 0px 1px inset;
+}
+.WindowItemImage {
+  width: 20px;
+  height: 20px;
 }

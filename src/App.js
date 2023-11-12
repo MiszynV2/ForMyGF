@@ -201,8 +201,10 @@ function App() {
       </button>
       {!isMobile && <DogGif />}
       <Footer
+        windows_data={WINDOWS_DATA}
         setClickedWindow={setClickedWindow}
         clickedWindow={clickedWindow}
+        setActiveWindowsId={setActiveWindowsId}
         activeWindowsId={activeWindowsId}
       />
     </div>

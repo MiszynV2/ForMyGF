@@ -5,7 +5,7 @@ import logo from "./../sources/images/internet.png";
 import Window from "./Atoms/Window";
 import TitleBar from "./Atoms/TitleBar";
 import Options from "./Atoms/Options";
-import ComputerOptions from "./Atoms/ComputerOptions";
+import SiteOptions from "./Atoms/SiteOptions";
 
 function CountryStats({ close }) {
   const title = "CountryStats.html";
@@ -16,7 +16,7 @@ function CountryStats({ close }) {
 
       <Options options={options} />
       {/* TODO MAKE DIRECTING COMPUTER OPTION VIA PROPS */}
-      <ComputerOptions />
+      <SiteOptions />
       <div className={classes.SiteWrapper}>
         <iframe
           src="https://countrystatistics-wm.vercel.app/"

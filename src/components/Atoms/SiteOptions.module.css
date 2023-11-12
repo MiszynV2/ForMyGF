@@ -1,0 +1,27 @@
+.Wrapper {
+    height: 36px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 11px;
+    padding: 1px 3px 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    background-color: #ede9d2;
+    gap: 5px;
+    margin-top: -2px;
+  }
+  .Wrapper img {
+    height: 30px;
+  }
+  .Wrapper span {
+    font-size: 16px;
+  }
+  .Line {
+    height: 90%;
+    width: 1px;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin: 0px 2px;
+  }
+  

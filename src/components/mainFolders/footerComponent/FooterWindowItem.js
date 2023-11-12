@@ -12,6 +12,7 @@ function FooterWindowsItem({
   clickedWindow,
   activeWindowsId,
   title,
+  icon,
 }) {
   const windowRef = useRef(null);
   const handleClick = () => {
@@ -25,9 +26,8 @@ function FooterWindowsItem({
       onClick={handleClick}
       className={classes.Item}
     >
-      <div className={classes.Wrapper}>
-        <span className={classes.Title}>{title}</span>
-      </div>
+      <img src={icon} className={classes.WindowItemImage} alt="Folder logo" />
+      <span className={classes.Title}>{title}</span>
     </div>
   );
 }

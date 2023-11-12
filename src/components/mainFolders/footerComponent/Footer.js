@@ -4,7 +4,13 @@ import windowsLogo from "../../../sources/windowsLogo.png";
 import UserMenu from "./UserMenu";
 import FooterWindowsItem from "./FooterWindowItem";
 
-function Footer({ activeWindowsId, clickedWindow, setClickedWindow }) {
+function Footer({
+  activeWindowsId,
+  clickedWindow,
+  setClickedWindow,
+  setActiveWindowsId,
+  windows_data,
+}) {
   const [currentTime, setCurrentTime] = useState(getCurrentTime());
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const userMenuRef = useRef(null);
@@ -59,6 +65,7 @@ function Footer({ activeWindowsId, clickedWindow, setClickedWindow }) {
         {isMenuVisible && (
           <UserMenu
             activeWindowsId={activeWindowsId}
+            setActiveWindowsId={setActiveWindowsId}
             clickedWindow={clickedWindow}
             setClickedWindow={setClickedWindow}
             onClose={handleUserMenuOptions}
@@ -67,12 +74,19 @@ function Footer({ activeWindowsId, clickedWindow, setClickedWindow }) {
       </div>
       <div className={classes.FooterWindowsItemWrapper}>
         {activeWindowsId.map((window) => {
+          console.log({ window });
+          const windowData = windows_data.find(
+            (element) => element.id === window
+          );
+          console.log({ windowData });
+
           return (
             <FooterWindowsItem
               clickedWindow={clickedWindow}
               activeWindowsId={activeWindowsId}
               setClickedWindow={setClickedWindow}
-              title={window}
+              title={windowData.id}
+              icon={windowData.icon}
             />
           );
         })}
