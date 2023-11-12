@@ -1,6 +1,6 @@
 @font-face {
   font-family: "windowsxp";
-  src: url("../../sources/windows-xp-tahoma.ttf") format("truetype");
+  src: url("../../../sources/windows-xp-tahoma.ttf") format("truetype");
 }
 
 .ImageWrapper {
@@ -8,11 +8,9 @@
   border-color: #e2e8f0;
 }
 
-
 .Icons {
   display: flex;
 }
-
 
 .folderImage {
   width: 100%;

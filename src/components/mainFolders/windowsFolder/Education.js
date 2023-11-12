@@ -1,12 +1,11 @@
 import React from "react";
 import classes from "./Education.module.css";
-import image from "../../sources/images/experience.png";
-import CloseButton from "../../sources/close.svg";
-import paperclip from "../../sources/paperclip.png";
-import cloud from "../../sources/dymek.png";
-import Window from "../Atoms/Window";
-import TitleBar from "../Atoms/TitleBar";
-import Options from "../Atoms/Options";
+import image from "../../../sources/images/experience.png";
+import paperclip from "../../../sources/paperclip.png";
+import cloud from "../../../sources/dymek.png";
+import Window from "../../Atoms/Window";
+import TitleBar from "../../Atoms/TitleBar";
+import Options from "../../Atoms/Options";
 
 function Education({ close }) {
   const title = "Education";

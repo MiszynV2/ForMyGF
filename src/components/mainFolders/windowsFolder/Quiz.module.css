@@ -58,7 +58,7 @@
 }
 @font-face {
   font-family: "windowsxp";
-  src: url("../../sources/windows-xp-tahoma.ttf") format("truetype");
+  src: url("../../../sources/windows-xp-tahoma.ttf") format("truetype");
 }
 
 .QuizWrapper {
@@ -89,7 +89,7 @@
 
 .MinimizeButton,
 .CloseButton {
-  background-image: url("../../sources/close.svg");
+  background-image: url("../../../sources/close.svg");
   background-repeat: no-repeat;
   background-position: 50%;
   width: 24px;
@@ -106,7 +106,7 @@
 }
 
 .CloseButton {
-  background-image: url("../../sources/close-hover.svg");
+  background-image: url("../../../sources/close-hover.svg");
 }
 
 .CloseButton:hover {

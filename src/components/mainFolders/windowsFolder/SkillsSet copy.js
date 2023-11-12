@@ -1,10 +1,9 @@
 import React from "react";
 import classes from "./SkillsSet.module.css";
-import image from "../../sources/check.svg";
-import CloseButton from "../../sources/close.svg";
-import Window from "../Atoms/Window";
-import TitleBar from "../Atoms/TitleBar";
-import Options from "../Atoms/Options";
+import image from "../../../sources/check.svg";
+import Window from "../../Atoms/Window";
+import TitleBar from "../../Atoms/TitleBar";
+import Options from "../../Atoms/Options";
 
 const SKILLSET_DATA = [
   { htmlFor: "react", text: "react.js" },

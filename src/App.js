@@ -1,20 +1,20 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import FolderList from "./components/FolderList";
+import FolderList from "./components/mainFolders/windowsFolder/FolderList";
 import Footer from "./components/mainFolders/footerComponent/Footer";
 import moonButton from "./sources/moonbutton.png";
 import sunButton from "./sources/sunbutton.png";
 import { Analytics } from "@vercel/analytics/react";
-import Industry from "./components/mainFolders/Industry";
-import Projects from "./components/mainFolders/Projects";
-import Education from "./components/mainFolders/Education";
-import Experience from "./components/mainFolders/Experience";
-import Computer from "./components/mainFolders/Computer";
-import AboutMe from "./components/mainFolders/AboutMe";
-import TicTacToe from "./components/mainFolders/TicTacToe";
-import Duck from "./components/mainFolders/Duck";
-import SkillsSet from "./components/mainFolders/SkillsSet";
-import Contact from "./components/mainFolders/Contact";
+import Industry from "./components/mainFolders/windowsFolder/Industry";
+import Projects from "./components/mainFolders/windowsFolder/Projects";
+import Education from "./components/mainFolders/windowsFolder/Education";
+import Experience from "./components/mainFolders/windowsFolder/Experience";
+import Computer from "./components/mainFolders/windowsFolder/Computer";
+import AboutMe from "./components/mainFolders/windowsFolder/AboutMe";
+import TicTacToe from "./components/mainFolders/windowsFolder/TicTacToe";
+import Duck from "./components/mainFolders/windowsFolder/Duck";
+import SkillsSet from "./components/mainFolders/windowsFolder/SkillsSet";
+import Contact from "./components/mainFolders/windowsFolder/Contact";
 import contact from "./sources/images/contact.png";
 import projects from "./sources/images/projects.png";
 import blocks from "./sources/images/experience.png";
@@ -30,9 +30,9 @@ import DogGif from "./components/Atoms/DogGif";
 import minesweeper from "./sources/minesweeper.png";
 import paint from "./sources/images/education.png";
 import internet from "./sources/images/internet.png";
-import Minesweeper from "./components/Minesweeper";
-import Paint from "./components/Paint";
-import CountryStats from "./components/CountryStats";
+import Minesweeper from "./components/mainFolders/windowsFolder/Minesweeper";
+import Paint from "./components/mainFolders/windowsFolder/Paint";
+import CountryStats from "./components/mainFolders/windowsFolder/CountryStats";
 
 const WINDOWS_DATA = [
   {

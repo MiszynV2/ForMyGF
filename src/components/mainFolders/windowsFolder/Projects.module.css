@@ -8,7 +8,7 @@
 }
 @font-face {
   font-family: "windowsxp";
-  src: url("../../sources/windows-xp-tahoma.ttf") format("truetype");
+  src: url("../../../sources/windows-xp-tahoma.ttf") format("truetype");
 }
 
 .ImageWrapper {

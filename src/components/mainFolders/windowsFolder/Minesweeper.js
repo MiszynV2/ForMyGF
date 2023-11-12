@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import classes from "./Minesweeper.module.css";
-import MinesweeperLogo from "./../sources/minesweeper.png";
-import Window from "./Atoms/Window";
-import TitleBar from "./Atoms/TitleBar";
-import Options from "./Atoms/Options";
+import MinesweeperLogo from "../../../sources/minesweeper.png";
+import Window from "../../Atoms/Window";
+import TitleBar from "../../Atoms/TitleBar";
 import MinesweeperGame from "./MinesweeperGame";
-import repeat from "../sources/repeat.svg";
-import MinesweeperOptions from "./Atoms/MinesweeperOptions";
+import MinesweeperOptions from "../../Atoms/MinesweeperOptions";
 
 function Minesweeper({ close }) {
   const [Restart, SetRestart] = useState(true);
@@ -34,7 +32,6 @@ function Minesweeper({ close }) {
       SetWidth(750);
       SetGameOptions([16, 30, 99]);
     }
-    console.log({ GameMod }, { GameOptions });
   }
 
   return (

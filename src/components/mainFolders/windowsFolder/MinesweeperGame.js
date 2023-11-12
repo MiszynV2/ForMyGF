@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import classes from "./Minesweeper.module.css";
-import bomb from "../sources/bomb.png";
-import repeat from "../sources/repeat.svg";
+import bomb from "../../../sources/bomb.png";
+import repeat from "../../../sources/repeat.svg";
 
 function MinesweeperGame({ Restart, GameOptions }) {
   const [board, setBoard] = useState(generateBoard(...GameOptions));

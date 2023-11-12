@@ -1,16 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
-import platform from "../../sources/platform.png";
-import hills from "../../sources/hills.png";
-import background from "../../sources/background.png";
-import cloud from "../../sources/cloud.png";
-import floating from "../../sources/floating.png";
-import duck from "../../sources/duck.png";
-import duckStand from "../../sources/duckStand.png";
-import duckLeft from "../../sources/duckLeft.png";
-import duckLeftStand from "../../sources/duckLeftStand.png";
-import yellowpipe from "../../sources/yellowpipe.png";
-import purplepipe from "../../sources/purplepipe.png";
-import redpipe from "../../sources/redpipe.png";
+import platform from "../../../sources/platform.png";
+import hills from "../../../sources/hills.png";
+import background from "../../../sources/background.png";
+import cloud from "../../../sources/cloud.png";
+import floating from "../../../sources/floating.png";
+import duck from "../../../sources/duck.png";
+import duckStand from "../../../sources/duckStand.png";
+import duckLeft from "../../../sources/duckLeft.png";
+import duckLeftStand from "../../../sources/duckLeftStand.png";
+import yellowpipe from "../../../sources/yellowpipe.png";
+import purplepipe from "../../../sources/purplepipe.png";
+import redpipe from "../../../sources/redpipe.png";
 import classes from "./Duck.module.css";
 
 const createImage = (imageSrc) => {
@@ -35,8 +35,8 @@ const Game = ({
 
   const player = useRef(null);
 
-  const canvasWidth = 960;
-  const canvasHeight = 1020;
+  const canvasWidth = 920;
+  const canvasHeight = 1220;
 
   const gravity = 0.15;
   const generateRandomPlatforms = () => {

@@ -1,10 +1,9 @@
 import React from "react";
 import classes from "./AboutMe.module.css";
-import image from "../../sources/images/text.png";
-import CloseButton from "../../sources/close.svg";
-import Window from "../Atoms/Window";
-import Options from "../Atoms/Options";
-import TitleBar from "../Atoms/TitleBar";
+import image from "../../../sources/images/text.png";
+import Window from "../../Atoms/Window";
+import Options from "../../Atoms/Options";
+import TitleBar from "../../Atoms/TitleBar";
 
 function AboutMe({ close }) {
   const options = ["File", "Edit", "Format", "View", "Help"];

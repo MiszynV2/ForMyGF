@@ -1,11 +1,10 @@
 import React from "react";
 import classes from "./Experience.module.css";
 
-import image from "../../sources/images/education.png";
-import CloseButton from "../../sources/close.svg";
-import Window from "../Atoms/Window";
-import TitleBar from "../Atoms/TitleBar";
-import Options from "../Atoms/Options";
+import image from "../../../sources/images/education.png";
+import Window from "../../Atoms/Window";
+import TitleBar from "../../Atoms/TitleBar";
+import Options from "../../Atoms/Options";
 
 function Education({ close }) {
   const options = ["File", "Edit", "Format", "View", "Help"];

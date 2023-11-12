@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import classes from "./DeathScreen.module.css";
-import CloseButton from "./../sources/close.svg";
-import TurnoffButton from "./../sources/turnoff.png";
-import Restart from "./../sources/restart.ico";
-import windowsLogo from "./../sources/windowsLogo.png";
-import Duck from "./../sources/duckDead.png";
+import Duck from "../../../sources/duckDead.png";
 
 function DeathScreen({ setIsDead, highestPoints, points }) {
   return (

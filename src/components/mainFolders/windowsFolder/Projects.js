@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import classes from "./Projects.module.css";
-import image from "../../sources/images/text.png";
-import Window from "../Atoms/Window";
-import TitleBar from "../Atoms/TitleBar";
-import Options from "../Atoms/Options";
+import image from "../../../sources/images/contact.png";
+import Window from "../../Atoms/Window";
+import TitleBar from "../../Atoms/TitleBar";
+import Options from "../../Atoms/Options";
 
 function Lista({ close }) {
   const [txtChange, setTxtChange] = useState(

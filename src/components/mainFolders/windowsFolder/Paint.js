@@ -1,10 +1,8 @@
 import React from "react";
 import classes from "./Paint.module.css";
-import image from "./../sources/check.svg";
-import logo from "./../sources/images/paint.png";
-import Window from "./Atoms/Window";
-import TitleBar from "./Atoms/TitleBar";
-import Options from "./Atoms/Options";
+import logo from "../../../sources/images/paint.png";
+import Window from "../../Atoms/Window";
+import TitleBar from "../../Atoms/TitleBar";
 
 function Paint({ close }) {
   const title = "Untilted - Paint";

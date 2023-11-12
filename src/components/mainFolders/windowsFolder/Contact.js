@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import classes from "./Contact.module.css";
-import image from "../../sources/images/contact.png";
-import firebase from "../../firebase";
+import image from "../../../sources/images/contact.png";
+import firebase from "../../../firebase";
 import { collection, addDoc } from "firebase/firestore/lite";
-import Window from "../Atoms/Window";
-import TitleBar from "../Atoms/TitleBar";
+import Window from "../../Atoms/Window";
+import TitleBar from "../../Atoms/TitleBar";
 
 function Contact({ close }) {
   const [email, setEmail] = useState("");

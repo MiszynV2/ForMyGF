@@ -1,11 +1,10 @@
 import React from "react";
 import classes from "./CountryStats.module.css";
-import image from "./../sources/check.svg";
-import logo from "./../sources/images/internet.png";
-import Window from "./Atoms/Window";
-import TitleBar from "./Atoms/TitleBar";
-import Options from "./Atoms/Options";
-import SiteOptions from "./Atoms/SiteOptions";
+import logo from "../../../sources/images/internet.png";
+import Window from "../../Atoms/Window";
+import TitleBar from "../../Atoms/TitleBar";
+import Options from "../../Atoms/Options";
+import SiteOptions from "../../Atoms/SiteOptions";
 
 function CountryStats({ close }) {
   const title = "CountryStats.html";

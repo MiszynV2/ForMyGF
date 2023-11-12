@@ -1,10 +1,10 @@
 import React from "react";
 import classes from "./Industry.module.css";
-import image from "../../sources/setting.svg";
-import CloseButton from "../../sources/close.svg";
-import Window from "../Atoms/Window";
-import Options from "../Atoms/Options";
-import TitleBar from "../Atoms/TitleBar";
+import image from "../../../sources/setting.svg";
+
+import Window from "../../Atoms/Window";
+import Options from "../../Atoms/Options";
+import TitleBar from "../../Atoms/TitleBar";
 
 function Industry({ close }) {
   const options = ["Options", "Help"];

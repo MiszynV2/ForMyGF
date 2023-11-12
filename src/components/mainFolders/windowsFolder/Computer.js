@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import classes from "./Computer.module.css";
-import Window from "../Atoms/Window";
-import image from "../../sources/images/computer.png";
-import TitleBar from "../Atoms/TitleBar";
-import Options from "../Atoms/Options";
-import ComputerNavSection from "../Atoms/ComputerNavSection";
-import ComputerRightSection from "../Atoms/ComputerRightSection";
-import ComputerOptions from "../Atoms/ComputerOptions";
+import Window from "../../Atoms/Window";
+import image from "../../../sources/images/computer.png";
+import TitleBar from "../../Atoms/TitleBar";
+import Options from "../../Atoms/Options";
+import ComputerNavSection from "../../Atoms/ComputerNavSection";
+import ComputerRightSection from "../../Atoms/ComputerRightSection";
+import ComputerOptions from "../../Atoms/ComputerOptions";
 
 function Computer({ close }) {
   const title = "My Computer";

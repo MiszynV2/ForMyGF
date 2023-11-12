@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import classes from "./Quiz.module.css";
-import Window from "../Atoms/Window";
-import TitleBar from "../Atoms/TitleBar";
-import image from "../../sources/heart.svg";
+import Window from "../../Atoms/Window";
+import TitleBar from "../../Atoms/TitleBar";
+import image from "../../../sources/heart.svg";
 
 function Quiz({ close }) {
   const [board, setBoard] = useState(Array(9).fill(null));

@@ -5,7 +5,7 @@ import tapeta2 from "../../sources/tapeta2.jpg";
 import tapeta4 from "../../sources/tapeta4.jpg";
 import tapeta5 from "../../sources/tapeta5.jpg";
 import tapeta6 from "../../sources/tapeta6.jpg";
-import TitleBar from "../Atoms/TitleBar";
+import TitleBar from "../../../Atoms/TitleBar";
 
 function ChangeBg({ close }) {
   const [isDragging, setIsDragging] = useState(false);

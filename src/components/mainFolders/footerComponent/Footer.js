@@ -59,11 +59,9 @@ function Footer({
       </div>
       <div className={classes.FooterWindowsItemWrapper}>
         {activeWindowsId.map((window) => {
-          console.log({ window });
           const windowData = windows_data.find(
             (element) => element.id === window
           );
-          console.log({ windowData });
 
           return (
             <FooterWindowsItem

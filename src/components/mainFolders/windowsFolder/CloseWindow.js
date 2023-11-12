@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import classes from "./CloseWindow.module.css";
-import CloseButton from "./../sources/close.svg";
-import TurnoffButton from "./../sources/turnoff.png";
-import Restart from "./../sources/restart.ico";
-import windowsLogo from "./../sources/windowsLogo.png";
+import CloseButton from "../../../sources/close.svg";
+import TurnoffButton from "../../../sources/turnoff.png";
+import Restart from "../../../sources/restart.ico";
+import windowsLogo from "../../../sources/windowsLogo.png";
 
 function CloseWindow({ onCancelClick }) {
   return (

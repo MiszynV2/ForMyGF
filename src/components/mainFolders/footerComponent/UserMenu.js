@@ -16,7 +16,7 @@ import contactme from "../../../sources/images/contact.png";
 import internet from "../../../sources/images/internet.png";
 import experience from "../../../sources/images/experience.png";
 import folder from "../../../sources/images/folder.png";
-import CloseWindow from "../../CloseWindow";
+import CloseWindow from "../windowsFolder/CloseWindow";
 import { computeHeadingLevel } from "@testing-library/react";
 
 const USER_MENU_DATA1 = [
@@ -84,9 +84,6 @@ const USER_MENU_DATA2 = [
   { title: "Winamp", icon: windowsLogo, subtitle: "" },
 ];
 function UserMenu({ activeWindowsId, setActiveWindowsId }) {
-  console.log(activeWindowsId);
-  console.log(setActiveWindowsId);
-
   const [isButtonClicked, setIsButtonClicked] = useState(false);
   function handleImgClick() {
     setIsButtonClicked(!isButtonClicked);
