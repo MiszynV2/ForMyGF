@@ -42,7 +42,7 @@ The Windows XP Portfolio is an interactive website built using React that emulat
 ## Features I would like to add
 
 - Change dummy data to valid data (for example, in the start menu) 
-- Add functionality that allows you to display a window when you click on the tabs at the bottom 
+- Add functionality that allows you to display or minimalize a window when you click on the tabs at the bottom 
 - Make minesweeper look more like the original
 - Improve "duck.exe" game with additional functionality
 - Change css of windows such as "industry knowledge", "education" and "experience"
