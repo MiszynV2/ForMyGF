@@ -19,19 +19,19 @@ The Windows XP Portfolio is an interactive website built using React that emulat
  
  **Multiple Windows application like:**:
 
-    1. About me
-    2. My Computer
-    3. Industry knowledge
-    4. Tic Tac Toe
-    5. Projects (not fully done yet)
-    6. Duck.exe 
-    7. Skill set
-    8. Minesweeper
-    9. Education
-    10. Paint
-    11. Experience
-    12. Country_Statistics.html
-    13. Contact me
+  1. About me
+  2. My Computer
+  3. Industry knowledge
+  4. Tic Tac Toe
+  5. Projects (not fully done yet)
+  6. Duck.exe 
+  7. Skill set
+  8. Minesweeper
+  9. Education
+  10. Paint
+  11. Experience
+  12. Country_Statistics.html
+  13. Contact me
 
 - **Application Windows:** The site allows you to open and drag multiple application windows. You can open windows like "About me" or "Education" to browse your projects and files.
 
