@@ -16,12 +16,35 @@
 The Windows XP Portfolio is an interactive website built using React that emulates the Windows XP user interface. This website offers various features reminiscent of the classic Windows XP operating system.
 
 ## Features
-
-- **Start Menu:** By clicking the "Start" button in the bottom-left corner of the page, you can access the main menu, where you'll find various sections and tools for navigating the site.
+ 
+**Multiple Windows application like:**
+1. About me
+2. My Computer
+3. Industry knowledge
+4. Tic Tac Toe
+5. Projects (not fully done yet)
+6. Duck.exe 
+7. Skill set
+8. Minesweeper
+9. Education
+10. Paint
+11. Experience
+12. Country_Statistics.html
+13. Contact me
 
 - **Application Windows:** The site allows you to open and drag multiple application windows. You can open windows like "About me" or "Education" to browse your projects and files.
 
-- **Taskbar:** The taskbar at the bottom of the page displays currently open windows and allows for quick switching between them.
+- **Start Menu:** By clicking the "Start" button in the bottom-left corner of the page, you can access the main menu, where you'll find various sections and tools for navigating the site.
+
+- **Taskbar:** The taskbar at the bottom of the page displays currently open windows.
+
+## Features I would like to add
+
+- Change dummy data to valid data (for example, in the start menu) 
+- Add functionality that allows you to display a window when you click on the tabs at the bottom 
+- Make minesweeper look more like the original
+- Improve "duck.exe" game with additional functionality
+- Change css of windows such as "industry knowledge", "education" and "experience"
 
 ## How to Run Locally
 
