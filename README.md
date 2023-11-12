@@ -17,7 +17,7 @@ The Windows XP Portfolio is an interactive website built using React that emulat
 
 ## Features
  
-**Multiple Windows application like:**
+- **Multiple Windows application like:**
 1. About me
 2. My Computer
 3. Industry knowledge
