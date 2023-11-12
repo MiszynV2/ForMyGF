@@ -32,12 +32,6 @@
   z-index: 999;
 }
 
-.CurrentTime {
-  margin: 0;
-  padding: 0;
-  color: #ccc;
-  font-size: 14px;
-}
 .FooterOptionsWrapper div img {
   width: 15px;
   height: 15px;
@@ -67,31 +61,7 @@
   align-items: center;
   padding-left: 15px;
 }
-.FooterOptionsWrapper {
-  height: 30px;
-  width: 120px;
-  display: flex;
-  padding-left: 20px;
-  padding-right: 20px;
-  background: linear-gradient(
-    rgb(12, 89, 185) 1%,
-    rgb(19, 158, 233) 6%,
-    rgb(24, 181, 242) 10%,
-    rgb(19, 155, 235) 14%,
-    rgb(18, 144, 232) 19%,
-    rgb(13, 141, 234) 63%,
-    rgb(13, 159, 241) 81%,
-    rgb(15, 158, 237) 88%,
-    rgb(17, 155, 233) 91%,
-    rgb(19, 146, 226) 94%,
-    rgb(19, 126, 215) 97%,
-    rgb(9, 91, 201) 100%
-  );
-  border-left: 1px solid rgb(16, 66, 175);
-  box-shadow: rgb(24, 187, 255) 1px 0px 1px inset;
-  align-items: center;
-  justify-content: space-around;
-}
+
 .FooterWindowsItemWrapper {
   width: calc(100% - 226px);
   display: flex;

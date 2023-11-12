@@ -1,11 +1,6 @@
 import React, { useState, useRef } from "react";
 import classes from "./FooterWindowItem.module.css";
 {
-  /* <img
-src={props.image}
-className={classes.WindowItemImage}
-alt="Folder logo"
-/> */
 }
 function FooterWindowsItem({
   setClickedWindow,
