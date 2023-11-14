@@ -28,6 +28,7 @@
 }
 .RightSectionItem {
   display: flex;
+  width: 40%;
   -webkit-box-align: center;
   align-items: center;
   flex-wrap: wrap;
@@ -35,4 +36,7 @@
 }
 .RightSectionItem img {
   margin-right: 10px;
+}
+.RightSectionItemWrapper {
+  display: flex;
 }

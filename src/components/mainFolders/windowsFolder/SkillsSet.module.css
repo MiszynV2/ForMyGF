@@ -180,3 +180,8 @@
   flex-direction: column;
   align-content: flex-start;
 }
+.Title {
+  width: 98%;
+  text-align: center;
+  background: white;
+}

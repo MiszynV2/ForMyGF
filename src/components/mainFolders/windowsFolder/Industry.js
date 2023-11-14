@@ -22,6 +22,7 @@ function Industry({ close }) {
     <Window>
       <TitleBar image={image} title={title} close={close} />
       <Options options={options} />
+      <h1 className={classes.Title}>Industry knowledge skills bar:</h1>
       <div className={classes.SlidesWrapper}>
         {values.map((range) => {
           return (

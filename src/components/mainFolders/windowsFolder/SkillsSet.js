@@ -21,7 +21,9 @@ function SkillsSet({ close }) {
       <TitleBar image={image} title={title} close={close} />
       <div className={classes.TextWrapper}>
         <Options options={options} />
+
         <div className={classes.UlWrapper}>
+          <h1 className={classes.Title}>My Skills set:</h1>
           {SKILLSET_DATA.map((element, index) => {
             return (
               <div key={index}>
