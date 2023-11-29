@@ -1,0 +1,28 @@
+.TextWrapper {
+  display: flex;
+  padding: 40px;
+  justify-content: space-around;
+}
+.ButtonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.ButtonWrapper button {
+  width: 25%;
+  margin-bottom: 10px;
+}
+.WarningText {
+  width: 45%;
+  margin-left: 50px;
+}
+.Bomb {
+  z-index: 999;
+  width: 20px;
+  height: 20px;
+}
+.BombsWrapper {
+  width: 100vw;
+  height: 100vh;
+  margin-left: -240px;
+}

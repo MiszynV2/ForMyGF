@@ -76,7 +76,7 @@ label {
   text-align: center;
 }
 .Slide input[type="range"] {
-  -webkit-appearance: none;
+  appearance: none;
   width: 100px;
   height: 4px;
   background: #b4b4b4;

@@ -25,6 +25,7 @@ import computer from "./sources/images/computer.png";
 import duck from "./sources/duck.png";
 import check from "./sources/check.svg";
 import education from "./sources/images/education.png";
+import virus from "./sources/images/virus.png";
 import paintlogo from "./sources/images/paint.png";
 import DogGif from "./components/Atoms/DogGif";
 import minesweeper from "./sources/minesweeper.png";
@@ -33,6 +34,7 @@ import internet from "./sources/images/internet.png";
 import Minesweeper from "./components/mainFolders/windowsFolder/Minesweeper";
 import Paint from "./components/mainFolders/windowsFolder/Paint";
 import CountryStats from "./components/mainFolders/windowsFolder/CountryStats";
+import Virus from "./components/mainFolders/windowsFolder/virusComponents/Virus";
 
 const WINDOWS_DATA = [
   {
@@ -113,6 +115,12 @@ const WINDOWS_DATA = [
     icon: internet,
     Component: CountryStats,
   },
+  {
+    id: "Virus",
+    name: "Virus",
+    icon: virus,
+    Component: Virus,
+  },
 ];
 
 function App() {
@@ -171,7 +179,52 @@ function App() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
+  const virus = () => {
+    setActiveWindowsId([
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+      "Virus",
+    ]);
+  };
   const toggleTheme = () => {
     if (currentTheme === "light") {
       setButtonIcon(sunButton);
@@ -194,6 +247,7 @@ function App() {
         setActiveWindowsId={setActiveWindowsId}
         activeWindowsId={activeWindowsId}
         data={WINDOWS_DATA}
+        virus={virus}
       />
 
       <button className="moonButton" onClick={toggleTheme}>

@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import classes from "./FolderList.module.css";
 import FolderItem from "./FolderItem";
 
-function FolderList({ data, activeWindowsId, setActiveWindowsId }) {
+function FolderList({ data, activeWindowsId, setActiveWindowsId, virus }) {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 700);
 
   useEffect(() => {
@@ -41,6 +41,7 @@ function FolderList({ data, activeWindowsId, setActiveWindowsId }) {
             close={() => {
               handleCloseWindows(windowElement);
             }}
+            virus={virus}
           />
         );
       })}
