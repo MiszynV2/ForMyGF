@@ -39,3 +39,25 @@
 .FolderLogo {
   width: 20px;
 }
+.SiteWrapper {
+  width: 800px;
+}
+.Site {
+  height: 800px;
+  width: 597px;
+}
+.IcWrapper {
+  height: 600px;
+  width: 800px;
+}
+.IcSite {
+  width: 800px;
+  height: 600px;
+}
+.windowsWrapper {
+  width: 600px;
+}
+.windows {
+  height: 400px;
+  width: 600px;
+}

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import classes from "./Projects.module.css";
 import image from "../../../sources/images/contact.png";
+import logo from "../../../sources/images/internet.png";
+import SiteOptions from "../../Atoms/SiteOptions";
 import Window from "../../Atoms/Window";
 import TitleBar from "../../Atoms/TitleBar";
 import Options from "../../Atoms/Options";
@@ -15,14 +17,51 @@ function Lista({ close }) {
     setTxtChange(e.target.value);
   };
   return (
-    <Window>
-      <TitleBar image={image} title={title} close={close} />
-      <div className={classes.ProjectContent}>
+    <>
+      <Window width={600} height={400}>
+        <TitleBar image={logo} title={"This Site lol"} close={close} />
+
+        <Options options={options} />
+        {/* TODO MAKE DIRECTING COMPUTER OPTION VIA PROPS */}
+        <SiteOptions />
+        <div className={classes.windowsWrapper}>
+          <iframe
+            src="https://windows-xp-portfolio.vercel.app/"
+            className={classes.windows}
+          ></iframe>
+        </div>
+      </Window>
+      <Window width={800} height={600}>
+        <TitleBar
+          image={logo}
+          title={"instagram copy - kilogram"}
+          close={close}
+        />
+
         <Options options={options} />
 
-        <textarea value={txtChange} onChange={handleTxtChange} />
-      </div>
-    </Window>
+        <SiteOptions />
+        <div className={classes.IcWrapper}>
+          <iframe
+            src="https://ic-miszyn.vercel.app/"
+            className={classes.IcSite}
+          ></iframe>
+        </div>
+      </Window>
+      <Window width={600} height={600}>
+        <TitleBar image={logo} title={"Country_Stats"} close={close} />
+
+        <Options options={options} />
+
+        <SiteOptions />
+        <div className={classes.SiteWrapper}>
+          <iframe
+            src="https://countrystatistics-wm.vercel.app/"
+            className={classes.Site}
+          ></iframe>
+        </div>
+      </Window>
+    </>
   );
 }
 
