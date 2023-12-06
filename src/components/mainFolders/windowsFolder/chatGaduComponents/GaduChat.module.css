@@ -1,0 +1,39 @@
+.Ad {
+  width: 100%;
+  height: 40px;
+  background-color: aqua;
+}
+.MessageWrapper {
+  height: 30px;
+  width: 100%;
+}
+.YellowBackground {
+  background-color: lightyellow;
+}
+
+.MessageWrapper {
+  margin-left: 5px;
+}
+
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.Textbox {
+  height: 60px;
+  width: 100%;
+}
+.Buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+.MassageDate {
+  margin-left: 10px;
+}
+.ContactName {
+  margin-left: 10px;
+}
+.ContactWrapper {
+  width: 100%;
+  height: 30px;
+}

@@ -26,6 +26,7 @@ import duck from "./sources/duck.png";
 import check from "./sources/check.svg";
 import education from "./sources/images/education.png";
 import virus from "./sources/images/virus.png";
+import gaduLogo from "./sources/gadu-chat-logo.webp";
 import paintlogo from "./sources/images/paint.png";
 import DogGif from "./components/Atoms/DogGif";
 import minesweeper from "./sources/minesweeper.png";
@@ -35,6 +36,7 @@ import Minesweeper from "./components/mainFolders/windowsFolder/Minesweeper";
 import Paint from "./components/mainFolders/windowsFolder/Paint";
 import CountryStats from "./components/mainFolders/windowsFolder/CountryStats";
 import Virus from "./components/mainFolders/windowsFolder/virusComponents/Virus";
+import GaduChat from "./components/mainFolders/windowsFolder/chatGaduComponents/GaduChat";
 
 const WINDOWS_DATA = [
   {
@@ -120,6 +122,12 @@ const WINDOWS_DATA = [
     name: "Virus",
     icon: virus,
     Component: Virus,
+  },
+  {
+    id: "Gadu chat",
+    name: "Gadu Chat",
+    icon: gaduLogo,
+    Component: GaduChat,
   },
 ];
 
