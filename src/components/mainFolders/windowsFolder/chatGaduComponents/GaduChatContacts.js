@@ -6,44 +6,57 @@ import image from "../../../../sources/gadu-chat-logo.webp";
 const CONTACTS = [
   {
     name: "Artur",
+    icon: image,
   },
   {
+    icon: image,
     name: "Julka",
   },
   {
     name: "Kafka",
+    icon: image,
   },
   {
     name: "Marcin",
+    icon: image,
   },
   {
     name: "Piasek",
+    icon: image,
   },
   {
     name: "Rafał",
+    icon: image,
   },
   {
     name: "Slawek",
+    icon: image,
   },
   {
     name: "Sylwia",
+    icon: image,
   },
   {
     name: "Wanda",
+    icon: image,
   },
   {
     name: "Daniel",
+    icon: image,
   },
 ];
 
 function GaduChatContacts() {
   return (
     <div className={classes.ContactsWrapper}>
+      <span className={classes.ContactsText}>Contacts</span>
       {CONTACTS.map((data) => {
-        <div className={classes.ContactWrapper}>
-          <img alt="" src={image} />
-          <span className={classes.ContactName}>{data.name}</span>
-        </div>;
+        return (
+          <div className={classes.ContactWrapper}>
+            <img alt="" src={data.icon} />
+            <span className={classes.ContactName}>{data.name}</span>
+          </div>
+        );
       })}
     </div>
   );

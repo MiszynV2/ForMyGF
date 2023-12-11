@@ -6,7 +6,9 @@ import image from "../../../../sources/gadu-chat-logo.webp";
 function GaduChatTextbox() {
   return (
     <div className={classes.TextBoxWrapper}>
-      <textarea className={classes.Textbox} spellCheck="false"></textarea>
+      <div className={classes.TextareaWrapper}>
+        <textarea className={classes.Textbox} spellCheck="false"></textarea>
+      </div>
       <div className={classes.Buttons}>
         <button>Send</button>
         <button>Clear</button>

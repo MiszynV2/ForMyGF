@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./GaduChat.module.css";
 
 import image from "../../../../sources/gadu-chat-logo.webp";
+import ad from "../../../../sources/fireAd.gif";
 import Window from "./../../../Atoms/Window";
 import TitleBar from "./../../../Atoms/TitleBar";
 import GaduChatMessage from "./GaduChatMessage";
@@ -14,12 +15,14 @@ function GaduChat({ close }) {
   const options = ["GaduGadu", "PowerGG"];
   const title = "Gadu Chat";
   return (
-    <Window width={300}>
+    <Window width={500}>
       <TitleBar image={image} title={title} close={close} />
+      <Options options={options} />
       <div className={classes.Wrapper}>
-        <Options options={options} />
         <div className={classes.LeftSectionWrapper}>
-          <div className={classes.Ad} />
+          <div className={classes.Ad}>
+            <img className={classes.AdGif} alt="adGif" src={ad} />
+          </div>
           <GaduChatMessage />
           <GaduChatTextbox />
         </div>
