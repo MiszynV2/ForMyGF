@@ -5,7 +5,8 @@ import dogo from "../../sources/dogo.gif";
 
 function DogGif() {
   const textList = [
-    "Paint is now available!!!!  (click me for more facts)",
+    "Gadu Chat is now working! [!beta version!] (click me for more facts)",
+    "Paint is now available!!!!",
     "Minesweeper is now ready to play! Don't forget to check others difficulties!",
     "Duck.exe has now points system!",
     "You can always write to me via 'contact me' window",
