@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classes from "./Quiz.module.css";
 import Window from "../../Atoms/Window";
 import TitleBar from "../../Atoms/TitleBar";
@@ -9,6 +9,18 @@ function Quiz({ close }) {
   const [isXNext, setIsXNext] = useState(true);
   const [winner, setWinner] = useState(null);
   const title = "Tic Tac Toe";
+
+  useEffect(() => {
+    if (!isXNext) {
+      const randomEmptyCell = getRandomEmptyCell();
+      if (randomEmptyCell !== null) {
+        setTimeout(function () {
+          handleCellClick(randomEmptyCell);
+        }, 500);
+      }
+    }
+  }, [isXNext]);
+
   const handleCellClick = (index) => {
     if (board[index] || winner) return;
 
@@ -47,6 +59,22 @@ function Quiz({ close }) {
     }
 
     return null;
+  };
+
+  const getRandomEmptyCell = () => {
+    const emptyCells = [];
+    for (let i = 0; i < board.length; i++) {
+      if (!board[i]) {
+        emptyCells.push(i);
+      }
+    }
+
+    if (emptyCells.length === 0) {
+      return null;
+    }
+
+    const randomIndex = Math.floor(Math.random() * emptyCells.length);
+    return emptyCells[randomIndex];
   };
 
   const renderCell = (index) => {

@@ -23,7 +23,7 @@ function GaduChatTextbox({ onMessageSent }) {
     e.preventDefault();
     const date = new Date();
 
-    if (!isTextShort || textContentChange == 0) {
+    if (!isTextShort || textContentChange.length === 0) {
       console.log("text is too long or too short!!!!!!!!!!");
       return;
     } else {
@@ -35,8 +35,9 @@ function GaduChatTextbox({ onMessageSent }) {
           date: date,
         });
         setIsSend(true);
+        setTextContentChange("");
+        console.log({ textContentChange });
         onMessageSent();
-        console.log("Good!!!!!!!!!!");
       } catch (error) {
         setIsSend(false);
         console.error("Something is wrong: ", error);
@@ -47,17 +48,26 @@ function GaduChatTextbox({ onMessageSent }) {
   return (
     <div className={classes.TextBoxWrapper}>
       <div className={classes.TextareaWrapper}>
-        <span className={classes.UserNameTextInfo}>Your username is {userName}</span>
+        <span className={classes.UserNameTextInfo}>
+          Your username is {userName}
+        </span>
 
         <textarea
           className={classes.Textbox}
           onChange={handleTextContentChange}
           spellCheck="false"
+          value={textContentChange}
         ></textarea>
       </div>
       <div className={classes.Buttons}>
         <button onClick={handleTextSubmit}>Send</button>
-        <button>Clear</button>
+        <button
+          onClick={() => {
+            setTextContentChange("");
+          }}
+        >
+          Clear
+        </button>
         <button>Close</button>
       </div>
       {isSend ? (

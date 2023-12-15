@@ -5,7 +5,7 @@ import image from "../../../../sources/gadu-chat-logo.webp";
 
 const CONTACTS = [
   {
-    name: "Artur",
+    name: "Anonim club",
     icon: image,
   },
   {
