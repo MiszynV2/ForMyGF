@@ -16,7 +16,6 @@ function GaduChat({ close }) {
   const options = ["GaduGadu", "PowerGG"];
   const title = "Gadu Chat";
 
-  // Define a function to be passed as onMessageSent prop
   const handleMessageSent = () => {
     const state = isSendNewMessage;
     setIsSendNewMessage(!state);
