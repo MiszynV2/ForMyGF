@@ -9,6 +9,7 @@ import mycomputer from "../../../sources/images/computer.png";
 import project from "../../../sources/images/projects.png";
 import duckexe from "../../../sources/duck.png";
 import minesweeper from "../../../sources/minesweeper.png";
+import gaduchat from "../../../sources/gadu-chat-logo.webp";
 import skillset from "../../../sources/check.svg";
 import education from "../../../sources/images/education.png";
 import paint from "../../../sources/images/paint.png";
@@ -16,6 +17,7 @@ import contactme from "../../../sources/images/contact.png";
 import internet from "../../../sources/images/internet.png";
 import experience from "../../../sources/images/experience.png";
 import folder from "../../../sources/images/folder.png";
+import GaduChat from "../windowsFolder/chatGaduComponents/GaduChat";
 import CloseWindow from "../windowsFolder/CloseWindow";
 import { computeHeadingLevel } from "@testing-library/react";
 
@@ -45,6 +47,12 @@ const USER_MENU_DATA1 = [
     id: "Minesweeper",
     icon: minesweeper,
     subtitle: "",
+  },
+  {
+    title: "Gadu Chat",
+    id: "Gadu Chat",
+    icon: gaduchat,
+    subtitle: "Chat with your friends!",
   },
   {
     title: "Paint",

@@ -32,7 +32,7 @@ import DogGif from "./components/Atoms/DogGif";
 import minesweeper from "./sources/minesweeper.png";
 import paint from "./sources/images/education.png";
 import internet from "./sources/images/internet.png";
-import Minesweeper from "./components/mainFolders/windowsFolder/Minesweeper";
+import Minesweeper from "./components/mainFolders/windowsFolder/mineswapperFolder/Minesweeper";
 import Paint from "./components/mainFolders/windowsFolder/Paint";
 import CountryStats from "./components/mainFolders/windowsFolder/CountryStats";
 import Virus from "./components/mainFolders/windowsFolder/virusComponents/Virus";
@@ -124,7 +124,7 @@ const WINDOWS_DATA = [
     Component: Virus,
   },
   {
-    id: "Gadu chat",
+    id: "Gadu Chat",
     name: "Gadu Chat",
     icon: gaduLogo,
     Component: GaduChat,
