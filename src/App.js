@@ -31,12 +31,14 @@ import paintlogo from "./sources/images/paint.png";
 import DogGif from "./components/Atoms/DogGif";
 import minesweeper from "./sources/minesweeper.png";
 import paint from "./sources/images/education.png";
+import option from "./sources/images/Options.png";
 import internet from "./sources/images/internet.png";
 import Minesweeper from "./components/mainFolders/windowsFolder/mineswapperFolder/Minesweeper";
 import Paint from "./components/mainFolders/windowsFolder/Paint";
 import CountryStats from "./components/mainFolders/windowsFolder/CountryStats";
 import Virus from "./components/mainFolders/windowsFolder/virusComponents/Virus";
 import GaduChat from "./components/mainFolders/windowsFolder/chatGaduComponents/GaduChat";
+import ChangeWallpaper from "./components/mainFolders/windowsFolder/changeWallpaper/ChangeWallpaper";
 
 const WINDOWS_DATA = [
   {
@@ -128,6 +130,12 @@ const WINDOWS_DATA = [
     name: "Gadu Chat",
     icon: gaduLogo,
     Component: GaduChat,
+  },
+  {
+    id: "Wallpaper Options",
+    name: "Wallpaper Options",
+    icon: option,
+    Component: ChangeWallpaper,
   },
 ];
 

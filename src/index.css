@@ -13,12 +13,12 @@ code {
 }
 :root {
   --main-text-color: #000;
-  --main-background-image: url("./sources/tapeta.jpg");
+  --main-background-image: url("./sources/images/wallpapers/tapeta.jpg");
   --transition-duration: 0.5s;
 }
 
 [data-theme="dark"] {
   --main-text-color: #d8b9c3;
-  --main-background-image: url("./sources/tapeta6.jpg");
+  --main-background-image: url("./sources/images/wallpapers/tapeta6.jpg");
   --transition-duration: 0.5s;
 }

@@ -1,0 +1,42 @@
+.desktopOptionsWrapper {
+  padding-top: 20px;
+}
+
+.ExampleWallpaperWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.basicBackgroundOptions {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.backgroundsList {
+  margin: 0;
+  width: 250px;
+  background-color: white;
+  list-style: none;
+}
+ul {
+  margin: 0;
+  padding-left: 12px;
+}
+.specificBackgroundOptions {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.backgroundOptions {
+  display: flex;
+  gap: 10px;
+  height: 150px;
+}
+.specificBackgroundOptionsSize {
+  display: flex;
+}
+.colorChangeInput {
+  width: 82px;
+}
