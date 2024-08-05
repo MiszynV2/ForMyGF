@@ -6,7 +6,7 @@ import Options from "../../../Atoms/Options";
 import TitleBar from "../../../Atoms/TitleBar";
 import DesktopOptions from "./DesktopOptions";
 
-function ChangeWallpaper({ close }) {
+function ChangeWallpaper({ close, minimalize }) {
   const options = [
     "Themes",
     "Desktop",
@@ -17,7 +17,12 @@ function ChangeWallpaper({ close }) {
   const title = "Wallpaper Options";
   return (
     <Window height={700}>
-      <TitleBar image={image} title={title} close={close} />
+      <TitleBar
+        minimalize={minimalize}
+        image={image}
+        title={title}
+        close={close}
+      />
       <Options options={options} />
       <DesktopOptions />
       <div className={classes.changeWallpaperButton}>

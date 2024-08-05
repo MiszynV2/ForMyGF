@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import classes from "./SkillsSet.module.css";
 import image from "../../../sources/check.svg";
 import Window from "../../Atoms/Window";
@@ -13,12 +14,17 @@ const SKILLSET_DATA = [
   { htmlFor: "minded", text: "open minded" },
   { htmlFor: "people", text: "open for people" },
 ];
-function SkillsSet({ close }) {
+function SkillsSet({ close, minimalize }) {
   const options = ["File", "Edit", "Format", "View", "Help"];
   const title = "Skills Set";
   return (
     <Window>
-      <TitleBar image={image} title={title} close={close} />
+      <TitleBar
+        minimalize={minimalize}
+        image={image}
+        title={title}
+        close={close}
+      />
       <div className={classes.TextWrapper}>
         <Options options={options} />
 
@@ -43,5 +49,9 @@ function SkillsSet({ close }) {
     </Window>
   );
 }
+SkillsSet.propTypes = {
+  close: PropTypes.func.isRequired,
+  minimalize: PropTypes.func.isRequired,
+};
 
 export default SkillsSet;

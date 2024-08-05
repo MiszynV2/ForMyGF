@@ -8,13 +8,18 @@ import ComputerNavSection from "../../Atoms/ComputerNavSection";
 import ComputerRightSection from "../../Atoms/ComputerRightSection";
 import ComputerOptions from "../../Atoms/ComputerOptions";
 
-function Computer({ close }) {
+function Computer({ close, minimalize }) {
   const title = "My Computer";
   const options = ["File", "Edit", "View", "Favorites", "Tools", "Help"];
 
   return (
     <Window width={660}>
-      <TitleBar image={image} title={title} close={close} />
+      <TitleBar
+        minimalize={minimalize}
+        image={image}
+        title={title}
+        close={close}
+      />
       <div className={classes.Wrapper}>
         <Options options={options} />
         <ComputerOptions />

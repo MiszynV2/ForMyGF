@@ -49,7 +49,6 @@ function GaduChatMessage({ state }) {
     fetchMessages();
   }, [status]);
 
-  console.log({ messages });
   return (
     <div className={classes.MessagesWrapper}>
       {messages.map((data, index) => {

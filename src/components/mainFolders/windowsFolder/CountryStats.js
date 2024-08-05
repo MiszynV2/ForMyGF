@@ -6,12 +6,17 @@ import TitleBar from "../../Atoms/TitleBar";
 import Options from "../../Atoms/Options";
 import SiteOptions from "../../Atoms/SiteOptions";
 
-function CountryStats({ close }) {
+function CountryStats({ close, minimalize }) {
   const title = "CountryStats.html";
   const options = ["File", "Edit", "View", "Favorites", "Tools", "Help"];
   return (
     <Window width={1000} height={600}>
-      <TitleBar image={logo} title={title} close={close} />
+      <TitleBar
+        minimalize={minimalize}
+        image={logo}
+        title={title}
+        close={close}
+      />
 
       <Options options={options} />
       {/* TODO MAKE DIRECTING COMPUTER OPTION VIA PROPS */}

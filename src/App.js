@@ -46,100 +46,117 @@ const WINDOWS_DATA = [
     name: "About me",
     icon: text,
     Component: AboutMe,
+    IsMinimalize: false,
   },
   {
     id: "Industry knowledge",
     name: "Industry knowledge",
     icon: setting,
     Component: Industry,
+    IsMinimalize: false,
   },
   {
     id: "Projects",
     name: "Projects",
     icon: projects,
     Component: Projects,
+    IsMinimalize: false,
   },
   {
     id: "Skills set",
     name: "Skills set",
     icon: check,
     Component: SkillsSet,
+    IsMinimalize: false,
   },
   {
     id: "Education",
     name: "Education",
     icon: blocks,
     Component: Education,
+    IsMinimalize: false,
   },
   {
     id: "Experience",
     name: "Experience",
     icon: education,
     Component: Experience,
+    IsMinimalize: false,
   },
   {
     id: "Contact me",
     name: "Contact me",
     icon: contact,
     Component: Contact,
+    IsMinimalize: false,
   },
   {
     id: "My Computer",
     name: "My Computer",
     icon: computer,
     Component: Computer,
+    IsMinimalize: false,
   },
   {
     id: "Tic tac toe",
     name: "Tic tac toe",
     icon: game,
     Component: TicTacToe,
+    IsMinimalize: false,
   },
   {
     id: "Duck.exe",
     name: "Duck.exe",
     icon: duck,
     Component: Duck,
+    IsMinimalize: false,
   },
   {
     id: "Minesweeper",
     name: "Minesweeper",
     icon: minesweeper,
     Component: Minesweeper,
+    IsMinimalize: false,
   },
   {
     id: "Paint",
     name: "Paint",
     icon: paintlogo,
     Component: Paint,
+    IsMinimalize: false,
   },
   {
     id: "Country_Statistics.html",
     name: "Country_Statistics.html",
     icon: internet,
     Component: CountryStats,
+    IsMinimalize: false,
   },
   {
     id: "Virus",
     name: "Virus",
     icon: virus,
     Component: Virus,
+    IsMinimalize: false,
   },
   {
     id: "Gadu Chat",
     name: "Gadu Chat",
     icon: gaduLogo,
     Component: GaduChat,
+    IsMinimalize: false,
   },
   {
     id: "Wallpaper Options",
     name: "Wallpaper Options",
     icon: option,
     Component: ChangeWallpaper,
+    IsMinimalize: false,
   },
 ];
 
 function App() {
+  const [windowsData, setWindowsData] = useState(WINDOWS_DATA);
   const [angelHour, setAngelHour] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 700);
   const [buttonIcon, setButtonIcon] = useState(moonButton);
@@ -184,6 +201,7 @@ function App() {
 
       setAngelHour(isAngelHour ? `${hours}:${minutes}` : null);
     }, 1000);
+
     const handleResize = () => {
       setIsMobile(window.innerWidth < 700);
     };
@@ -195,52 +213,11 @@ function App() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   const virus = () => {
-    setActiveWindowsId([
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-      "Virus",
-    ]);
+    setActiveWindowsId(["Virus", "Virus"]);
   };
+
   const toggleTheme = () => {
     if (currentTheme === "light") {
       setButtonIcon(sunButton);
@@ -254,15 +231,18 @@ function App() {
     setButtonIcon(moonButton);
   };
 
+  const minimizedWindows = windowsData.filter((window) => window.IsMinimalize);
+  console.log("windowsData    ", windowsData);
   return (
     <div className={`app-wrapper`}>
       <Analytics />
       {angelHour && <div className="angel-hour-message">{`${angelHour}`}</div>}
 
       <FolderList
+        setWindowsData={setWindowsData}
         setActiveWindowsId={setActiveWindowsId}
         activeWindowsId={activeWindowsId}
-        data={WINDOWS_DATA}
+        data={windowsData}
         virus={virus}
       />
 
@@ -271,11 +251,13 @@ function App() {
       </button>
       {!isMobile && <DogGif />}
       <Footer
-        windows_data={WINDOWS_DATA}
+        setWindowsData={setWindowsData}
+        windowsData={windowsData}
         setClickedWindow={setClickedWindow}
         clickedWindow={clickedWindow}
         setActiveWindowsId={setActiveWindowsId}
         activeWindowsId={activeWindowsId}
+        minimizedWindows={minimizedWindows}
       />
     </div>
   );

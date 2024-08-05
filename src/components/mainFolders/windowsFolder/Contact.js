@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+
+import PropTypes from "prop-types";
 import classes from "./Contact.module.css";
 import image from "../../../sources/images/contact.png";
 import firebase from "../../../firebase";
@@ -6,7 +8,7 @@ import { collection, addDoc } from "firebase/firestore/lite";
 import Window from "../../Atoms/Window";
 import TitleBar from "../../Atoms/TitleBar";
 
-function Contact({ close }) {
+function Contact({ close, minimalize }) {
   const [email, setEmail] = useState("");
   const [emailContentChange, setEmailContentChange] = useState("");
   const [isEmailValid, setIsEmailValid] = useState(true);
@@ -50,7 +52,12 @@ function Contact({ close }) {
 
   return (
     <Window>
-      <TitleBar image={image} title={title} close={close} />
+      <TitleBar
+        minimalize={minimalize}
+        image={image}
+        title={title}
+        close={close}
+      />
       <form className={classes.PasswordForm} onSubmit={handleEmailSubmit}>
         <div className={classes.Email}>
           <label htmlFor="password">Your E-mail</label>

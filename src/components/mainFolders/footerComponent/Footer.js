@@ -10,14 +10,37 @@ function Footer({
   clickedWindow,
   setClickedWindow,
   setActiveWindowsId,
-  windows_data,
+  windowsData,
+  setWindowsData,
 }) {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const userMenuRef = useRef(null);
 
   function handleUserMenuOptions() {
-    const isVisible = !isMenuVisible;
-    setIsMenuVisible(isVisible);
+    setIsMenuVisible((prev) => !prev);
+  }
+
+  const minimizedWindows = windowsData.filter((window) => window.IsMinimalize);
+
+  function handleToggleWindow(windowId) {
+    setWindowsData((prevState) =>
+      prevState.map((item) =>
+        item.id === windowId
+          ? { ...item, IsMinimalize: !item.IsMinimalize }
+          : item
+      )
+    );
+
+    setActiveWindowsId((prevState) => {
+      const newActiveWindows = !windowsData.find(
+        (window) => window.id === windowId
+      ).IsMinimalize
+        ? prevState.filter((id) => id !== windowId)
+        : [...new Set([...prevState, windowId])];
+      return newActiveWindows;
+    });
+
+    setClickedWindow(windowId);
   }
 
   useEffect(() => {
@@ -26,13 +49,18 @@ function Footer({
         setIsMenuVisible(false);
       }
     }
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  });
+  }, []);
 
+  const footerItems = [
+    ...new Set([
+      ...activeWindowsId,
+      ...minimizedWindows.map((window) => window.id),
+    ]),
+  ];
   return (
     <div className={classes.FooterWrapper}>
       <button
@@ -58,17 +86,18 @@ function Footer({
         )}
       </div>
       <div className={classes.FooterWindowsItemWrapper}>
-        {activeWindowsId.map((window) => {
-          const windowData = windows_data.find(
-            (element) => element.id === window
+        {footerItems.map((windowId) => {
+          const windowData = windowsData.find(
+            (element) => element.id === windowId
           );
 
           return (
             <FooterWindowsItem
+              key={windowId}
+              onClick={() => handleToggleWindow(windowId)}
               clickedWindow={clickedWindow}
-              activeWindowsId={activeWindowsId}
               setClickedWindow={setClickedWindow}
-              title={windowData.id}
+              title={windowData.name}
               icon={windowData.icon}
             />
           );

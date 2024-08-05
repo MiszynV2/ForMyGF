@@ -1,19 +1,20 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import classes from "./FooterWindowItem.module.css";
-{
-}
+
 function FooterWindowsItem({
-  setClickedWindow,
-  clickedWindow,
-  activeWindowsId,
+  onClick,
   title,
   icon,
+  clickedWindow,
+  setClickedWindow,
 }) {
   const windowRef = useRef(null);
+
   const handleClick = () => {
-    windowRef.current.focus();
+    onClick();
+    setClickedWindow(title);
   };
-  setClickedWindow(title);
+
   return (
     <div
       tabIndex={0}

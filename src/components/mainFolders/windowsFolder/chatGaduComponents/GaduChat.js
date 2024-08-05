@@ -11,7 +11,7 @@ import Options from "../../../Atoms/Options";
 import GaduChatContacts from "./GaduChatContacts";
 import GaduChatSendWrapper from "./GaduChatSendWrapper";
 
-function GaduChat({ close }) {
+function GaduChat({ close, minimalize }) {
   const [isSendNewMessage, setIsSendNewMessage] = useState(true);
   const options = ["GaduGadu", "PowerGG"];
   const title = "Gadu Chat";
@@ -23,7 +23,12 @@ function GaduChat({ close }) {
 
   return (
     <Window width={500}>
-      <TitleBar image={image} title={title} close={close} />
+      <TitleBar
+        minimalize={minimalize}
+        image={image}
+        title={title}
+        close={close}
+      />
       <Options options={options} />
       <div className={classes.Wrapper}>
         <div className={classes.LeftSectionWrapper}>

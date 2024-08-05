@@ -36,7 +36,6 @@ function GaduChatTextbox({ onMessageSent }) {
         });
         setIsSend(true);
         setTextContentChange("");
-        console.log({ textContentChange });
         onMessageSent();
       } catch (error) {
         setIsSend(false);

@@ -7,7 +7,7 @@ import Window from "../../Atoms/Window";
 import TitleBar from "../../Atoms/TitleBar";
 import Options from "../../Atoms/Options";
 
-function Lista({ close }) {
+function Lista({ close, minimalize }) {
   const [txtChange, setTxtChange] = useState(
     "Check my github: https://github.com/MiszynV2"
   );
@@ -19,7 +19,12 @@ function Lista({ close }) {
   return (
     <>
       <Window width={600} height={400}>
-        <TitleBar image={logo} title={"This Site lol"} close={close} />
+        <TitleBar
+          minimalize={minimalize}
+          image={logo}
+          title={"This Site lol"}
+          close={close}
+        />
 
         <Options options={options} />
         {/* TODO MAKE DIRECTING COMPUTER OPTION VIA PROPS */}
@@ -33,6 +38,7 @@ function Lista({ close }) {
       </Window>
       <Window width={800} height={600}>
         <TitleBar
+          minimalize={minimalize}
           image={logo}
           title={"instagram copy - kilogram"}
           close={close}
@@ -49,7 +55,12 @@ function Lista({ close }) {
         </div>
       </Window>
       <Window width={600} height={600}>
-        <TitleBar image={logo} title={"Country_Stats"} close={close} />
+        <TitleBar
+          minimalize={minimalize}
+          image={logo}
+          title={"Country_Stats"}
+          close={close}
+        />
 
         <Options options={options} />
 

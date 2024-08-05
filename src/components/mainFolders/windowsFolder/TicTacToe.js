@@ -4,7 +4,7 @@ import Window from "../../Atoms/Window";
 import TitleBar from "../../Atoms/TitleBar";
 import image from "../../../sources/heart.svg";
 
-function Quiz({ close }) {
+function Quiz({ close, minimalize }) {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [isXNext, setIsXNext] = useState(true);
   const [winner, setWinner] = useState(null);
@@ -110,7 +110,12 @@ function Quiz({ close }) {
 
   return (
     <Window width={300}>
-      <TitleBar image={image} title={title} close={close} />
+      <TitleBar
+        minimalize={minimalize}
+        image={image}
+        title={title}
+        close={close}
+      />
       {renderBoard()}
       {renderGameResult()}
     </Window>

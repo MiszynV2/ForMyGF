@@ -7,7 +7,7 @@ import tapeta5 from "../../sources/tapeta5.jpg";
 import tapeta6 from "../../sources/tapeta6.jpg";
 import TitleBar from "../../../Atoms/TitleBar";
 
-function ChangeBg({ close }) {
+function ChangeBg({ close, minimalize }) {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [startY, setStartY] = useState(0);
@@ -83,7 +83,11 @@ function ChangeBg({ close }) {
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
     >
-      <TitleBar title={title} handleFolderSelection={handleFolderSelection} />
+      <TitleBar
+        minimalize={minimalize}
+        title={title}
+        handleFolderSelection={handleFolderSelection}
+      />
       <div className={classes.ChangeBgOptions}>
         <div
           className={classes.ChangeBgOption}

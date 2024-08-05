@@ -7,7 +7,7 @@ import Window from "../../../Atoms/Window";
 import bombImage from "../../../../sources/bomb.png";
 import TitleBar from "../../../Atoms/TitleBar";
 
-function Virus({ close, virus }) {
+function Virus({ close, minimalize, virus }) {
   const [bombs, setBombs] = useState([]);
   const [isVisible, setIsVisible] = useState(true);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -55,7 +55,12 @@ function Virus({ close, virus }) {
   return (
     <>
       <Window style={{ display: isVisible ? "block" : "none" }}>
-        <TitleBar image={image} title={title} close={close} />
+        <TitleBar
+          minimalize={minimalize}
+          image={image}
+          title={title}
+          close={close}
+        />
         <div className={classes.TextWrapper}>
           <div>
             <img className={classes.WarningImg} src={critical} alt="" />

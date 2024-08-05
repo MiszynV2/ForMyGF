@@ -14,7 +14,7 @@ import TitleBar from "../../../Atoms/TitleBar";
 import MinesweeperGame from "./MinesweeperGame";
 import MinesweeperOptions from "../../../Atoms/MinesweeperOptions";
 
-function Minesweeper({ close }) {
+function Minesweeper({ close, minimalize }) {
   const [Restart, SetRestart] = useState(true);
   const [GameMod, SetGameMod] = useState("Easy");
   const [Width, SetWidth] = useState(250);
@@ -44,7 +44,12 @@ function Minesweeper({ close }) {
 
   return (
     <Window width={Width}>
-      <TitleBar image={MinesweeperLogo} title={title} close={close} />
+      <TitleBar
+        minimalize={minimalize}
+        image={MinesweeperLogo}
+        title={title}
+        close={close}
+      />
       <div className={classes.TextWrapper}>
         <MinesweeperOptions SetTitle={handleGameMod} options={options} />
 

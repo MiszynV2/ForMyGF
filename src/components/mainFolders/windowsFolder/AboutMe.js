@@ -5,12 +5,17 @@ import Window from "../../Atoms/Window";
 import Options from "../../Atoms/Options";
 import TitleBar from "../../Atoms/TitleBar";
 
-function AboutMe({ close }) {
+function AboutMe({ close, minimalize }) {
   const options = ["File", "Edit", "Format", "View", "Help"];
   const title = "About me";
   return (
     <Window>
-      <TitleBar image={image} title={title} close={close} />
+      <TitleBar
+        minimalize={minimalize}
+        image={image}
+        title={title}
+        close={close}
+      />
       <div className={classes.TextWrapper}>
         <Options options={options} />
 

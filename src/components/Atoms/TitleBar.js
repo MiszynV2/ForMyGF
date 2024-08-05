@@ -14,7 +14,11 @@ function TitleBar(props) {
         <span className={classes.Title}>{props.title}</span>
       </div>
       <div className={classes.Icons}>
-        <button className={classes.MinimizeButton} src={MinimizeButton} />
+        <button
+          className={classes.MinimizeButton}
+          src={MinimizeButton}
+          onClick={props.minimalize}
+        />
         <button
           className={classes.CloseButton}
           src={CloseButton}
